@@ -1,65 +1,229 @@
-import { FC } from "react";
-import { Star } from "lucide-react";
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Amit Verma",
-    role: "Founder, BrightTech Solutions",
-    text: "Dreamlytix delivered a clean, scalable solution ahead of schedule. Their attention to detail and communication made the process smooth and stress-free.",
+    name: "Dr. Rajesh Kumar",
+    role: "Principal",
+    school: "Delhi Public School, Bangalore",
+    text: "Dreamlytix transformed our entire school administration. The integrated system has made managing 2000+ students effortless. Parents love the mobile app!",
+    rating: 5,
+    avatar: "from-blue-500 to-cyan-500",
   },
   {
-    name: "Priya Sharma",
-    role: "Marketing Manager, NovaCorp",
-    text: "The team understood our vision perfectly and transformed it into a beautiful, functional platform. Highly recommended for startups!",
+    name: "Mrs. Priya Sharma",
+    role: "Administrator",
+    school: "St. Mary's School, Mumbai",
+    text: "The fee management system alone has saved us countless hours. Automated receipts and payment tracking work flawlessly. Best investment we've made!",
+    rating: 5,
+    avatar: "from-purple-500 to-pink-500",
   },
   {
-    name: "Rahul Jain",
-    role: "Director, BlueWave Systems",
-    text: "Exceptional work! The UI/UX and performance exceeded expectations. We’ll definitely collaborate again for future projects.",
+    name: "Mr. Arjun Patel",
+    role: "IT Head",
+    school: "Global Academy, Pune",
+    text: "Outstanding support and robust platform. The admin panel is intuitive, and the mobile app has received excellent feedback from parents and teachers.",
+    rating: 5,
+    avatar: "from-green-500 to-teal-500",
+  },
+  {
+    name: "Dr. Anjali Mehta",
+    role: "Director",
+    school: "Cambridge School, Hyderabad",
+    text: "Implementation was smooth and training excellent. Our teachers adapted quickly, and attendance tracking has been a revelation for parent communication.",
+    rating: 5,
+    avatar: "from-orange-500 to-red-500",
+  },
+  {
+    name: "Mr. Vikram Singh",
+    role: "Principal",
+    school: "Ryan School, Delhi",
+    text: "The student management system is comprehensive and easy to use. From admission to alumni tracking, everything is organized beautifully.",
+    rating: 5,
+    avatar: "from-indigo-500 to-blue-500",
+  },
+  {
+    name: "Mrs. Kavita Desai",
+    role: "Vice Principal",
+    school: "Mount Litera School, Chennai",
+    text: "Real-time notifications keep parents informed and engaged. The platform has strengthened our school-parent relationship significantly.",
+    rating: 5,
+    avatar: "from-pink-500 to-rose-500",
   },
 ];
 
-const Testimonials: FC = () => {
+const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const cardsPerView = 3;
+  const totalPages = Math.ceil(testimonials.length / cardsPerView);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      handleNext();
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [currentIndex, isPaused]);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalPages);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  // Get current testimonials to display
+  const startIdx = currentIndex * cardsPerView;
+  const currentTestimonials = testimonials.slice(startIdx, startIdx + cardsPerView);
+
   return (
-    <section id="testimonials" className="container mx-auto px-6 py-24">
-      {/* Heading */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-          What <span className="text-orange-500">Clients Say</span>
-        </h2>
-        <p className="text-gray-600 mt-3 text-lg">
-          Real words from people we've had the pleasure to work with.
-        </p>
+    <section id="testimonials" className="relative py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 overflow-hidden">
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
-      {/* Grid */}
-      <div className="grid md:grid-cols-3 gap-10">
-        {testimonials.map((t) => (
-          <div
-            key={t.name}
-            className="bg-white border border-gray-100 shadow-sm hover:shadow-lg 
-                      transition rounded-2xl p-8"
+      {/* Glowing orbs */}
+      <motion.div
+        className="absolute top-20 left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl"
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.3, 0.2, 0.3],
+        }}
+        transition={{ duration: 10, repeat: Infinity, delay: 1 }}
+      />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-block mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold rounded-full">
+              <Quote className="w-3 h-3" />
+              Success Stories
+            </div>
+          </motion.div>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            What <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">People</span> Say
+          </h2>
+
+          <p className="text-blue-200 text-normal leading-relaxed">Trusted by leading educational institutions for digital transformation</p>
+        </div>
+
+        {/* Slider Container */}
+        <div className="relative max-w-7xl mx-auto" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+          {/* Navigation Buttons */}
+          <button
+            onClick={handlePrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 hover:scale-110"
+            aria-label="Previous testimonials"
           >
-            {/* Stars */}
-            <div className="flex gap-1 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-5 h-5 text-orange-500 fill-orange-500"
-                />
-              ))}
-            </div>
+            <ChevronLeft className="w-6 h-6" />
+          </button>
 
-            {/* Text */}
-            <p className="text-gray-700 leading-relaxed mb-6">"{t.text}"</p>
+          <button
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 hover:scale-110"
+            aria-label="Next testimonials"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
 
-            {/* Footer */}
-            <div>
-              <h4 className="font-semibold text-gray-900">{t.name}</h4>
-              <p className="text-sm text-gray-500">{t.role}</p>
-            </div>
+          {/* Cards Grid */}
+          <div className="overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -300, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="grid md:grid-cols-3 gap-6"
+              >
+                {currentTestimonials.map((testimonial, idx) => (
+                  <motion.div
+                    key={startIdx + idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 flex flex-col h-full hover:bg-white/15 transition-all duration-300 group"
+                  >
+                    {/* Quote Icon */}
+                    <Quote className="w-10 h-10 text-blue-400/40 mb-4" />
+
+                    {/* Star Rating */}
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                      ))}
+                    </div>
+
+                    {/* Testimonial Text */}
+                    <p className="text-white text-sm md:text-base leading-relaxed mb-6 flex-1 italic">"{testimonial.text}"</p>
+
+                    {/* Divider */}
+                    <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4" />
+
+                    {/* Author Info */}
+                    <div className="flex items-center gap-3">
+                      {/* Avatar */}
+                      <div
+                        className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.avatar} flex items-center justify-center text-white text-lg font-bold shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform`}
+                      >
+                        {testimonial.name.charAt(0)}
+                      </div>
+
+                      {/* Details */}
+                      <div className="min-w-0">
+                        <h4 className="text-white font-bold text-sm truncate">{testimonial.name}</h4>
+                        <p className="text-blue-300 text-xs truncate">{testimonial.role}</p>
+                        <p className="text-blue-400 text-xs font-semibold truncate">{testimonial.school}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
-        ))}
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center gap-2 mt-8">
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => handleDotClick(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? "w-8 bg-blue-400" : "w-2 bg-white/30 hover:bg-white/50"}`}
+                aria-label={`Go to page ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

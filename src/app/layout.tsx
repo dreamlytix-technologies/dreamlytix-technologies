@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
+
+// pure components
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Modern, professional font for body text
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Modern, bold font for headings
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Dreamlytix - You Dream, We Build",
-  description: "Transforming your ideas into exceptional digital experiences",
+  description: "Transforming educational institutions with innovative digital solutions",
 };
 
 export default function RootLayout({
@@ -26,28 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`
-          ${geistSans.variable} ${geistMono.variable} 
-          antialiased flex flex-col min-h-screen 
-          overflow-x-hidden
-        `}
-      >
-        {/* 🔥 Background shape spanning Header + Hero */}
-        <div className="absolute top-0 right-0 -z-10 pointer-events-none">
-          <img
-            src="/hero-bg.svg"
-            alt="background shape"
-            // className="w-[900px] md:w-[1100px] h-auto translate-x-40 -translate-y-40"
-          />
-        </div>
-
-        {/* 🔥 Content above background */}
-        <div className="relative z-10 flex flex-col min-h-screen">
-          <Header />
-          <div className="flex-1">{children}</div>
-          <Footer />
-        </div>
+      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased flex flex-col overflow-x-hidden`}>
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

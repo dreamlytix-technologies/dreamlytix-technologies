@@ -1,56 +1,105 @@
 "use client";
+
 import React from "react";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import AnimatedBackground from "@/components/ui/AnimatedBackground";
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
-    <section className="container mx-auto px-6 pt-5 pb-24 relative z-10">
-      <div className="grid md:grid-cols-2 gap-16 items-center">
-        {/* Left Column - Text Content */}
-        <div className="space-y-8 max-w-xl">
-          <h2 className="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-            Turning Ideas Into
-            <br />
-            <span className="text-orange-500">Digital Reality</span>
-          </h2>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12">
+      {/* Animated Background */}
+      <AnimatedBackground variant="mesh" />
 
-          <p className="text-gray-600 text-lg leading-relaxed">
-            We build modern, scalable, and human-centric digital solutions that
-            empower businesses to grow, innovate, and transform.
-          </p>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text Content */}
+          <motion.div className="space-y-10 max-w-xl" variants={containerVariants} initial="hidden" animate="visible">
+            <motion.h1 variants={itemVariants} className="text-6xl lg:text-6xl font-extrabold leading-tight text-zinc-50">
+              Turning Ideas Into
+              <br />
+              <span className="gradient-text relative">
+                Digital Reality
+                {/* Animated underline */}
+                <motion.div
+                  className="absolute -bottom-2 left-0 h-1 bg-gradient-primary rounded-full"
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 0.8, delay: 1 }}
+                />
+              </span>
+            </motion.h1>
 
-          <blockquote className="border-l-4 border-orange-500 pl-4 text-gray-700 italic text-lg">
-            "You Dream, We Build — delivering technology with purpose."
-          </blockquote>
+            <motion.p variants={itemVariants} className="text-zinc-200 text-md lg:text-md leading-relaxed">
+              Transform your business with a complete digital ecosystem — secure websites, powerful admin panels, and intuitive mobile apps designed specifically for
+              educational institutions.
+            </motion.p>
 
-          <button
-            onClick={() => {
-              console.log("Contact");
-              const contact = document.getElementById("contact");
-              contact?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="px-8 py-3 bg-gray-900 text-white rounded-md text-lg font-medium hover:bg-gray-800 transition"
+            <motion.blockquote variants={itemVariants} className="border-l-4 border-blue-500 pl-6 text-gray-700 italic text-md bg-blue-50 py-3 rounded-r-xl">
+              "You Dream, We Build — delivering technology with purpose."
+            </motion.blockquote>
+          </motion.div>
+
+          {/* Right Column - Floating Cards & Illustration */}
+          <motion.div
+            className="relative lg:h-[600px] flex items-center justify-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
           >
-            Get a Free Consultation
-          </button>
-        </div>
+            {/* Central Illustration */}
+            <div className="relative w-full max-w-2xl">
+              <div className="relative w-full aspect-square">
+                {/* Hero Illustration - Static, No Animation */}
+                <img src={"/images/hello.png"} alt="School Management Dashboard" className="relative z-10 w-full h-full object-contain" />
+              </div>
+            </div>
 
-        {/* Right Column - Image */}
-        <div className="relative flex justify-center items-center">
-          <div className="relative w-full max-w-md">
-            {/* <Image
-              src="https://images.unsplash.com/vector-1761074651005-97a2e57eef29?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Team working on software project"
-              width={600}
-              height={600}
-              // className="rounded-2xl shadow-xl object-cover"
-            /> */}
-            <img
-              src="/hero.svg"
-              alt="background shape"
-              // className="w-[900px] md:w-[1100px] h-auto translate-x-40 -translate-y-40"
+            {/* Floating decoration shapes */}
+            <motion.div
+              className="absolute top-20 right-10 w-20 h-20 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-xl"
+              animate={{
+                y: [0, -20, 0],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             />
-          </div>
+            <motion.div
+              className="absolute bottom-20 right-20 w-16 h-16 bg-gradient-to-br from-teal-500/20 to-green-500/20 rounded-full blur-xl"
+              animate={{
+                y: [0, 20, 0],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+            />
+          </motion.div>
         </div>
       </div>
     </section>
