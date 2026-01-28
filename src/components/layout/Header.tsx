@@ -1,75 +1,81 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: "#services", label: "Services" },
+    { href: "#portfolio", label: "Portfolio" },
+    { href: "#case-studies", label: "Case Studies" },
+    { href: "#technologies", label: "Technologies" },
+    { href: "#why-choose-us", label: "Why Us" },
+    { href: "#testimonials", label: "Testimonials" },
+    { href: "#contact", label: "Contact Us" },
+  ];
+
   return (
-    <header className="container mx-auto px-6 py-6 relative z-10">
-      <nav className="flex items-center justify-between">
-        {/* Logo + Caption */}
-        <div className="flex flex-col leading-tight">
-          <Link href="/" className="text-3xl font-bold">
-            <span className="text-gray-900">Dream</span>
-            <span className="text-orange-500">lytix</span>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-3 glass-dark shadow-lg" : "py-6 bg-transparent"}`}>
+      <div className="container mx-auto">
+        <nav className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center group">
+            <img src="/images/hero-logo.png" alt="Dreamlytix Logo" className="h-18 -mr-3" />
+            <div className="flex flex-col leading-tight">
+              <div className="text-2xl font-bold">
+                <span className="text-gray  transition-colors">Dream</span>
+                <span className="gradient-text-primary">lytix</span>
+              </div>
+              <span className="text-xs text-center text-gray-500 tracking-wide">You Dream, We Build.</span>
+            </div>
           </Link>
-          <span className="text-xs text-center text-gray-400 tracking-wide">
-            You Dream, We Build.
-          </span>
-        </div>
 
-        {/* Navigation Links */}
-        <ul className="hidden md:flex items-center space-x-12 text-base font-medium">
-          <li>
-            <a href="#about" className="text-gray-700 hover:text-gray-900">
-              About Us
-            </a>
-          </li>
-          <li>
-            {/* <Link
-              href="/services"
-              className="text-gray-700 hover:text-gray-900"
-            >
-              Services
-            </Link> */}
+          {/* Desktop Navigation */}
+          <ul className="hidden md:flex items-center space-x-8 text-sm font-normal">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="relative text-gray hover:text-orange-500 transition-colors group">
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+            ))}
+          </ul>
 
-            <a href="#services" className="text-gray-700 hover:text-gray-900">
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="#portfolio" className="text-gray-700 hover:text-gray-900">
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <Link href="/blogs" className="text-gray-700 hover:text-gray-900">
-              Blogs
-            </Link>
-          </li>
-          <li>
-            <Link href="/team" className="text-gray-700 hover:text-gray-900">
-              Team
-            </Link>
-          </li>
-        </ul>
+          {/* Mobile Menu Button */}
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-gray-900 hover:text-orange-500 transition-colors" aria-label="Toggle menu">
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </nav>
 
-        {/* Let's Chat Button */}
-        {/* <Link
-          href="https://wa.me/918719087038?text=Hi%20Dreamlytix%2C%20I%20would%20like%20to%20discuss%20a%20project.%20Could%20you%20help%20me%3F"
-          target="_blank"
-          className="px-8 py-2.5 border-2 border-gray-900 rounded-md text-base font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition"
-        >
-          Let’s Chat
-        </Link> */}
-
-        <Link
-          href="https://wa.me/919876543210?text=Hi%20Dreamlytix%2C%20I%20would%20like%20to%20discuss%20a%20project.%20Could%20you%20help%20me%3F"
-          target="_blank"
-          className="flex items-center gap-2 px-8 py-2.5 border-2 border-gray-900 rounded-md text-base font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition"
-        >
-          <Image src="/whatsapp.svg" alt="WhatsApp" width={20} height={20} />
-          Let’s Chat
-        </Link>
-      </nav>
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-6 glass-dark rounded-2xl p-6 animate-slideUp">
+            <ul className="space-y-4">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-orange-500 font-medium transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </header>
   );
 };
