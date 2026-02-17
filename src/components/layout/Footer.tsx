@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,10 +20,10 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 pt-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pt-3">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center group -mt-3">
-              <img src="/images/hero-logo.png" alt="Dreamlytix Logo" className="h-18 -ml-6 -mr-3" />
+              <Image src="/images/hero-logo.png" alt="Dreamlytix Logo" width={72} height={72} className="h-18 -ml-6 -mr-3" />
               <div className="flex flex-col leading-tight">
                 <div className="text-2xl font-bold">
                   <span className="text-gray-700 transition-colors">Dream</span>
@@ -31,11 +32,14 @@ export default function Footer() {
                 <span className="text-xs text-gray-400 tracking-wide">You Dream, We Build.</span>
               </div>
             </Link>
-            <p className="text-white text-sm leading-relaxed mb-6">You Dream, We Build. Transforming educational institutions with innovative digital solutions.</p>
+            <p className="text-white text-sm leading-relaxed mb-6">
+              We are a professional software development company specializing in secure websites and mobile applications. We deliver reliable, scalable, and innovative
+              digital solutions to help businesses grow and succeed.
+            </p>
           </div>
 
-          <div className="lg:col-span-3">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-3">
               <div>
                 <h3 className="text-xl font-bold text-white tracking-wider mb-6 relative inline-block">
                   Navigation<span className="text-cyan-400">.</span>
@@ -69,7 +73,7 @@ export default function Footer() {
                 </h3>
 
                 <div className="flex flex-col space-y-3">
-                  <button className="cursor-pointer w-full px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-yellow-300">
+                  <button className="cursor-pointer w-48 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-yellow-300">
                     Book a free Consultation
                   </button>
                 </div>
@@ -78,7 +82,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 py-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-8 py-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white text-sm">© {currentYear} Dreamlytix. All rights reserved.</p>
           <div className="flex space-x-6 text-sm text-white">
             <span className="flex items-center">

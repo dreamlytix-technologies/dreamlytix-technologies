@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -20,20 +21,20 @@ const Header = () => {
   const navLinks = [
     { href: "#services", label: "Services" },
     { href: "#portfolio", label: "Portfolio" },
-    { href: "#case-studies", label: "Case Studies" },
     { href: "#technologies", label: "Technologies" },
     { href: "#why-choose-us", label: "Why Us" },
     { href: "#testimonials", label: "Testimonials" },
+    { href: "/faqs", label: "FAQs" },
     { href: "#contact", label: "Contact Us" },
   ];
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-3 glass-dark shadow-lg" : "py-6 bg-transparent"}`}>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 md:px-12 lg:px-16">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <img src="/images/hero-logo.png" alt="Dreamlytix Logo" className="h-18 -mr-3" />
+            <Image src="/images/hero-logo.png" alt="Dreamlytix Logo" width={72} height={72} className="h-18 -mr-3" priority />
             <div className="flex flex-col leading-tight">
               <div className="text-2xl font-bold">
                 <span className="text-gray  transition-colors">Dream</span>

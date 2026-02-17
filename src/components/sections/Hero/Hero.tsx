@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
 
 const Hero = () => {
@@ -29,7 +30,7 @@ const Hero = () => {
       {/* Animated Background */}
       <AnimatedBackground variant="mesh" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div className="space-y-10 max-w-xl" variants={containerVariants} initial="hidden" animate="visible">
@@ -49,12 +50,12 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-zinc-200 text-md lg:text-md leading-relaxed">
-              Transform your business with a complete digital ecosystem — secure websites, powerful admin panels, and intuitive mobile apps designed specifically for
-              educational institutions.
+              We delivers innovative digital solutions including secure websites, scalable admin panels, and user-friendly mobile applications. We help educational
+              institutions and growing businesses transform their operations with cutting-edge technology, reliable infrastructure, and performance-driven design.
             </motion.p>
 
             <motion.blockquote variants={itemVariants} className="border-l-4 border-blue-500 pl-6 text-gray-700 italic text-md bg-blue-50 py-3 rounded-r-xl">
-              "You Dream, We Build — delivering technology with purpose."
+              &ldquo;You Dream, We Build — Delivering Technology with Purpose.&rdquo;
             </motion.blockquote>
           </motion.div>
 
@@ -69,13 +70,13 @@ const Hero = () => {
             <div className="relative w-full max-w-2xl">
               <div className="relative w-full aspect-square">
                 {/* Hero Illustration - Static, No Animation */}
-                <img src={"/images/hello.png"} alt="School Management Dashboard" className="relative z-10 w-full h-full object-contain" />
+                <Image src="/images/hello.png" alt="School Management Dashboard" fill className="relative z-10 object-contain" priority />
               </div>
             </div>
 
             {/* Floating decoration shapes */}
             <motion.div
-              className="absolute top-20 right-10 w-20 h-20 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-xl"
+              className="absolute top-20 right-10 w-20 h-20 bg-linear-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-xl"
               animate={{
                 y: [0, -20, 0],
                 scale: [1, 1.1, 1],
@@ -87,7 +88,7 @@ const Hero = () => {
               }}
             />
             <motion.div
-              className="absolute bottom-20 right-20 w-16 h-16 bg-gradient-to-br from-teal-500/20 to-green-500/20 rounded-full blur-xl"
+              className="absolute bottom-20 right-20 w-16 h-16 bg-linear-to-br from-teal-500/20 to-green-500/20 rounded-full blur-xl"
               animate={{
                 y: [0, 20, 0],
                 scale: [1, 1.2, 1],

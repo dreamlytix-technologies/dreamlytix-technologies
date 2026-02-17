@@ -125,7 +125,7 @@ const Testimonials = () => {
           <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-block mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold rounded-full">
               <Quote className="w-3 h-3" />
-              Success Stories
+              Client Success Stories
             </div>
           </motion.div>
 
@@ -133,7 +133,9 @@ const Testimonials = () => {
             What <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">People</span> Say
           </h2>
 
-          <p className="text-blue-200 text-normal leading-relaxed">Trusted by leading educational institutions for digital transformation</p>
+          <p className="text-blue-200 text-normal leading-relaxed">
+            Trusted by educational institutions and businesses worldwide for reliable, scalable, and innovative technology services.
+          </p>
         </div>
 
         {/* Slider Container */}

@@ -84,7 +84,7 @@ const Services = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         {/* Heading */}
         <SmoothScroll animation="fadeUp">
           <div className="text-center max-w-4xl mx-auto mb-20">
@@ -129,7 +129,7 @@ const Services = () => {
 
             return (
               <motion.div
-                key={index}
+                key={service.title}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

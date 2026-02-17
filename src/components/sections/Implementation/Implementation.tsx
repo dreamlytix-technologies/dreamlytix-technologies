@@ -8,31 +8,32 @@ const Implementation = () => {
     {
       icon: ClipboardList,
       title: "Requirements Gathering",
-      description: "Understanding your school's specific needs and processes",
+      description:
+        "We analyze your business goals, workflows, and technical requirements to create a customized digital solution that fits your organization’s objectives.",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Palette,
       title: "UI/UX Design",
-      description: "Creating intuitive and beautiful interfaces",
+      description: "Our designers create intuitive, modern, and responsive interfaces that enhance user experience and improve engagement across all devices.",
       color: "from-cyan-500 to-teal-500",
     },
     {
       icon: Code,
       title: "Development",
-      description: "Building robust and scalable solutions",
+      description: "Our development team builds robust web and mobile applications using modern technologies to ensure speed, security, and scalability.",
       color: "from-teal-500 to-green-500",
     },
     {
       icon: TestTube,
-      title: "Testing & QA",
-      description: "Ensuring quality and performance",
+      title: "Testing & Quality Assurance",
+      description: "We conduct rigorous testing to eliminate bugs, optimize performance, and ensure your solution meets the highest quality standards.",
       color: "from-green-500 to-blue-500",
     },
     {
       icon: Rocket,
-      title: "Deployment",
-      description: "Going live with training and support",
+      title: "Deployment & Support",
+      description: "We deploy your project smoothly, provide team training, and offer continuous technical support for long-term success.",
       color: "from-blue-500 to-purple-500",
     },
   ];
@@ -57,7 +58,7 @@ const Implementation = () => {
             How We <span className="bg-linear-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">Work</span>
           </h2>
 
-          <p className="text-gray-600 text-normal leading-relaxed">A streamlined process from concept to completion</p>
+          <p className="text-gray-600 text-normal leading-relaxed">A streamlined, transparent, and result-driven approach from concept to successful deployment.</p>
         </motion.div>
 
         {/* Horizontal Timeline */}
@@ -66,7 +67,7 @@ const Implementation = () => {
           <div className="hidden lg:block">
             <div className="relative">
               {/* Connection Line */}
-              <div className="absolute top-16 left-0 right-0 h-1 bg-linear-to-r from-blue-500 via-green-500 to-purple-500 opacity-20" />
+              {/* <div className="absolute top-16 left-0 right-0 h-1 bg-linear-to-r from-blue-500 via-green-500 to-purple-500 opacity-20" /> */}
 
               {/* Steps */}
               <div className="grid grid-cols-5 gap-4">
