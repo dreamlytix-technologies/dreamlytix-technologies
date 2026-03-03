@@ -30,11 +30,19 @@ const Hero = () => {
       {/* Animated Background */}
       <AnimatedBackground variant="mesh" />
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
-          <motion.div className="space-y-10 max-w-xl" variants={containerVariants} initial="hidden" animate="visible">
-            <motion.h1 variants={itemVariants} className="text-6xl lg:text-6xl font-extrabold leading-tight text-zinc-50">
+          <motion.div
+            className="space-y-10 max-w-xl"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1
+              variants={itemVariants}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-zinc-50"
+            >
               Turning Ideas Into
               <br />
               <span className="gradient-text relative">
@@ -49,13 +57,24 @@ const Hero = () => {
               </span>
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-zinc-200 text-md lg:text-md leading-relaxed">
-              We delivers innovative digital solutions including secure websites, scalable admin panels, and user-friendly mobile applications. We help educational
-              institutions and growing businesses transform their operations with cutting-edge technology, reliable infrastructure, and performance-driven design.
+            <motion.p
+              variants={itemVariants}
+              className="text-zinc-200 text-sm md:text-base lg:text-lg leading-relaxed"
+            >
+              We deliver innovative digital solutions including secure
+              school websites, scalable admin panels, and user-friendly
+              mobile applications. We help educational institutions and
+              growing businesses transform their operations with
+              cutting-edge technology, reliable infrastructure, and
+              performance-driven design.
             </motion.p>
 
-            <motion.blockquote variants={itemVariants} className="border-l-4 border-blue-500 pl-6 text-gray-700 italic text-md bg-blue-50 py-3 rounded-r-xl">
-              &ldquo;You Dream, We Build — Delivering Technology with Purpose.&rdquo;
+            <motion.blockquote
+              variants={itemVariants}
+              className="border-l-4 border-blue-500 pl-6 text-gray-700 italic text-xs sm:text-sm md:text-base bg-blue-50 py-3 rounded-r-xl"
+            >
+              &ldquo;You Dream, We Build — Delivering Technology with
+              Purpose.&rdquo;
             </motion.blockquote>
           </motion.div>
 
@@ -70,7 +89,13 @@ const Hero = () => {
             <div className="relative w-full max-w-2xl">
               <div className="relative w-full aspect-square">
                 {/* Hero Illustration - Static, No Animation */}
-                <Image src="/images/hello.png" alt="School Management Dashboard" fill className="relative z-10 object-contain" priority />
+                <Image
+                  src="/images/hello.png"
+                  alt="Dreamlytix School Management Software Dashboard - Student Management, Fee Tracking, Attendance System"
+                  fill
+                  className="relative z-10 object-contain"
+                  priority
+                />
               </div>
             </div>
 
