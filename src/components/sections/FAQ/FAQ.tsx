@@ -48,10 +48,10 @@ export default function FAQ() {
         <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-green-50 rounded-full blur-3xl opacity-60" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-linear-to-r from-blue-600 to-green-600 text-white text-sm font-semibold rounded-full shadow-lg mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-linear-to-r from-blue-600 to-green-600 text-white text-xs font-semibold rounded-full shadow-lg mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
             Got Questions?
           </div>

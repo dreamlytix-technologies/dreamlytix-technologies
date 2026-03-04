@@ -25,8 +25,7 @@ const siteUrl = "https://dreamlytix.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default:
-      "Dreamlytix - Best School Management Software | Website, Admin Panel & Mobile App Development India",
+    default: "Dreamlytix - Best School Management Software | Website, Admin Panel & Mobile App Development India",
     template: "%s | Dreamlytix - School Management Software",
   },
   description:
@@ -67,8 +66,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteUrl,
     siteName: "Dreamlytix",
-    title:
-      "Dreamlytix - Best School Management Software | Website & App Development India",
+    title: "Dreamlytix - Best School Management Software | Website & App Development India",
     description:
       "India's trusted school management software company. We build secure school websites, admin panels, student management systems, and mobile apps. Trusted by 50+ institutions with 99.9% uptime.",
     images: [
@@ -84,8 +82,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dreamlytix - Best School Management Software India",
-    description:
-      "Build secure school websites, admin panels & mobile apps with Dreamlytix. Trusted by 50+ schools. Student management, fee tracking, attendance & more.",
+    description: "Build secure school websites, admin panels & mobile apps with Dreamlytix. Trusted by 50+ schools. Student management, fee tracking, attendance & more.",
     images: ["/images/og-image.png"],
     creator: "@dreamlytix",
     site: "@dreamlytix",
@@ -162,12 +159,7 @@ const organizationSchema = {
       areaServed: "IN",
     },
   ],
-  sameAs: [
-    "https://twitter.com/dreamlytix",
-    "https://www.linkedin.com/company/dreamlytix",
-    "https://www.instagram.com/dreamlytix",
-    "https://github.com/dreamlytix",
-  ],
+  sameAs: ["https://twitter.com/dreamlytix", "https://www.linkedin.com/company/dreamlytix", "https://www.instagram.com/dreamlytix", "https://github.com/dreamlytix"],
   founder: {
     "@type": "Person",
     name: "Dreamlytix Team",
@@ -179,13 +171,7 @@ const organizationSchema = {
     minValue: 5,
     maxValue: 20,
   },
-  knowsAbout: [
-    "School Management Software",
-    "Web Development",
-    "Mobile App Development",
-    "Student Management System",
-    "Educational Technology",
-  ],
+  knowsAbout: ["School Management Software", "Web Development", "Mobile App Development", "Student Management System", "Educational Technology"],
 };
 
 const localBusinessSchema = {
@@ -202,7 +188,7 @@ const localBusinessSchema = {
     streetAddress: "Gangin",
     addressLocality: "Murshidabad",
     addressRegion: "West Bengal",
-    postalCode: "742149",
+    postalCode: "742223",
     addressCountry: "IN",
   },
   geo: {
@@ -236,13 +222,7 @@ const localBusinessSchema = {
     "@type": "Country",
     name: "India",
   },
-  serviceType: [
-    "School Management Software",
-    "Website Development",
-    "Mobile App Development",
-    "Admin Panel Development",
-    "Student Management System",
-  ],
+  serviceType: ["School Management Software", "Website Development", "Mobile App Development", "Admin Panel Development", "Student Management System"],
 };
 
 const websiteSchema = {
@@ -251,8 +231,7 @@ const websiteSchema = {
   "@id": `${siteUrl}/#website`,
   name: "Dreamlytix",
   url: siteUrl,
-  description:
-    "Best school management software company in India offering websites, admin panels, and mobile apps for educational institutions.",
+  description: "Best school management software company in India offering websites, admin panels, and mobile apps for educational institutions.",
   publisher: {
     "@id": `${siteUrl}/#organization`,
   },
@@ -343,8 +322,7 @@ const serviceSchema = {
       "@type": "Service",
       position: 1,
       name: "School Website Development",
-      description:
-        "Modern, responsive school websites with photo galleries, news/events sections, faculty pages, and complete content management.",
+      description: "Modern, responsive school websites with photo galleries, news/events sections, faculty pages, and complete content management.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Website Development",
@@ -353,8 +331,7 @@ const serviceSchema = {
       "@type": "Service",
       position: 2,
       name: "School Admin Panel System",
-      description:
-        "Comprehensive web-based admin panel for managing students, teachers, attendance, fees, exams, results, timetables, and reports.",
+      description: "Comprehensive web-based admin panel for managing students, teachers, attendance, fees, exams, results, timetables, and reports.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Admin Panel Development",
@@ -363,8 +340,7 @@ const serviceSchema = {
       "@type": "Service",
       position: 3,
       name: "School Mobile App Development",
-      description:
-        "Dedicated Android apps for parents and students with real-time access to attendance, results, fees, and school communications.",
+      description: "Dedicated Android apps for parents and students with real-time access to attendance, results, fees, and school communications.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Mobile App Development",
@@ -373,8 +349,7 @@ const serviceSchema = {
       "@type": "Service",
       position: 4,
       name: "Student Management System",
-      description:
-        "Complete student lifecycle management from admission to alumni tracking, including profiles, documents, and performance analytics.",
+      description: "Complete student lifecycle management from admission to alumni tracking, including profiles, documents, and performance analytics.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Software Development",
@@ -383,8 +358,7 @@ const serviceSchema = {
       "@type": "Service",
       position: 5,
       name: "Fee Management Software",
-      description:
-        "Digital fee collection, payment tracking, automated receipts, pending dues alerts, and comprehensive financial reporting.",
+      description: "Digital fee collection, payment tracking, automated receipts, pending dues alerts, and comprehensive financial reporting.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Software Development",
@@ -393,8 +367,7 @@ const serviceSchema = {
       "@type": "Service",
       position: 6,
       name: "Attendance & Result Management",
-      description:
-        "Digital attendance marking for students and staff, exam management, result processing, report cards, and parent notifications.",
+      description: "Digital attendance marking for students and staff, exam management, result processing, report cards, and parent notifications.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Software Development",
@@ -424,21 +397,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
         <meta name="theme-color" content="#2563eb" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Dreamlytix" />
         <script
           type="application/ld+json"
@@ -452,22 +414,10 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -475,9 +425,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${inter.variable} ${outfit.variable} font-sans antialiased flex flex-col overflow-x-hidden`}
-      >
+      <body suppressHydrationWarning className={`${inter.variable} ${outfit.variable} font-sans antialiased flex flex-col overflow-x-hidden`}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

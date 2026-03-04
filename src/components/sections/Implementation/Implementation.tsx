@@ -1,20 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ClipboardList,
-  Palette,
-  Code,
-  TestTube,
-  Rocket,
-  Sparkles,
-  GraduationCap,
-  PackageCheck,
-  Headphones,
-  Settings,
-  ArrowRight,
-} from "lucide-react";
-import { ReactNode } from "react";
+import { ClipboardList, Palette, Code, TestTube, Rocket, Sparkles, ArrowRight } from "lucide-react";
 
 const steps = [
   { icon: ClipboardList, title: "Discovery", desc: "Analyze goals & requirements", color: "from-blue-500 to-cyan-500" },
@@ -22,41 +9,6 @@ const steps = [
   { icon: Code, title: "Build", desc: "Develop robust applications", color: "from-teal-500 to-green-500" },
   { icon: TestTube, title: "Test", desc: "Rigorous quality assurance", color: "from-green-500 to-emerald-500" },
   { icon: Rocket, title: "Launch", desc: "Deploy & ongoing support", color: "from-emerald-500 to-blue-500" },
-];
-
-const strengths: { icon: typeof GraduationCap; title: string; description: ReactNode; color: string }[] = [
-  {
-    icon: GraduationCap,
-    title: "Education Focused",
-    description: (
-      <>
-        We specialize in <span className="text-blue-600 font-semibold">educational software</span> and understand the unique needs of schools.
-      </>
-    ),
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    icon: PackageCheck,
-    title: "Complete Solutions",
-    description: "Integrated website, admin panel, and mobile apps — everything in one seamless ecosystem.",
-    color: "from-cyan-500 to-teal-500",
-  },
-  {
-    icon: Headphones,
-    title: "Dedicated Support",
-    description: (
-      <>
-        Technical support, training, and <span className="text-blue-600 font-semibold">quick issue resolution</span> to keep things running.
-      </>
-    ),
-    color: "from-teal-500 to-green-500",
-  },
-  {
-    icon: Settings,
-    title: "Fully Customizable",
-    description: "Flexible system tailored to your school's unique processes, workflows, and branding.",
-    color: "from-green-500 to-blue-500",
-  },
 ];
 
 const Implementation = () => {
@@ -68,7 +20,7 @@ const Implementation = () => {
         <div className="absolute -bottom-40 left-0 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-3xl opacity-70" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* ── Header ── */}
         <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-gray-200 bg-gray-50 text-gray-600 text-xs font-medium rounded-full mb-5">
@@ -77,8 +29,7 @@ const Implementation = () => {
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Why{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">Dreamlytix</span>?
+            Why <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">Dreamlytix</span>?
           </h2>
 
           <p className="text-gray-500 text-sm md:text-base lg:text-lg leading-relaxed max-w-xl mx-auto">
@@ -108,8 +59,12 @@ const Implementation = () => {
                     >
                       {/* Node */}
                       <div className="relative mb-4">
-                        <div className={`absolute -inset-1.5 rounded-full bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-20 blur transition-all duration-400`} />
-                        <div className={`relative w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                        <div
+                          className={`absolute -inset-1.5 rounded-full bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-20 blur transition-all duration-400`}
+                        />
+                        <div
+                          className={`relative w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}
+                        >
                           <StepIcon className="w-7 h-7 text-white" />
                         </div>
                       </div>
@@ -154,34 +109,6 @@ const Implementation = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* ── Strength Cards ── */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {strengths.map((item, i) => {
-            const ItemIcon = item.icon;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="group relative rounded-2xl border border-gray-100 bg-gray-50/50 p-6 hover:bg-white hover:border-blue-200 hover:shadow-xl transition-all duration-400 overflow-hidden"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`} />
-
-                <div className="relative z-10">
-                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md`}>
-                    <ItemIcon className="w-5 h-5 text-white" />
-                  </div>
-
-                  <h4 className="text-sm sm:text-base font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{item.title}</h4>
-                  <p className="text-gray-500 text-xs sm:text-sm md:text-base leading-relaxed">{item.description}</p>
-                </div>
-              </motion.div>
-            );
-          })}
         </div>
 
         {/* CTA */}

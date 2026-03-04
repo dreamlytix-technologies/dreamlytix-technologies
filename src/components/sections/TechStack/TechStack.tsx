@@ -1,14 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Smartphone,
-  Database,
-  Cloud,
-  Laptop,
-  TestTube2,
-} from "lucide-react";
+import { Code2, Smartphone, Database, Cloud, Laptop, TestTube2 } from "lucide-react";
 
 const TechStack = () => {
   const technologies = [
@@ -60,7 +53,7 @@ const TechStack = () => {
       icon: TestTube2,
       color: "from-yellow-500 to-orange-500",
       techs: [
-        { name: "Jest", icon: "🃏", description: "Unit & integration testing" },
+        { name: "Jest", icon: "🃏", description: "Unit testing" },
         { name: "Cypress", icon: "🌲", description: "End-to-end testing" },
         { name: "Playwright", icon: "🎭", description: "Browser automation" },
       ],
@@ -100,10 +93,7 @@ const TechStack = () => {
   };
 
   return (
-    <section
-      className="relative py-16 overflow-hidden bg-gray-900"
-      id="technologies"
-    >
+    <section className="relative py-16 overflow-hidden bg-gray-900" id="technologies">
       {/* Animated background */}
       <div className="absolute inset-0">
         {/* Grid pattern */}
@@ -148,49 +138,30 @@ const TechStack = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
+        <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold rounded-full mb-4">
             <Code2 className="w-3 h-3" />
             Technologies We Use
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Our{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
-              Tech Stack
-            </span>
+            Our <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">Tech Stack</span>
           </h2>
 
           <p className="text-blue-200 text-sm md:text-base lg:text-lg leading-relaxed">
-            Cutting-edge technologies powering robust, scalable, and modern
-            educational solutions
+            Cutting-edge technologies powering robust, scalable, and modern educational solutions
           </p>
         </motion.div>
 
         {/* Tech Categories Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
-        >
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 gap-8">
           {technologies.map((category, catIndex) => {
             const CategoryIcon = category.icon;
 
             return (
-              <motion.div
-                key={catIndex}
-                variants={itemVariants}
-                className="group relative"
-              >
+              <motion.div key={catIndex} variants={itemVariants} className="group relative">
                 {/* Card */}
                 <div className="relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden h-full">
                   {/* Animated gradient background */}
@@ -211,17 +182,13 @@ const TechStack = () => {
                         <CategoryIcon className="w-8 h-8 text-white" />
                       </motion.div>
                       <div>
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">
-                          {category.category}
-                        </h3>
-                        <div
-                          className={`h-1 w-16 bg-gradient-to-r ${category.color} rounded-full mt-2`}
-                        />
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">{category.category}</h3>
+                        <div className={`h-1 w-16 bg-gradient-to-r ${category.color} rounded-full mt-2`} />
                       </div>
                     </div>
 
                     {/* Tech Items */}
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-4 gap-4">
                       {category.techs.map((tech, techIndex) => (
                         <motion.div
                           key={techIndex}
@@ -235,12 +202,8 @@ const TechStack = () => {
                           className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
                         >
                           <div className="text-3xl mb-2">{tech.icon}</div>
-                          <h4 className="text-white font-semibold text-xs sm:text-sm mb-1">
-                            {tech.name}
-                          </h4>
-                          <p className="text-gray-400 text-xs">
-                            {tech.description}
-                          </p>
+                          <h4 className="text-white font-semibold text-xs sm:text-sm mb-1">{tech.name}</h4>
+                          {/* <p className="text-gray-400 text-xs">{tech.description}</p> */}
                         </motion.div>
                       ))}
                     </div>
@@ -248,9 +211,7 @@ const TechStack = () => {
 
                   {/* Corner decoration */}
                   <div className="absolute bottom-0 right-0 w-32 h-32 opacity-20">
-                    <div
-                      className={`w-full h-full rounded-tl-full bg-gradient-to-tl ${category.color}`}
-                    />
+                    <div className={`w-full h-full rounded-tl-full bg-gradient-to-tl ${category.color}`} />
                   </div>
                 </div>
               </motion.div>

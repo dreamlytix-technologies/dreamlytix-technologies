@@ -25,15 +25,15 @@ const Pricing = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-white" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <SmoothScroll animation="fadeUp">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-gradient-primary text-white text-sm font-semibold rounded-full shadow-lg">💰 Transparent Pricing</span>
+              <span className="px-4 py-2 bg-gradient-primary text-white text-xs font-semibold rounded-full shadow-lg">💰 Transparent Pricing</span>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Investment{" "}
               <span className="gradient-text relative inline-block">
                 Plans
@@ -41,7 +41,7 @@ const Pricing = () => {
               </span>
             </h2>
 
-            <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
+            <p className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
               Clear, honest pricing with no hidden costs. One-time development plus optional annual maintenance.
             </p>
           </div>
@@ -63,7 +63,7 @@ const Pricing = () => {
             <div className="relative z-10">
               {/* Header */}
               <div className="mb-8">
-                <div className="inline-flex px-4 py-2 bg-gradient-primary text-white text-sm font-semibold rounded-full mb-4">One-Time Investment</div>
+                <div className="inline-flex px-4 py-2 bg-gradient-primary text-white text-xs font-semibold rounded-full mb-4">One-Time Investment</div>
                 <h3 className="text-4xl font-bold text-gray-900 mb-2">₹1,20,000</h3>
                 <p className="text-gray-600">Complete Development & Deployment</p>
               </div>
@@ -110,7 +110,7 @@ const Pricing = () => {
             <div className="relative z-10">
               {/* Header */}
               <div className="mb-8">
-                <div className="inline-flex px-4 py-2 bg-white/20 text-white text-sm font-semibold rounded-full mb-4 backdrop-blur-sm">Annual Maintenance</div>
+                <div className="inline-flex px-4 py-2 bg-white/20 text-white text-xs font-semibold rounded-full mb-4 backdrop-blur-sm">Annual Maintenance</div>
                 <h3 className="text-4xl font-bold mb-2">₹18,000 - ₹25,000</h3>
                 <p className="text-blue-100">Per Year (AMC)</p>
               </div>

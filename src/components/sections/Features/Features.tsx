@@ -52,7 +52,7 @@ const Features = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <SmoothScroll animation="fadeUp">
           <div className="text-center max-w-5xl mx-auto mb-20">
@@ -62,7 +62,7 @@ const Features = () => {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Complete{" "}
               <span className="gradient-text relative inline-block">
                 Ecosystem
@@ -70,7 +70,7 @@ const Features = () => {
               </span>
             </h2>
 
-            <p className="text-gray-600 text-normal leading-relaxed">
+            <p className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
               All-in-one school management software with website, admin dashboard, and mobile apps for seamless digital operations.
             </p>
           </div>
@@ -102,7 +102,7 @@ const Features = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="relative z-10 text-2xl font-bold text-gray-900 mb-6">{section.title}</h3>
+                <h3 className="relative z-10 text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-6">{section.title}</h3>
 
                 {/* Features List */}
                 <ul className="relative z-10 space-y-4">
@@ -113,7 +113,7 @@ const Features = () => {
                         <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
                           <FeatureIcon className="w-3 h-3 text-green-600" />
                         </div>
-                        <span className="text-gray-600 text-sm leading-relaxed">{feature.text}</span>
+                        <span className="text-gray-600 text-sm md:text-base leading-relaxed">{feature.text}</span>
                       </li>
                     );
                   })}

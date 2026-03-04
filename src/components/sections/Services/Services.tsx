@@ -106,7 +106,7 @@ const Services = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
         <SmoothScroll animation="fadeUp">
           <div className="text-center max-w-4xl mx-auto mb-20">
