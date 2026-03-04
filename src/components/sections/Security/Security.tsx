@@ -9,64 +9,76 @@ const Security = () => {
     {
       icon: Shield,
       title: "Secure Login System",
-      description: "Role-based access control with encrypted authentication for admins, teachers, staff, and parents.",
+      description:
+        "Role-based access control with encrypted authentication for admins, teachers, staff, and parents.",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Lock,
       title: "Encrypted Data Storage",
-      description: "All sensitive student and school data protected with industry-standard encryption protocols.",
+      description:
+        "All sensitive student and school data protected with industry-standard encryption protocols.",
       color: "from-cyan-500 to-teal-500",
     },
     {
       icon: Database,
       title: "Regular Backups",
-      description: "Automated daily backups ensure your data is always safe and recoverable.",
+      description:
+        "Automated daily backups ensure your data is always safe and recoverable.",
       color: "from-teal-500 to-green-500",
     },
     {
       icon: Cloud,
       title: "Cloud-Based Hosting",
-      description: "Reliable cloud infrastructure with 99.9% uptime guarantee and global accessibility.",
+      description:
+        "Reliable cloud infrastructure with 99.9% uptime guarantee and global accessibility.",
       color: "from-green-500 to-blue-500",
     },
     {
       icon: Zap,
       title: "High Performance",
-      description: "Optimized code and CDN delivery for lightning-fast load times across all devices.",
+      description:
+        "Optimized code and CDN delivery for lightning-fast load times across all devices.",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: RefreshCw,
       title: "Scalable Architecture",
-      description: "Built to grow with your school — from 100 to 10,000+ students without performance loss.",
+      description:
+        "Built to grow with your school — from 100 to 10,000+ students without performance loss.",
       color: "from-cyan-500 to-teal-500",
     },
   ];
 
   return (
-    <section id="security" className="relative py-16 overflow-hidden bg-gray-900 text-white">
+    <section
+      id="security"
+      className="relative py-16 overflow-hidden bg-gray-900 text-white"
+    >
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-mesh opacity-20" />
         <div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0)",
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <SmoothScroll animation="fadeUp">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="inline-block mb-6">
-              <span className="px-4 py-2 bg-gradient-primary text-white text-xs font-semibold rounded-full shadow-lg">🔒 Security & Technology</span>
+              <span className="px-4 py-2 bg-gradient-primary text-white text-xs font-semibold rounded-full shadow-lg">
+                🔒 Security & Technology
+              </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Reliable &{" "}
               <span className="gradient-text relative inline-block">
                 Secure
@@ -74,7 +86,10 @@ const Security = () => {
               </span>
             </h2>
 
-            <p className="text-gray-300 text-normal leading-relaxed">Enterprise-grade security and infrastructure to keep your school data safe and accessible 24/7.</p>
+            <p className="text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed">
+              Enterprise-grade security and infrastructure to keep your school
+              data safe and accessible 24/7.
+            </p>
           </div>
         </SmoothScroll>
 
@@ -92,7 +107,9 @@ const Security = () => {
                 className="group relative bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 hover:bg-white/10 hover:border-blue-400/30 transition-all duration-300"
               >
                 {/* Gradient glow on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity`}
+                />
 
                 <div className="relative z-10">
                   {/* Icon */}
@@ -103,8 +120,12 @@ const Security = () => {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-3 text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               </motion.div>
             );
@@ -119,11 +140,13 @@ const Security = () => {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-4 px-8 py-4 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+          <div className="inline-flex items-center gap-4 px-8 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
             <Shield className="w-8 h-8 text-green-400" />
             <div className="text-left">
-              <div className="text-sm text-gray-400">Trusted Security</div>
-              <div className="text-lg font-bold text-white">99.9% Uptime Guarantee</div>
+              <div className="text-xs text-gray-400">Trusted Security</div>
+              <div className="text-sm font-bold text-white">
+                99.9% Uptime Guarantee
+              </div>
             </div>
           </div>
         </motion.div>

@@ -6,52 +6,12 @@ import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Dr. Rajesh Kumar",
-    role: "Principal",
-    school: "Delhi Public School, Bangalore",
-    text: "Dreamlytix transformed our entire school administration. The integrated system has made managing 2000+ students effortless. Parents love the mobile app!",
+    name: "Animesh Das",
+    role: "Owner",
+    school: "Novacoat, Murshidabad, WB",
+    text: "Dreamlytix understood our requirements perfectly and created a website that reflects our company and industry. The design, speed, and overall functionality are excellent. We’re very happy with the result.",
     rating: 5,
     avatar: "from-blue-500 to-cyan-500",
-  },
-  {
-    name: "Mrs. Priya Sharma",
-    role: "Administrator",
-    school: "St. Mary's School, Mumbai",
-    text: "The fee management system alone has saved us countless hours. Automated receipts and payment tracking work flawlessly. Best investment we've made!",
-    rating: 5,
-    avatar: "from-purple-500 to-pink-500",
-  },
-  {
-    name: "Mr. Arjun Patel",
-    role: "IT Head",
-    school: "Global Academy, Pune",
-    text: "Outstanding support and robust platform. The admin panel is intuitive, and the mobile app has received excellent feedback from parents and teachers.",
-    rating: 5,
-    avatar: "from-green-500 to-teal-500",
-  },
-  {
-    name: "Dr. Anjali Mehta",
-    role: "Director",
-    school: "Cambridge School, Hyderabad",
-    text: "Implementation was smooth and training excellent. Our teachers adapted quickly, and attendance tracking has been a revelation for parent communication.",
-    rating: 5,
-    avatar: "from-orange-500 to-red-500",
-  },
-  {
-    name: "Mr. Vikram Singh",
-    role: "Principal",
-    school: "Ryan School, Delhi",
-    text: "The student management system is comprehensive and easy to use. From admission to alumni tracking, everything is organized beautifully.",
-    rating: 5,
-    avatar: "from-indigo-500 to-blue-500",
-  },
-  {
-    name: "Mrs. Kavita Desai",
-    role: "Vice Principal",
-    school: "Mount Litera School, Chennai",
-    text: "Real-time notifications keep parents informed and engaged. The platform has strengthened our school-parent relationship significantly.",
-    rating: 5,
-    avatar: "from-pink-500 to-rose-500",
   },
 ];
 
@@ -119,21 +79,23 @@ const Testimonials = () => {
         transition={{ duration: 10, repeat: Infinity, delay: 1 }}
       />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-block mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold rounded-full">
               <Quote className="w-3 h-3" />
-              Success Stories
+              Client Success Stories
             </div>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             What <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">People</span> Say
           </h2>
 
-          <p className="text-blue-200 text-normal leading-relaxed">Trusted by leading educational institutions for digital transformation</p>
+          <p className="text-blue-200 text-sm md:text-base lg:text-lg leading-relaxed">
+            Trusted by educational institutions and businesses worldwide for reliable, scalable, and innovative technology services.
+          </p>
         </div>
 
         {/* Slider Container */}
@@ -185,7 +147,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Testimonial Text */}
-                    <p className="text-white text-sm md:text-base leading-relaxed mb-6 flex-1 italic">"{testimonial.text}"</p>
+                    <p className="text-white text-sm md:text-sm leading-relaxed mb-6 flex-1 italic">"{testimonial.text}"</p>
 
                     {/* Divider */}
                     <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4" />

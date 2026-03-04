@@ -1,6 +1,14 @@
 "use client";
 
-import { Code, Globe, Smartphone, Server, Palette, Zap, Sparkles } from "lucide-react";
+import {
+  Code,
+  Globe,
+  Smartphone,
+  Server,
+  Palette,
+  Zap,
+  Sparkles,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 
@@ -9,49 +17,58 @@ const Services = () => {
     {
       icon: Globe,
       title: "Website Development",
-      description: "Modern, responsive school websites with photo galleries, news/events sections, faculty pages, and complete content management.",
+      description:
+        "Modern, responsive school websites with photo galleries, news/events sections, faculty pages, and complete content management.",
       gradient: "from-blue-500 via-cyan-500 to-teal-500",
       delay: 0,
     },
     {
       icon: Server,
       title: "Admin Panel System",
-      description: "Comprehensive web-based admin panel for managing students, teachers, attendance, fees, exams, results, timetables, and reports.",
+      description:
+        "Comprehensive web-based admin panel for managing students, teachers, attendance, fees, exams, results, timetables, and reports.",
       gradient: "from-cyan-500 via-teal-500 to-green-500",
       delay: 0.1,
     },
     {
       icon: Smartphone,
       title: "Mobile Applications",
-      description: "Dedicated Android apps for parents,  students with real-time access to attendance, results, fees, and school communications.",
+      description:
+        "Dedicated Android apps for parents,  students with real-time access to attendance, results, fees, and school communications.",
       gradient: "from-teal-500 via-green-500 to-blue-500",
       delay: 0.2,
     },
     {
       icon: Code,
       title: "Student Management",
-      description: "Complete student lifecycle management from admission to alumni tracking, including profiles, documents, and performance analytics.",
+      description:
+        "Complete student lifecycle management from admission to alumni tracking, including profiles, documents, and performance analytics.",
       gradient: "from-green-500 via-blue-500 to-cyan-500",
       delay: 0.3,
     },
     {
       icon: Palette,
       title: "Fee Management System",
-      description: "Digital fee collection, payment tracking, automated receipts, pending dues alerts, and comprehensive financial reporting.",
+      description:
+        "Digital fee collection, payment tracking, automated receipts, pending dues alerts, and comprehensive financial reporting.",
       gradient: "from-blue-500 via-indigo-500 to-purple-500",
       delay: 0.4,
     },
     {
       icon: Zap,
       title: "Attendance & Results",
-      description: "Digital attendance marking for students and staff, exam management, result processing, report cards, and parent notifications.",
+      description:
+        "Digital attendance marking for students and staff, exam management, result processing, report cards, and parent notifications.",
       gradient: "from-purple-500 via-pink-500 to-blue-500",
       delay: 0.5,
     },
   ];
 
   return (
-    <section className="relative pt-10 pb-16 overflow-hidden bg-linear-to-b from-white via-blue-50/30 to-white" id="services">
+    <section
+      className="relative pt-10 pb-16 overflow-hidden bg-linear-to-b from-white via-blue-50/30 to-white"
+      id="services"
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating gradient orbs */}
@@ -71,7 +88,12 @@ const Services = () => {
             x: [0, -20, 0],
             scale: [1, 1.2, 1],
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
         />
         <motion.div
           className="absolute top-1/2 left-1/2 w-80 h-80 bg-green-500/10 rounded-full blur-3xl"
@@ -84,7 +106,7 @@ const Services = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
         <SmoothScroll animation="fadeUp">
           <div className="text-center max-w-4xl mx-auto mb-20">
@@ -101,7 +123,7 @@ const Services = () => {
               </span>
             </motion.div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Our{" "}
               <span className="gradient-text relative inline-block">
                 Services
@@ -115,8 +137,9 @@ const Services = () => {
               </span>
             </h2>
 
-            <p className="text-gray-600 text-normal leading-relaxed">
-              Complete digital ecosystem for educational institutions — from websites to mobile apps, all integrated seamlessly.
+            <p className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
+              Complete digital ecosystem for educational institutions — from
+              websites to mobile apps, all integrated seamlessly.
             </p>
           </div>
         </SmoothScroll>
@@ -129,14 +152,18 @@ const Services = () => {
 
             return (
               <motion.div
-                key={index}
+                key={service.title}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: service.delay, duration: 0.6, type: "spring" }}
+                transition={{
+                  delay: service.delay,
+                  duration: 0.6,
+                  type: "spring",
+                }}
                 className={`group relative ${isLarge ? "md:col-span-2 lg:col-span-1" : ""}`}
               >
-                <div className="relative h-full bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-100 p-8 hover:border-blue-200 transition-all duration-500 overflow-hidden">
+                <div className="relative h-full bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-gray-100 p-6 hover:border-blue-200 transition-all duration-500 overflow-hidden">
                   {/* Animated gradient background */}
                   <motion.div
                     className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
@@ -191,21 +218,27 @@ const Services = () => {
 
                     {/* Number badge */}
                     <div className="absolute top-2 right-2 w-10 h-10 rounded-full bg-linear-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
-                      <span className="text-sm font-bold text-blue-600">{String(index + 1).padStart(2, "0")}</span>
+                      <span className="text-sm font-bold text-blue-600">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-cyan-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-4 group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-cyan-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                       {service.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-600 leading-relaxed text-sm">{service.description}</p>
+                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base">
+                      {service.description}
+                    </p>
                   </div>
 
                   {/* Corner accent */}
                   <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10">
-                    <div className={`w-full h-full rounded-tl-full bg-linear-to-tl ${service.gradient}`} />
+                    <div
+                      className={`w-full h-full rounded-tl-full bg-linear-to-tl ${service.gradient}`}
+                    />
                   </div>
                 </div>
               </motion.div>

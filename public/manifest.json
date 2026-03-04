@@ -1,0 +1,16 @@
+{
+  "name": "Dreamlytix - School Management Software",
+  "short_name": "Dreamlytix",
+  "description": "Best school management software company in India. Build secure school websites, admin panels, student management systems, and mobile apps.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/images/hero-logo.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties } from "react";
+import { useState, type CSSProperties } from "react";
 
 interface AnimatedBackgroundProps {
   readonly variant?: "mesh" | "gradient" | "particles";
@@ -8,21 +8,18 @@ interface AnimatedBackgroundProps {
 }
 
 export default function AnimatedBackground({ variant = "mesh", className = "" }: AnimatedBackgroundProps) {
-  const [particles, setParticles] = useState<Array<{ id: number; style: CSSProperties }>>([]);
-
-  useEffect(() => {
-    setParticles(
-      Array.from({ length: 20 }).map((_, i) => ({
-        id: i,
-        style: {
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 5}s`,
-          animationDuration: `${5 + Math.random() * 10}s`,
-        },
-      })),
-    );
-  }, []);
+  // Use lazy initialization to generate particles only once on mount
+  const [particles] = useState<Array<{ id: number; style: CSSProperties }>>(() =>
+    Array.from({ length: 20 }).map((_, i) => ({
+      id: i,
+      style: {
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${5 + Math.random() * 10}s`,
+      },
+    })),
+  );
 
   if (variant === "mesh") {
     return (

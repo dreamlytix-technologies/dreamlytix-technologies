@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Smartphone, Database, Cloud, Laptop } from "lucide-react";
+import { Code2, Smartphone, Database, Cloud, Laptop, TestTube2 } from "lucide-react";
 
 const TechStack = () => {
   const technologies = [
@@ -12,8 +12,16 @@ const TechStack = () => {
       techs: [
         { name: "React.js", icon: "⚛️", description: "Modern UI library" },
         { name: "Next.js", icon: "▲", description: "Full-stack framework" },
-        { name: "TypeScript", icon: "TS", description: "Type-safe development" },
-        { name: "Tailwind CSS", icon: "🎨", description: "Utility-first styling" },
+        {
+          name: "TypeScript",
+          icon: "TS",
+          description: "Type-safe dev",
+        },
+        {
+          name: "Tailwind CSS",
+          icon: "🎨",
+          description: "Utility-first styling",
+        },
       ],
     },
     {
@@ -32,10 +40,22 @@ const TechStack = () => {
       icon: Smartphone,
       color: "from-purple-500 to-pink-500",
       techs: [
-        { name: "React Native", icon: "📱", description: "Cross-platform apps" },
+        {
+          name: "React Native",
+          icon: "📱",
+          description: "Cross-platform apps",
+        },
         { name: "Flutter", icon: "🦋", description: "Native performance" },
-        { name: "Kotlin", icon: "K", description: "Android native" },
-        { name: "Swift", icon: "🍎", description: "iOS native" },
+      ],
+    },
+    {
+      category: "Testing",
+      icon: TestTube2,
+      color: "from-yellow-500 to-orange-500",
+      techs: [
+        { name: "Jest", icon: "🃏", description: "Unit testing" },
+        { name: "Cypress", icon: "🌲", description: "End-to-end testing" },
+        { name: "Playwright", icon: "🎭", description: "Browser automation" },
       ],
     },
     {
@@ -44,7 +64,6 @@ const TechStack = () => {
       color: "from-orange-500 to-red-500",
       techs: [
         { name: "AWS", icon: "☁️", description: "Cloud infrastructure" },
-        { name: "Docker", icon: "🐳", description: "Containerization" },
         { name: "Firebase", icon: "🔥", description: "Backend services" },
         { name: "Vercel", icon: "▲", description: "Deployment platform" },
       ],
@@ -68,7 +87,7 @@ const TechStack = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -119,7 +138,7 @@ const TechStack = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold rounded-full mb-4">
@@ -127,15 +146,17 @@ const TechStack = () => {
             Technologies We Use
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Our <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">Tech Stack</span>
           </h2>
 
-          <p className="text-blue-200 text-normal leading-relaxed">Cutting-edge technologies powering robust, scalable, and modern educational solutions</p>
+          <p className="text-blue-200 text-sm md:text-base lg:text-lg leading-relaxed">
+            Cutting-edge technologies powering robust, scalable, and modern educational solutions
+          </p>
         </motion.div>
 
         {/* Tech Categories Grid */}
-        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 gap-8">
           {technologies.map((category, catIndex) => {
             const CategoryIcon = category.icon;
 
@@ -161,26 +182,28 @@ const TechStack = () => {
                         <CategoryIcon className="w-8 h-8 text-white" />
                       </motion.div>
                       <div>
-                        <h3 className="text-2xl font-bold text-white">{category.category}</h3>
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">{category.category}</h3>
                         <div className={`h-1 w-16 bg-gradient-to-r ${category.color} rounded-full mt-2`} />
                       </div>
                     </div>
 
                     {/* Tech Items */}
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-4 gap-4">
                       {category.techs.map((tech, techIndex) => (
                         <motion.div
                           key={techIndex}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
-                          transition={{ delay: catIndex * 0.15 + techIndex * 0.1 }}
+                          transition={{
+                            delay: catIndex * 0.15 + techIndex * 0.1,
+                          }}
                           whileHover={{ y: -5, scale: 1.05 }}
                           className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
                         >
                           <div className="text-3xl mb-2">{tech.icon}</div>
-                          <h4 className="text-white font-semibold text-sm mb-1">{tech.name}</h4>
-                          <p className="text-gray-400 text-xs">{tech.description}</p>
+                          <h4 className="text-white font-semibold text-xs sm:text-sm mb-1">{tech.name}</h4>
+                          {/* <p className="text-gray-400 text-xs">{tech.description}</p> */}
                         </motion.div>
                       ))}
                     </div>
