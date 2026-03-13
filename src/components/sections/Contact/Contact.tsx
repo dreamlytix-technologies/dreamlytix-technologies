@@ -4,6 +4,29 @@ import { ChangeEvent, FormEvent, useState } from "react";
 
 type Status = "idle" | "loading" | "success" | "error";
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_RE = /^[\d\s+\-()]+$/;
+
+type FieldErrors = {
+  name?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+};
+
+function validateForm(data: { name: string; email: string; phone: string; message: string }): FieldErrors {
+  const errors: FieldErrors = {};
+  if (data.name.length < 2) errors.name = "Name must be at least 2 characters.";
+  else if (data.name.length > 100) errors.name = "Name must be 100 characters or less.";
+  if (!EMAIL_RE.test(data.email)) errors.email = "Please enter a valid email address.";
+  else if (data.email.length > 254) errors.email = "Email is too long.";
+  if (!PHONE_RE.test(data.phone) || data.phone.length === 0) errors.phone = "Please enter a valid phone number.";
+  else if (data.phone.length > 20) errors.phone = "Phone number is too long.";
+  if (data.message.length < 10) errors.message = "Message must be at least 10 characters.";
+  else if (data.message.length > 5000) errors.message = "Message must be 5000 characters or less.";
+  return errors;
+}
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,18 +36,28 @@ export default function Contact() {
   });
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear field error on change
+    if (fieldErrors[name as keyof FieldErrors]) {
+      setFieldErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("loading");
     setErrorMessage("");
+
+    const errors = validateForm(formData);
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      return;
+    }
+    setFieldErrors({});
+    setStatus("loading");
 
     try {
       const res = await fetch("/api/contact", {
@@ -110,7 +143,7 @@ export default function Contact() {
                   </a>{" "}
                   <br />
                   <a href="mailto:contact@dreamlytix.com" className="hover:text-blue-600 transition-colors">
-                    contact@dreamlytix.com
+                    info@dreamlytix.com
                   </a>
                 </p>
               </div>
@@ -130,10 +163,18 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  maxLength={100}
                   autoComplete="name"
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg border-2 border-gray-200 text-gray-900 text-sm md:text-base placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition-colors duration-200"
                   placeholder="Enter your name"
+                  aria-invalid={!!fieldErrors.name}
+                  aria-describedby={fieldErrors.name ? "error-name" : undefined}
                 />
+                {fieldErrors.name && (
+                  <p id="error-name" role="alert" className="text-red-500 text-xs mt-1">
+                    {fieldErrors.name}
+                  </p>
+                )}
               </div>
               <div>
                 <label htmlFor="contact-email" className="sr-only">
@@ -146,10 +187,18 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  maxLength={254}
                   autoComplete="email"
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg border-2 border-gray-200 text-gray-900 text-sm md:text-base placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition-colors duration-200"
                   placeholder="your.email@example.com"
+                  aria-invalid={!!fieldErrors.email}
+                  aria-describedby={fieldErrors.email ? "error-email" : undefined}
                 />
+                {fieldErrors.email && (
+                  <p id="error-email" role="alert" className="text-red-500 text-xs mt-1">
+                    {fieldErrors.email}
+                  </p>
+                )}
               </div>
               <div>
                 <label htmlFor="contact-phone" className="sr-only">
@@ -162,10 +211,18 @@ export default function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
+                  maxLength={20}
                   autoComplete="tel"
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg border-2 border-gray-200 text-gray-900 text-sm md:text-base placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition-colors duration-200"
                   placeholder="Enter your Mobile Number"
+                  aria-invalid={!!fieldErrors.phone}
+                  aria-describedby={fieldErrors.phone ? "error-phone" : undefined}
                 />
+                {fieldErrors.phone && (
+                  <p id="error-phone" role="alert" className="text-red-500 text-xs mt-1">
+                    {fieldErrors.phone}
+                  </p>
+                )}
               </div>
               <div>
                 <label htmlFor="contact-message" className="sr-only">
@@ -177,10 +234,18 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  maxLength={5000}
                   rows={2}
                   className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg border-2 border-gray-200 text-gray-900 text-sm md:text-base placeholder-gray-400 focus:outline-none focus:border-blue-400 resize-none transition-colors duration-200"
                   placeholder="Tell us about your requirements..."
+                  aria-invalid={!!fieldErrors.message}
+                  aria-describedby={fieldErrors.message ? "error-message" : undefined}
                 />
+                {fieldErrors.message && (
+                  <p id="error-message" role="alert" className="text-red-500 text-xs mt-1">
+                    {fieldErrors.message}
+                  </p>
+                )}
               </div>
 
               <button
