@@ -18,7 +18,7 @@ const Services = () => {
       icon: Globe,
       title: "Website Development",
       description:
-        "Modern, responsive school websites with photo galleries, news/events sections, faculty pages, and complete content management.",
+        "Modern, responsive websites with photo galleries, news/events sections, team & faculty pages, and complete content management.",
       gradient: "from-blue-500 via-cyan-500 to-teal-500",
       delay: 0,
     },
@@ -26,7 +26,7 @@ const Services = () => {
       icon: Server,
       title: "Admin Panel System",
       description:
-        "Comprehensive web-based admin panel for managing students, teachers, attendance, fees, exams, results, timetables, and reports.",
+        "Comprehensive web-based admin panel for managing clients, members, students, attendance, billing, and advanced reporting.",
       gradient: "from-cyan-500 via-teal-500 to-green-500",
       delay: 0.1,
     },
@@ -34,15 +34,15 @@ const Services = () => {
       icon: Smartphone,
       title: "Mobile Applications",
       description:
-        "Dedicated Android apps for parents,  students with real-time access to attendance, results, fees, and school communications.",
+        "Dedicated Android apps for your end-users (parents, students, or clients) with real-time access to attendance, updates, and communications.",
       gradient: "from-teal-500 via-green-500 to-blue-500",
       delay: 0.2,
     },
     {
       icon: Code,
-      title: "Student Management",
+      title: "User Management System",
       description:
-        "Complete student lifecycle management from admission to alumni tracking, including profiles, documents, and performance analytics.",
+        "Complete user lifecycle management from onboarding to retention, including profiles, essential documents, and performance analytics.",
       gradient: "from-green-500 via-blue-500 to-cyan-500",
       delay: 0.3,
     },
@@ -56,9 +56,9 @@ const Services = () => {
     },
     {
       icon: Zap,
-      title: "Attendance & Results",
+      title: "Attendance & Performance",
       description:
-        "Digital attendance marking for students and staff, exam management, result processing, report cards, and parent notifications.",
+        "Digital attendance marking for members, students, and staff, along with milestone tracking, report generation, and automated notifications.",
       gradient: "from-purple-500 via-pink-500 to-blue-500",
       delay: 0.5,
     },
@@ -138,7 +138,7 @@ const Services = () => {
             </h2>
 
             <p className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
-              Complete digital ecosystem for educational institutions — from
+              Complete digital ecosystem for schools and growing businesses — from
               websites to mobile apps, all integrated seamlessly.
             </p>
           </div>

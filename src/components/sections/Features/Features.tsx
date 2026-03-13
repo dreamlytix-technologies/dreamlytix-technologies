@@ -71,7 +71,7 @@ const Features = () => {
             </h2>
 
             <p className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed">
-              All-in-one school management software with website, admin dashboard, and mobile apps for seamless digital operations.
+              All-in-one management solutions specifically tailored for schools, small businesses, gyms, and corporate organizations with seamless digital operations.
             </p>
           </div>
         </SmoothScroll>
