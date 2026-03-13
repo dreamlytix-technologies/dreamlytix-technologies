@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Smartphone, Database, Cloud, Laptop, TestTube2 } from "lucide-react";
+import { Code2, Smartphone, Database, Cloud, Laptop, TestTube2, Brain, BarChart3, Bot, Zap } from "lucide-react";
 
 const TechStack = () => {
   const technologies = [
@@ -36,6 +36,28 @@ const TechStack = () => {
       ],
     },
     {
+      category: "AI & Generative AI",
+      icon: Brain,
+      color: "from-violet-500 to-fuchsia-500",
+      techs: [
+        { name: "OpenAI", icon: "🤖", description: "GPT & DALL-E APIs" },
+        { name: "Claude AI", icon: "🧠", description: "Anthropic LLM" },
+        { name: "LangChain", icon: "🔗", description: "LLM orchestration" },
+        { name: "Gemini", icon: "💎", description: "Google AI model" },
+      ],
+    },
+    {
+      category: "AI Automation",
+      icon: Bot,
+      color: "from-emerald-500 to-cyan-500",
+      techs: [
+        { name: "n8n", icon: "⚡", description: "Workflow automation" },
+        { name: "RAG", icon: "📚", description: "Retrieval-augmented gen" },
+        { name: "AI Agents", icon: "🕹️", description: "Autonomous AI agents" },
+        { name: "Zapier AI", icon: "🔄", description: "AI-powered workflows" },
+      ],
+    },
+    {
       category: "Mobile Development",
       icon: Smartphone,
       color: "from-purple-500 to-pink-500",
@@ -46,6 +68,17 @@ const TechStack = () => {
           description: "Cross-platform apps",
         },
         { name: "Flutter", icon: "🦋", description: "Native performance" },
+      ],
+    },
+    {
+      category: "Data & Analytics",
+      icon: BarChart3,
+      color: "from-amber-500 to-yellow-500",
+      techs: [
+        { name: "Pandas", icon: "🐼", description: "Data processing" },
+        { name: "Power BI", icon: "📊", description: "Business intelligence" },
+        { name: "Redis", icon: "🔴", description: "In-memory caching" },
+        { name: "Elasticsearch", icon: "🔍", description: "Search engine" },
       ],
     },
     {
@@ -64,6 +97,7 @@ const TechStack = () => {
       color: "from-orange-500 to-red-500",
       techs: [
         { name: "AWS", icon: "☁️", description: "Cloud infrastructure" },
+        { name: "Docker", icon: "🐳", description: "Containerization" },
         { name: "Firebase", icon: "🔥", description: "Backend services" },
         { name: "Vercel", icon: "▲", description: "Deployment platform" },
       ],
@@ -188,7 +222,7 @@ const TechStack = () => {
                     </div>
 
                     {/* Tech Items */}
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                       {category.techs.map((tech, techIndex) => (
                         <motion.div
                           key={techIndex}
