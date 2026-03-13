@@ -66,14 +66,14 @@ const Header = () => {
           </ul>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-gray-900 hover:text-orange-500 transition-colors" aria-label="Toggle menu">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-gray-900 hover:text-orange-500 transition-colors" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu">
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </nav>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-6 glass-dark rounded-2xl p-6 animate-slideUp">
+          <div id="mobile-menu" className="md:hidden mt-6 glass-dark rounded-2xl p-6 animate-slideUp">
             <ul className="space-y-4">
               {navLinks.map((link) => (
                 <li key={link.href}>

@@ -20,21 +20,21 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pt-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pt-6">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center group -mt-3">
               <Image src="/images/hero-logo.png" alt="Dreamlytix Logo" width={72} height={72} className="h-18 -ml-6 -mr-3" />
               <div className="flex flex-col leading-tight">
                 <div className="text-2xl font-bold">
                   <span className="text-gray-700 transition-colors">Dream</span>
-                  <span className="text-[#5ACCD9]">lytix</span>
+                  <span className="gradient-text-secondary">lytix</span>
                 </div>
-                <span className="text-xs text-gray-400 tracking-wide">You Dream, We Build.</span>
+                <span className="text-xs text-gray-300 tracking-wide">You Dream, We Build.</span>
               </div>
             </Link>
             <p className="text-white text-sm leading-relaxed mb-6">
-              Dreamlytix is a leading school management software company in India. We build secure school websites, admin panels, student management systems, and mobile
-              applications to help educational institutions digitize their operations.
+              Dreamlytix is a school management software company in India that builds secure school websites, admin panels, student management systems, and mobile apps to
+              help institutions digitize their operations.
             </p>
           </div>
 
@@ -49,7 +49,6 @@ export default function Footer() {
                   <FooterLink href="#implementation" label="About Us" />
                   <FooterLink href="#contact" label="Contact Us" />
                   <FooterLink href="#services" label="Our Services" />
-                  <FooterLink href="#features" label="Key Features" />
                 </ul>
               </div>
 
@@ -59,8 +58,7 @@ export default function Footer() {
                   <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-cyan-400 -mb-2"></span>
                 </h3>
                 <ul className="space-y-2">
-                  <FooterLink href="#faq" label="FAQs" />
-                  <FooterLink href="#testimonials" label="Reviews" />
+                  <FooterLink href="#faq" label="Blogs" />
                   <FooterLink href="/privacy-policy" label="Privacy Policy" />
                   <FooterLink href="/terms-and-conditions" label="Terms & Conditions" />
                 </ul>
