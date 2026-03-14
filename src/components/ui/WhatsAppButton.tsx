@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -13,15 +13,15 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export default function WhatsAppButton() {
   return (
-    <motion.div
+    <m.div
       className="fixed bottom-6 right-6 z-50"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, type: "spring", stiffness: 200, damping: 15 }}
     >
       {/* Ripple rings */}
-      <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-[whatsapp-ping_2s_ease-out_infinite]" />
-      <span className="absolute inset-0 rounded-full bg-[#25D366]/20 animate-[whatsapp-ping_2s_ease-out_0.6s_infinite]" />
+      <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-[whatsapp-ping_2s_ease-out_infinite]" aria-hidden="true" />
+      <span className="absolute inset-0 rounded-full bg-[#25D366]/20 animate-[whatsapp-ping_2s_ease-out_0.6s_infinite]" aria-hidden="true" />
 
       <Link
         target="_blank"
@@ -32,6 +32,6 @@ export default function WhatsAppButton() {
       >
         <WhatsAppIcon className="w-[26px] h-[26px]" />
       </Link>
-    </motion.div>
+    </m.div>
   );
 }

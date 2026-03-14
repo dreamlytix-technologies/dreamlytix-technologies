@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 
-// pure components
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+import MotionProvider from "@/components/ui/MotionProvider";
 import "./globals.css";
 
 // Modern, professional font for body text
@@ -25,32 +25,47 @@ const siteUrl = "https://dreamlytix.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Dreamlytix - Best School Management Software | Website, Admin Panel & Mobile App Development India",
-    template: "%s | Dreamlytix - School Management Software",
+    default: "Dreamlytix - Website, Admin Panel & Mobile App Development India",
+    template: "%s | Dreamlytix",
   },
   description:
-    "Dreamlytix is a leading school management software company in India. We build secure school websites, admin panels, student management systems, fee management software, attendance tracking apps & mobile applications for educational institutions. Trusted by 50+ schools.",
+    "Dreamlytix builds custom websites, admin panels, and mobile apps for businesses & institutions in India. Trusted by 150+ clients. Get a free quote today!",
   keywords: [
-    "school management software",
-    "school management system",
-    "school ERP software India",
+    "Dreamlytix",
+    "Dreamlytix Technologies",
+    "dreamlytix.com",
+    "website development company India",
+    "custom website development",
+    "admin panel development",
+    "mobile app development India",
+    "web application development",
+    "software development company India",
+    "custom software development",
+    "business website development",
+    "school management software India",
+    "school ERP software",
+    "school website development",
+    "school mobile app",
     "student management system",
     "fee management software",
     "attendance tracking system",
-    "school website development",
-    "school mobile app development",
-    "educational software India",
-    "school admin panel",
-    "online school management",
-    "school management app",
-    "digital school solution",
-    "parent communication app",
-    "exam result management system",
-    "school software company India",
-    "web development company India",
-    "mobile app development India",
-    "custom software development",
-    "Dreamlytix",
+    "admin dashboard development",
+    "Android app development India",
+    "React Next.js development",
+    "Node.js development company",
+    "SaaS development India",
+    "cloud based management system",
+    "CRM development India",
+    "ERP software development",
+    "software company West Bengal",
+    "software company Kolkata",
+    "software company Murshidabad",
+    "IT company India",
+    "digital transformation India",
+    "app development company India",
+    "best software company India",
+    "affordable web development India",
+    "startup software development",
   ],
   authors: [{ name: "Dreamlytix", url: siteUrl }],
   creator: "Dreamlytix",
@@ -66,23 +81,23 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteUrl,
     siteName: "Dreamlytix",
-    title: "Dreamlytix - Best School Management Software | Website & App Development India",
+    title: "Dreamlytix - Custom Websites, Admin Panels & Mobile Apps | India",
     description:
-      "India's trusted school management software company. We build secure school websites, admin panels, student management systems, and mobile apps. Trusted by 50+ institutions with 99.9% uptime.",
+      "India's trusted software development company. We build custom websites, powerful admin panels, and mobile apps for businesses & institutions. 150+ happy clients with 99.9% uptime.",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Dreamlytix - School Management Software Company India",
+        alt: "Dreamlytix - Software Development Company India",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dreamlytix - Best School Management Software India",
-    description: "Build secure school websites, admin panels & mobile apps with Dreamlytix. Trusted by 50+ schools. Student management, fee tracking, attendance & more.",
+    title: "Dreamlytix - Website, Admin Panel & App Development India",
+    description: "Custom websites, admin panels & mobile apps for businesses and institutions. Trusted by 150+ clients. You Dream, We Build.",
     images: ["/images/og-image.png"],
     creator: "@dreamlytix",
     site: "@dreamlytix",
@@ -100,7 +115,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-alternates: {
+  alternates: {
     canonical: siteUrl,
     languages: {
       "en-IN": siteUrl,
@@ -121,6 +136,8 @@ const organizationSchema = {
   "@type": "Organization",
   "@id": `${siteUrl}/#organization`,
   name: "Dreamlytix",
+  alternateName: ["Dreamlytix Technologies", "Dreamlytix Software", "Dreamlytix India"],
+  legalName: "Dreamlytix",
   url: siteUrl,
   logo: {
     "@type": "ImageObject",
@@ -129,7 +146,7 @@ const organizationSchema = {
     height: 72,
   },
   description:
-    "Professional software development company specializing in school management systems, secure websites, mobile applications, and educational software solutions in India.",
+    "Professional software development company specializing in custom websites, admin panels, mobile applications, and management software for businesses and educational institutions in India.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Gangin",
@@ -168,7 +185,7 @@ const organizationSchema = {
     minValue: 5,
     maxValue: 20,
   },
-  knowsAbout: ["School Management Software", "Web Development", "Mobile App Development", "Student Management System", "Educational Technology"],
+  knowsAbout: ["Website Development", "Admin Panel Development", "Mobile App Development", "School Management Software", "Custom Software Development", "SaaS Development", "Web Applications"],
 };
 
 const localBusinessSchema = {
@@ -176,16 +193,18 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   "@id": `${siteUrl}/#business`,
   name: "Dreamlytix",
+  alternateName: ["Dreamlytix Technologies", "Dreamlytix Software"],
   image: `${siteUrl}/images/hero-logo.png`,
   url: siteUrl,
   telephone: "+91-9933606242",
   email: "contact@dreamlytix.com",
+  hasMap: "https://maps.google.com/?q=Dreamlytix+Gangin+Murshidabad+West+Bengal+742149",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Gangin",
     addressLocality: "Murshidabad",
     addressRegion: "West Bengal",
-    postalCode: "742223",
+    postalCode: "742149",
     addressCountry: "IN",
   },
   geo: {
@@ -219,7 +238,7 @@ const localBusinessSchema = {
     "@type": "Country",
     name: "India",
   },
-  serviceType: ["School Management Software", "Website Development", "Mobile App Development", "Admin Panel Development", "Student Management System"],
+  serviceType: ["Website Development", "Admin Panel Development", "Mobile App Development", "Custom Software Development", "School Management Software", "SaaS Development"],
 };
 
 const websiteSchema = {
@@ -227,12 +246,46 @@ const websiteSchema = {
   "@type": "WebSite",
   "@id": `${siteUrl}/#website`,
   name: "Dreamlytix",
+  alternateName: "Dreamlytix Technologies",
   url: siteUrl,
-  description: "Best school management software company in India offering websites, admin panels, and mobile apps for educational institutions.",
+  description: "Dreamlytix is a software development company in India offering custom websites, admin panels, and mobile apps for businesses and institutions.",
   publisher: {
     "@id": `${siteUrl}/#organization`,
   },
   inLanguage: "en-IN",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteUrl}/?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const siteNavigationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  name: [
+    "About Us",
+    "Services",
+    "Portfolio",
+    "Reviews",
+    "FAQs",
+    "Contact",
+    "Privacy Policy",
+    "Terms & Conditions",
+  ],
+  url: [
+    `${siteUrl}/#implementation`,
+    `${siteUrl}/#services`,
+    `${siteUrl}/#portfolio`,
+    `${siteUrl}/#testimonials`,
+    `${siteUrl}/#faq`,
+    `${siteUrl}/#contact`,
+    `${siteUrl}/privacy-policy`,
+    `${siteUrl}/terms-and-conditions`,
+  ],
 };
 
 const webPageSchema = {
@@ -240,9 +293,9 @@ const webPageSchema = {
   "@type": "WebPage",
   "@id": `${siteUrl}/#webpage`,
   url: siteUrl,
-  name: "Dreamlytix - Best School Management Software | Website & App Development India",
+  name: "Dreamlytix - Custom Websites, Admin Panels & Mobile Apps | India",
   description:
-    "Dreamlytix is India's leading school management software company. Build secure school websites, admin panels, student management systems, and mobile apps.",
+    "Dreamlytix is India's trusted software development company. We build custom websites, admin panels, and mobile apps for businesses and institutions.",
   isPartOf: {
     "@id": `${siteUrl}/#website`,
   },
@@ -318,8 +371,8 @@ const serviceSchema = {
     {
       "@type": "Service",
       position: 1,
-      name: "School Website Development",
-      description: "Modern, responsive school websites with photo galleries, news/events sections, faculty pages, and complete content management.",
+      name: "Custom Website Development",
+      description: "Modern, responsive websites with photo galleries, news/events sections, team pages, and complete content management for businesses and institutions.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Website Development",
@@ -327,8 +380,8 @@ const serviceSchema = {
     {
       "@type": "Service",
       position: 2,
-      name: "School Admin Panel System",
-      description: "Comprehensive web-based admin panel for managing students, teachers, attendance, fees, exams, results, timetables, and reports.",
+      name: "Admin Panel Development",
+      description: "Comprehensive web-based admin panels for managing clients, users, attendance, billing, reports, and operations from one powerful dashboard.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Admin Panel Development",
@@ -336,8 +389,8 @@ const serviceSchema = {
     {
       "@type": "Service",
       position: 3,
-      name: "School Mobile App Development",
-      description: "Dedicated Android apps for parents and students with real-time access to attendance, results, fees, and school communications.",
+      name: "Mobile App Development",
+      description: "Dedicated Android apps for end-users with real-time access to updates, billing, attendance, communications, and push notifications.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Mobile App Development",
@@ -345,8 +398,8 @@ const serviceSchema = {
     {
       "@type": "Service",
       position: 4,
-      name: "Student Management System",
-      description: "Complete student lifecycle management from admission to alumni tracking, including profiles, documents, and performance analytics.",
+      name: "School Management Software",
+      description: "Complete school management system with student management, fee tracking, attendance, exam results, timetables, and parent communication apps.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Software Development",
@@ -354,8 +407,8 @@ const serviceSchema = {
     {
       "@type": "Service",
       position: 5,
-      name: "Fee Management Software",
-      description: "Digital fee collection, payment tracking, automated receipts, pending dues alerts, and comprehensive financial reporting.",
+      name: "Custom Software Development",
+      description: "Tailored software solutions including CRM, ERP, SaaS platforms, and business automation tools built with modern tech stack.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Software Development",
@@ -363,13 +416,40 @@ const serviceSchema = {
     {
       "@type": "Service",
       position: 6,
-      name: "Attendance & Result Management",
-      description: "Digital attendance marking for students and staff, exam management, result processing, report cards, and parent notifications.",
+      name: "UI/UX Design & Branding",
+      description: "User-centric interface design, branding, and digital identity solutions that create lasting impressions and drive engagement.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
-      serviceType: "Software Development",
+      serviceType: "Design",
     },
   ],
+};
+
+const softwareAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Dreamlytix Management Software",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web, Android",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "INR",
+    description: "Free demo available",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: "50",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  description:
+    "Cloud-based management software with custom admin panels, billing, attendance tracking, reporting & mobile apps for businesses and institutions in India.",
+  url: siteUrl,
+  provider: {
+    "@id": `${siteUrl}/#organization`,
+  },
 };
 
 const breadcrumbSchema = {
@@ -391,7 +471,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#2563eb" />
@@ -415,20 +495,24 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(breadcrumbSchema),
           }}
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }} />
       </head>
       <body suppressHydrationWarning className={`${inter.variable} ${outfit.variable} font-sans antialiased flex flex-col overflow-x-hidden`}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">
           Skip to content
         </a>
-        <Header />
-        <main id="main-content" className="flex-1">{children}</main>
-        <Footer />
+        <MotionProvider>
+          <Header />
+          <main id="main-content" className="flex-1">{children}</main>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

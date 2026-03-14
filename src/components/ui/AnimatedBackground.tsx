@@ -23,7 +23,7 @@ export default function AnimatedBackground({ variant = "mesh", className = "" }:
 
   if (variant === "mesh") {
     return (
-      <div className={`absolute inset-0 -z-10 overflow-hidden ${className}`}>
+      <div className={`absolute inset-0 -z-10 overflow-hidden ${className}`} aria-hidden="true">
         {/* Animated Gradient Mesh Background */}
         <div className="absolute inset-0 bg-gradient-mesh opacity-50"></div>
 
@@ -43,7 +43,7 @@ export default function AnimatedBackground({ variant = "mesh", className = "" }:
 
   if (variant === "gradient") {
     return (
-      <div className={`absolute inset-0 -z-10 ${className}`}>
+      <div className={`absolute inset-0 -z-10 ${className}`} aria-hidden="true">
         <div className="absolute inset-0 bg-linear-to-br from-gray-900 via-purple-900/50 to-gray-900 animate-gradient"></div>
       </div>
     );
@@ -51,7 +51,7 @@ export default function AnimatedBackground({ variant = "mesh", className = "" }:
 
   // Particles variant
   return (
-    <div className={`absolute inset-0 -z-10 overflow-hidden ${className}`}>
+    <div className={`absolute inset-0 -z-10 overflow-hidden ${className}`} aria-hidden="true">
       <div className="absolute inset-0 bg-gray-50"></div>
       {/* Simple particle dots */}
       {particles.map((particle) => (

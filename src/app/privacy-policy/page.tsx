@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Dreamlytix Privacy Policy — how we collect, use, and protect your data.",
+  title: "Privacy Policy - Dreamlytix",
+  description: "Dreamlytix Privacy Policy — how we collect, use, and protect your data. School management software trusted by 150+ institutions.",
+  alternates: {
+    canonical: "https://dreamlytix.com/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicy() {

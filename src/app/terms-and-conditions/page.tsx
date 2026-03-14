@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
-  description: "Dreamlytix Terms & Conditions — rules and guidelines for using our services.",
+  title: "Terms & Conditions - Dreamlytix",
+  description: "Dreamlytix Terms & Conditions — rules and guidelines for using our school management software and services.",
+  alternates: {
+    canonical: "https://dreamlytix.com/terms-and-conditions",
+  },
 };
 
 export default function TermsAndConditions() {
