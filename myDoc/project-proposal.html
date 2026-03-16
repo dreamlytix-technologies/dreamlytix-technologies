@@ -1,0 +1,3427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dreamlytix - Digital Transformation Proposal for The Green View English Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #e5e5e5;
+        color: #1a1a2e;
+        line-height: 1.6;
+        padding: 20px 0;
+      }
+      .slide {
+        max-width: 960px;
+        margin: 20px auto;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+        position: relative;
+        min-height: 600px;
+      }
+
+      /* ===== SPLIT LAYOUT (dark sidebar + content) ===== */
+      .slide-split {
+        display: flex;
+      }
+      .sidebar {
+        width: 28%;
+        background: #1a1a2e;
+        color: #fff;
+        padding: 36px 26px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .sidebar .brand {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 36px;
+        font-weight: 700;
+        font-size: 15px;
+        color: #34d399;
+      }
+      .sidebar .section-title {
+        font-size: 34px;
+        font-weight: 800;
+        color: #34d399;
+        line-height: 1.12;
+      }
+      .sidebar .quote-block {
+        margin-top: auto;
+      }
+      .sidebar .quote-mark {
+        font-size: 52px;
+        font-weight: 900;
+        color: #34d399;
+        line-height: 1;
+        font-family: Georgia, serif;
+      }
+      .sidebar .quote-text {
+        font-size: 12px;
+        color: #9ca3af;
+        font-style: italic;
+        line-height: 1.55;
+      }
+      .sidebar .circle-deco {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .main-content {
+        width: 72%;
+        padding: 40px 44px;
+      }
+
+      /* ===== TYPOGRAPHY ===== */
+      .label {
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #6b7280;
+        margin-bottom: 5px;
+      }
+      .heading-lg {
+        font-size: 30px;
+        font-weight: 800;
+        color: #1a1a2e;
+        margin-bottom: 20px;
+        line-height: 1.18;
+      }
+
+      /* ===== ICON BAR ITEMS (About, Problem, Training) ===== */
+      .icon-bar-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .icon-bar-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .icon-bar-item .bullet {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #d1d5db;
+        flex-shrink: 0;
+        margin-top: 17px;
+      }
+      .icon-bar-item .bar-wrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        background: #f8fafc;
+        padding: 8px 20px;
+        border-radius: 16px;
+        border: 1px solid #f1f5f9;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .icon-bar-item .bar-wrap:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        border-color: #e2e8f0;
+      }
+      .icon-bar-item .bar {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .icon-bar-item .bar svg {
+        width: 22px;
+        height: 22px;
+      }
+      .icon-bar-item .desc {
+        flex: 1;
+        font-size: 13px;
+        color: #4b5563;
+        line-height: 1.55;
+      }
+      .icon-bar-item .desc strong {
+        color: #111827;
+        font-weight: 700;
+      }
+      .bar-blue {
+        background: #dbeafe;
+      }
+      .bar-gray {
+        background: #f3f4f6;
+      }
+      .bar-pink {
+        background: #fce7f3;
+      }
+      .bar-green {
+        background: #d1fae5;
+      }
+      .bar-yellow {
+        background: #fef9c3;
+      }
+      .bar-purple {
+        background: #ede9fe;
+      }
+
+      /* ===== SOLUTION STATEMENT ===== */
+      .solution-stmt {
+        border-left: 3px solid #10b981;
+        padding: 12px 18px;
+        background: #f0fdf4;
+        font-size: 13.5px;
+        color: #374151;
+        margin-top: 14px;
+        border-radius: 0 10px 10px 0;
+      }
+      .solution-stmt strong {
+        color: #111827;
+      }
+
+      /* ===== FEATURE GRID ===== */
+      .feat-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .feat-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid #f0f0f0;
+        position: relative;
+        transition: box-shadow 0.2s;
+      }
+      .feat-item:hover {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      }
+      .fi-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .fi-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+      .fi-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 2px;
+      }
+      .fi-desc {
+        font-size: 11px;
+        color: #6b7280;
+        line-height: 1.4;
+      }
+      .fi-check {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 18px;
+        height: 18px;
+        background: #10b981;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .fi-check svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      /* ===== PLATFORM BADGES ===== */
+      .plat-badges {
+        display: flex;
+        gap: 20px;
+      }
+      .plat-badge {
+        text-align: center;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #374151;
+      }
+      .plat-badge svg {
+        display: block;
+        margin: 0 auto 3px;
+        width: 22px;
+        height: 22px;
+      }
+
+      /* ===== SOLUTION CARDS ===== */
+      .sol-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .sol-card {
+        border: 1.5px dashed #c7d2de;
+        border-radius: 16px;
+        text-align: center;
+        background: #f8fffe;
+        overflow: hidden;
+      }
+      .sol-card .sol-top {
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .sol-card .sol-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .sol-card .sol-icon svg {
+        width: 26px;
+        height: 26px;
+      }
+      .sol-card .sol-body {
+        padding: 0 16px 22px;
+      }
+      .sol-card h4 {
+        font-size: 14px;
+        font-weight: 800;
+        margin-bottom: 6px;
+        color: #111827;
+      }
+      .sol-card p {
+        font-size: 11.5px;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+
+      /* ===== APP COLUMNS ===== */
+      .app-cols {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        align-items: start;
+      }
+      .app-col {
+        border: 1.5px dashed #c7d2de;
+        border-radius: 16px;
+        padding: 22px;
+        background: #fafffe;
+      }
+      .app-col.elevated {
+        transform: translateY(-6px);
+        border-color: #818cf8;
+        box-shadow: 0 6px 24px rgba(99, 102, 241, 0.1);
+      }
+      .ac-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .ac-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .ac-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+      .ac-label h4 {
+        font-size: 14px;
+        font-weight: 700;
+        color: #111827;
+      }
+      .ac-label p {
+        font-size: 10.5px;
+        color: #6b7280;
+      }
+      .ck-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .ck-list li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        color: #374151;
+      }
+      .ck-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .ck-dot svg {
+        width: 11px;
+        height: 11px;
+      }
+      .ac-tag {
+        display: inline-block;
+        margin-top: 16px;
+        font-size: 10.5px;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 20px;
+      }
+
+      /* ===== SECURITY ===== */
+      .slide-sec {
+        display: flex;
+      }
+      .sec-side {
+        width: 34%;
+        background: #1a1a2e;
+        color: #fff;
+        padding: 40px 28px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .sec-main {
+        width: 66%;
+        padding: 32px 36px;
+        display: flex;
+        align-items: center;
+      }
+      .sec-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        width: 100%;
+      }
+      .sec-card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 22px;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+      }
+      .sec-card .sc-icon {
+        width: 38px;
+        height: 38px;
+        background: #f3f4f6;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      .sec-card .sc-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+      .sec-card h4 {
+        font-size: 13.5px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #111827;
+      }
+      .sec-card p {
+        font-size: 11.5px;
+        color: #6b7280;
+        line-height: 1.55;
+      }
+
+      /* ===== TIMELINE ===== */
+      .tl-wrap {
+        position: relative;
+        margin: 40px 0 20px;
+      }
+      .tl-line {
+        position: absolute;
+        top: 26px;
+        left: 50px;
+        right: 50px;
+        height: 2px;
+        background: #e5e7eb;
+        z-index: 0;
+      }
+      .tl-steps {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+      }
+      .tl-step {
+        text-align: center;
+        flex: 1;
+      }
+      .tl-circle {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0;
+      }
+      .tl-circle svg {
+        width: 24px;
+        height: 24px;
+      }
+      .tl-card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 16px 10px 14px;
+        margin: 14px 4px 0;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        border: 1px solid #f0f0f0;
+      }
+      .tl-card h4 {
+        font-size: 13px;
+        font-weight: 800;
+        margin-bottom: 3px;
+        color: #111827;
+      }
+      .tl-card p {
+        font-size: 10px;
+        color: #6b7280;
+        line-height: 1.4;
+        margin-bottom: 8px;
+      }
+      .tl-dur {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 14px;
+        border-radius: 20px;
+      }
+      /* ===== VERTICAL TIMELINE (A4/Full Slide) ===== */
+      .v-tl-wrap {
+        position: relative;
+        padding-left: 30px;
+        margin-top: 10px;
+      }
+      .v-tl-line {
+        position: absolute;
+        left: 7px;
+        top: 10px;
+        bottom: 10px;
+        width: 2px;
+        background: #e5e7eb;
+      }
+      .v-tl-step {
+        position: relative;
+        margin-bottom: 24px;
+      }
+      .v-tl-step:last-child {
+        margin-bottom: 0;
+      }
+      .v-tl-dot {
+        position: absolute;
+        left: -30px;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #fff;
+        border: 3px solid #10b981;
+        z-index: 2;
+      }
+      .v-tl-card {
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 16px 20px;
+        border: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .v-tl-card:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border-color: #cbd5e1;
+      }
+      .v-tl-content h4 {
+        font-size: 15px;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 2px;
+      }
+      .v-tl-content p {
+        font-size: 12px;
+        color: #64748b;
+      }
+      .v-tl-dur {
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 20px;
+        white-space: nowrap;
+        margin-left: 15px;
+      }
+
+      /* ===== HORIZONTAL TIMELINE (Special Screen) ===== */
+      .h-tl-slide {
+        background-color: #fdfdfd;
+        background-image: radial-gradient(#e5e7eb 1.2px, transparent 1.2px);
+        background-size: 24px 24px;
+        padding: 50px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 600px;
+        position: relative;
+      }
+      .h-tl-roadmap-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #111827;
+        margin-bottom: 12px;
+      }
+      .h-tl-title {
+        font-size: 46px;
+        font-weight: 950;
+        color: #111827;
+        margin-bottom: 70px;
+        letter-spacing: -1.5px;
+      }
+      .h-tl-time-card {
+        position: absolute;
+        top: 50px;
+        right: 60px;
+        background: #fff;
+        padding: 18px 28px;
+        border-radius: 18px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        z-index: 10;
+        backdrop-filter: blur(10px);
+      }
+      .h-tl-time-content .label-sm {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #94a3b8;
+        letter-spacing: 1.5px;
+        margin-bottom: 4px;
+      }
+      .h-tl-time-content .val {
+        font-size: 24px;
+        font-weight: 950;
+        color: #0f172a;
+        line-height: 1;
+      }
+      .h-tl-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 30px;
+        padding: 0 10px;
+      }
+      .h-tl-line {
+        position: absolute;
+        top: 38px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #ecfdf5;
+        z-index: 1;
+      }
+      .h-tl-line::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, #3b82f6, #a855f7, #10b981, #f59e0b, #0d9488);
+        opacity: 0.2;
+      }
+      .h-tl-item {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 18%;
+      }
+      .h-tl-icon {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 5px solid #fff;
+        margin-bottom: 24px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .h-tl-item:hover .h-tl-icon {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+      .h-tl-icon svg {
+        width: 32px;
+        height: 32px;
+        stroke-width: 2.5;
+        stroke: #fff;
+      }
+      .h-tl-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 24px 18px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        border: 1px solid #f8fafc;
+        width: 100%;
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .h-tl-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--phase-color);
+      }
+      .h-tl-card h4 {
+        font-size: 16px;
+        font-weight: 900;
+        color: #0f172a;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
+      }
+      .h-tl-card p {
+        font-size: 11.5px;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 14px;
+      }
+      .h-tl-dur-pill {
+        font-size: 11px;
+        font-weight: 800;
+        padding: 5px 16px;
+        border-radius: 30px;
+        background: var(--phase-bg);
+        color: var(--phase-color);
+        letter-spacing: 0.5px;
+      }
+      .h-tl-footer {
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+      }
+      .h-tl-nav {
+        background: #fff;
+        padding: 10px 40px;
+        border-radius: 50px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f1f5f9;
+        display: flex;
+        gap: 40px;
+        font-size: 14px;
+        font-weight: 800;
+        color: #94a3b8;
+      }
+      .h-tl-nav span {
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+      .h-tl-nav span.active {
+        color: #0f172a;
+        position: relative;
+      }
+      .h-tl-nav span.active::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 3px;
+        background: #10b981;
+        border-radius: 4px;
+      }
+
+      /* ===== COST TABLE ===== */
+      .cost-tbl {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .cost-tbl thead th {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #6b7280;
+        padding: 12px 0;
+        text-align: left;
+        border-bottom: 2.5px solid #10b981;
+      }
+      .cost-tbl thead th:last-child {
+        text-align: right;
+      }
+      .cost-tbl tbody td {
+        padding: 12px 0;
+        border-bottom: 1px solid #f3f4f6;
+        vertical-align: top;
+      }
+      .cost-tbl tbody td:last-child {
+        text-align: right;
+        font-size: 20px;
+        font-weight: 800;
+        color: #111827;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      .cost-tbl tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .ci-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .ci-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .ci-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+      .ci-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #111827;
+      }
+      .ci-desc {
+        font-size: 11.5px;
+        color: #6b7280;
+        margin-top: 2px;
+        line-height: 1.4;
+      }
+      .ci-subs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 12px;
+        margin-top: 6px;
+      }
+      .ci-sub {
+        font-size: 10px;
+        color: #9ca3af;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+      .ci-sub::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #d1d5db;
+      }
+      .cost-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #1a1a2e;
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 12px;
+        margin-top: 8px;
+      }
+      .cost-total .ct-label {
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .cost-total .ct-label small {
+        display: block;
+        font-size: 11px;
+        font-weight: 400;
+        color: #9ca3af;
+        margin-top: 2px;
+      }
+      .cost-total .ct-value {
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      /* ===== PAYMENT TERMS ===== */
+      .pay-terms {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+      .pay-card {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 18px;
+        border: 1px solid #e5e7eb;
+        text-align: center;
+      }
+      .pay-card .pay-pct {
+        font-size: 28px;
+        font-weight: 900;
+        color: #10b981;
+      }
+      .pay-card .pay-phase {
+        font-size: 12px;
+        font-weight: 700;
+        color: #111827;
+        margin: 4px 0 2px;
+      }
+      .pay-card .pay-desc {
+        font-size: 10.5px;
+        color: #6b7280;
+        line-height: 1.4;
+      }
+      .pay-card .pay-amt {
+        font-size: 14px;
+        font-weight: 800;
+        color: #111827;
+        margin-top: 6px;
+      }
+
+      /* ===== AMC SECTION ===== */
+      .amc-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 28px;
+        margin-top: 24px;
+      }
+      .amc-left .amc-heading {
+        font-size: 24px;
+        font-weight: 800;
+        color: #111827;
+        line-height: 1.2;
+        margin-bottom: 12px;
+      }
+      .amc-left p {
+        font-size: 12.5px;
+        color: #6b7280;
+        line-height: 1.6;
+        margin-bottom: 12px;
+      }
+      .amc-badges {
+        display: flex;
+        gap: 16px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .amc-badges span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .amc-right {
+        background: #fafafa;
+        border-radius: 16px;
+        padding: 24px;
+        border: 1px solid #e5e7eb;
+      }
+      .amc-hdr {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .amc-hdr h4 {
+        font-size: 16px;
+        font-weight: 800;
+        color: #111827;
+      }
+      .amc-hdr p {
+        font-size: 11px;
+        color: #6b7280;
+      }
+      .amc-tag {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #6b7280;
+      }
+      .amc-item {
+        display: flex;
+        gap: 12px;
+        padding: 10px 0;
+      }
+      .amc-ic {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .amc-ic svg {
+        width: 15px;
+        height: 15px;
+      }
+      .amc-item h5 {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #111827;
+      }
+      .amc-item p {
+        font-size: 11px;
+        color: #6b7280;
+        line-height: 1.4;
+      }
+      .amc-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #1a1a2e;
+        color: #fff;
+        padding: 16px 22px;
+        border-radius: 12px;
+        margin-top: 16px;
+      }
+      .amc-price .ap-label {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #9ca3af;
+      }
+      .amc-price .ap-label span {
+        display: block;
+        font-size: 11px;
+        color: #9ca3af;
+        font-weight: 400;
+        letter-spacing: 0;
+        text-transform: none;
+        margin-top: 2px;
+      }
+      .amc-price .ap-val {
+        font-size: 24px;
+        font-weight: 900;
+      }
+      .amc-price .ap-val small {
+        font-size: 11px;
+        font-weight: 400;
+        color: #9ca3af;
+        display: block;
+        text-align: right;
+      }
+
+      /* ===== WHY CHOOSE ===== */
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .why-card {
+        background: #f8f9fa;
+        border-radius: 14px;
+        padding: 26px 22px;
+      }
+      .why-card .wc-icon {
+        margin-bottom: 14px;
+      }
+      .why-card .wc-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+      .why-card h4 {
+        font-size: 14px;
+        font-weight: 800;
+        margin-bottom: 8px;
+        color: #111827;
+      }
+      .why-card p {
+        font-size: 12px;
+        color: #6b7280;
+        line-height: 1.6;
+      }
+
+      /* ===== CTA / CONTACT ===== */
+      .slide-cta {
+        background: #1a1a2e;
+        color: #fff;
+        text-align: center;
+        padding: 56px 48px 32px;
+        position: relative;
+        overflow: hidden;
+      }
+      .slide-cta::before {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+        top: -100px;
+        right: -100px;
+        border-radius: 50%;
+      }
+      .slide-cta::after {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
+        bottom: -50px;
+        left: -50px;
+        border-radius: 50%;
+      }
+      .cta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #2d2d44;
+        padding: 8px 22px;
+        border-radius: 24px;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 28px;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-h2 {
+        font-size: 42px;
+        font-weight: 900;
+        line-height: 1.12;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-sub {
+        font-size: 14px;
+        color: #9ca3af;
+        max-width: 700px;
+        margin: 0 auto 44px;
+        line-height: 1.65;
+        position: relative;
+        z-index: 1;
+      }
+      .cc-cards {
+        display: flex;
+        justify-content: center;
+        gap: 44px;
+        margin-bottom: 52px;
+        position: relative;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        padding: 28px 40px;
+      }
+      .cc-card {
+        text-align: center;
+      }
+      .cc-ic {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        background: #2d2d44;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 12px;
+      }
+      .cc-ic svg {
+        width: 22px;
+        height: 22px;
+      }
+      .cc-lbl {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #9ca3af;
+        margin-bottom: 4px;
+      }
+      .cc-val {
+        font-size: 13px;
+        font-weight: 600;
+        color: #fff;
+      }
+      .cta-foot {
+        border-top: 1px solid #2d2d44;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-foot .copy {
+        font-size: 11px;
+        color: #6b7280;
+      }
+      .cta-foot .socials {
+        display: flex;
+        gap: 14px;
+      }
+      .cta-foot .socials a {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #9ca3af;
+      }
+      .cta-foot .socials svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      /* ===== COVER ===== */
+      .slide-cover {
+        display: flex;
+        background: #0f1629;
+      }
+      .cover-left {
+        width: 55%;
+        background: #0f1629;
+        padding: 48px 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cover-left::before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.07) 0%, transparent 70%);
+        bottom: -80px;
+        left: -80px;
+        pointer-events: none;
+      }
+      .cover-right {
+        width: 45%;
+        background: linear-gradient(160deg, #059669 0%, #10b981 45%, #34d399 80%, #6ee7b7 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      .cover-right::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 30% 20%, rgba(0, 0, 0, 0.12) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(255, 255, 255, 0.12) 0%, transparent 50%);
+      }
+      /* Watermark logo on green side */
+      .cover-right::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='10' y='10' width='80' height='80' rx='8' fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='4'/%3E%3Cpath d='M30 50 L50 30 L70 50 L50 70 Z' fill='rgba(255,255,255,0.06)'/%3E%3C/svg%3E")
+          center center / 70% 70% no-repeat;
+        pointer-events: none;
+      }
+      .cv-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .cv-bar {
+        width: 3px;
+        height: 44px;
+        background: #10b981;
+        border-radius: 2px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .cv-label-text {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .cv-school {
+        font-size: 18px;
+        font-weight: 800;
+        color: #ffffff;
+        line-height: 1.2;
+      }
+      .cv-h1 {
+        font-size: 40px;
+        font-weight: 900;
+        color: #ffffff;
+        line-height: 1.08;
+        margin: 22px 0 14px;
+      }
+      .cv-sub {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.55);
+        font-style: italic;
+        margin-bottom: 36px;
+      }
+      .cv-badge {
+        width: 235px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        padding: 11px 22px;
+        border-radius: 12px;
+      }
+      .cv-badge-label {
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .cv-badge-name {
+        font-size: 15px;
+        font-weight: 800;
+        color: #fff;
+      }
+      .fc {
+        position: absolute;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+        z-index: 2;
+      }
+      .fc-1 {
+        top: 26%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 210px;
+        padding: 16px 18px;
+      }
+      .fc-1 .fc-lbl {
+        font-size: 11px;
+        color: #6b7280;
+        margin-bottom: 4px;
+      }
+      .fc-1 .fc-bar {
+        height: 6px;
+        border-radius: 3px;
+        background: #e5e7eb;
+        margin-bottom: 10px;
+        overflow: hidden;
+      }
+      .fc-1 .fc-bar-fill {
+        height: 100%;
+        width: 72%;
+        border-radius: 3px;
+        background: linear-gradient(90deg, #10b981, #34d399);
+      }
+      .fc-1 .fc-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+      }
+      .fc-1 .fc-row .fc-t {
+        font-weight: 500;
+        color: #374151;
+      }
+      .fc-1 .fc-row .fc-v {
+        font-weight: 800;
+        color: #10b981;
+      }
+      .fc-2 {
+        bottom: 26%;
+        left: 50%;
+        transform: translateX(-40%);
+        width: 230px;
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .fc-2 .fc-sq {
+        width: 32px;
+        height: 32px;
+        background: #2563eb;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .fc-2 .fc-sq svg {
+        width: 16px;
+        height: 16px;
+      }
+      .fc-2 span {
+        font-size: 13px;
+        font-weight: 600;
+        color: #374151;
+      }
+
+      /* ===== IMPL BADGE ===== */
+      .impl-badge {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: #10b981;
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+      }
+      .impl-badge svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      /* ===== NOTES ===== */
+      .note-bar {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11.5px;
+        color: #6b7280;
+        font-style: italic;
+        padding: 10px 18px;
+        background: #f9fafb;
+        border-radius: 10px;
+        border: 1px solid #e5e7eb;
+      }
+      .note-bar svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+      .features-note {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 11px;
+        color: #6b7280;
+        font-style: italic;
+        margin-top: 16px;
+        padding-top: 12px;
+        border-top: 1px solid #f3f4f6;
+      }
+
+      /* ===== HELPERS ===== */
+      .sp {
+        padding: 40px 48px;
+      }
+      .tc {
+        text-align: center;
+      }
+      .currency-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #6b7280;
+        background: #f9fafb;
+        padding: 6px 14px;
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+      }
+      .currency-badge svg {
+        width: 14px;
+        height: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ SLIDE 1: COVER ============ -->
+    <section class="slide slide-cover">
+      <div class="cover-left">
+        <div class="cv-label">
+          <div class="cv-bar"></div>
+          <div>
+            <div class="cv-label-text">Proposal For</div>
+            <div class="cv-school">The Green View<br />English Academy</div>
+          </div>
+        </div>
+        <h1 class="cv-h1">Digital<br />Transformation for<br />School Management</h1>
+        <p class="cv-sub">"Smart School Solutions for a Smarter Future"</p>
+        <div class="cv-badge">
+          <div>
+            <div class="cv-badge-label">Presented By</div>
+            <div class="cv-badge-name">Dreamlytix Technologies</div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-right">
+        <div class="fc fc-1">
+          <div class="fc-lbl">Data-driven decisions</div>
+          <div class="fc-bar"><div class="fc-bar-fill"></div></div>
+          <div class="fc-row"><span class="fc-t">Performance</span><span class="fc-v">+45%</span></div>
+        </div>
+        <div class="fc fc-2">
+          <div class="fc-sq">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <span>Web & Mobile Ecosystem</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 2: ABOUT ============ -->
+    <section class="slide slide-split">
+      <div class="sidebar">
+        <div class="circle-deco" style="width: 200px; height: 200px; top: -50px; right: -70px"></div>
+        <div class="circle-deco" style="width: 140px; height: 140px; bottom: 50px; left: -50px"></div>
+        <div class="brand">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M4 8h16M4 12h16M4 16h16" /></svg> Dreamlytix
+        </div>
+        <div class="section-title">Who<br />We Are</div>
+        <div class="quote-block">
+          <div class="quote-mark">&ldquo;&ldquo;</div>
+          <p class="quote-text">Empowering education through seamless technology integration.</p>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="label">Company Overview</div>
+        <h2 class="heading-lg">About Dreamlytix</h2>
+        <div class="icon-bar-list">
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+              </div>
+              <p class="desc">
+                Dreamlytix is a technology company specializing in <strong>educational software systems</strong> and <strong>growing businesses.</strong>
+              </p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+              </div>
+              <p class="desc">We design and develop <strong>secure, scalable, and user-friendly</strong> applications with the latest technologies.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
+              </div>
+              <p class="desc">Focused on improving <strong>communication, efficiency, and transparency</strong> in schools.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" />
+                  <path d="M12 18h.01" />
+                </svg>
+              </div>
+              <p class="desc">Strong experience in <strong>web platforms, mobile applications, and admin systems</strong>.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
+              </div>
+              <p class="desc">Custom-built digital solutions tailored to the unique workflows of educational institutions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 3: PROBLEM ============ -->
+    <section class="slide slide-split">
+      <div class="sidebar">
+        <div class="circle-deco" style="width: 180px; height: 180px; top: 20px; right: -60px"></div>
+        <div class="circle-deco" style="width: 120px; height: 120px; top: 130px; right: 0"></div>
+        <div class="brand">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M4 8h16M4 12h16M4 16h16" /></svg> Dreamlytix
+        </div>
+        <div class="section-title">The<br />Problem</div>
+        <div class="quote-block">
+          <div
+            style="
+              width: 34px;
+              height: 34px;
+              border-radius: 50%;
+              border: 2px solid #fbbf24;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 10px;
+            "
+          >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fbbf24" stroke-width="2">
+              <path d="M12 9v4M12 17h.01" />
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            </svg>
+          </div>
+          <p class="quote-text">Manual systems create bottlenecks that slow down educational growth.</p>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="label">Current Challenges</div>
+        <h2 class="heading-lg">Why Digital School Management?</h2>
+        <div class="icon-bar-list">
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2">
+                  <path d="M5 3v4M3 5h4M6 17v4M4 19h4M13 3l2 2.5L13 8l2 2.5L13 13" />
+                  <path d="M17 3l2 2.5L17 8l2 2.5L17 13" />
+                </svg>
+              </div>
+              <p class="desc">Manual work consumes excessive <strong>time and effort</strong>.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              </div>
+              <p class="desc">Difficulty in managing scattered <strong>student data & records</strong>.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
+              </div>
+              <p class="desc">Limited and delayed <strong>parent-teacher communication</strong>.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+              </div>
+              <p class="desc">Prone to <strong>attendance and fee tracking errors</strong>.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                  <path d="M3 3v18h18" />
+                  <path d="M18 17V9M13 17V5M8 17v-3" />
+                </svg>
+              </div>
+              <p class="desc">No centralized system for <strong>reports and analytics</strong>.</p>
+            </div>
+          </div>
+        </div>
+        <div class="solution-stmt">Our solution solves <strong>all of this</strong> in one integrated platform.</div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 4: PROPOSED SOLUTION ============ -->
+    <section class="slide sp tc" style="padding-top: 48px; padding-bottom: 48px; background: linear-gradient(180deg, #f0fdf4 0%, #fff 100%)">
+      <div style="display: inline-flex; align-items: center; gap: 6px; background: #d1fae5; padding: 5px 14px; border-radius: 20px; margin-bottom: 8px">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#059669" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20" /></svg
+        ><span style="font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #059669">Integrated Ecosystem</span>
+      </div>
+      <h2 class="heading-lg" style="margin-bottom: 8px">Our Proposed Solution</h2>
+      <p style="font-size: 13.5px; color: #6b7280; max-width: 480px; margin: 0 auto 34px; line-height: 1.6">
+        We propose a <strong style="color: #111827">fully integrated system</strong> designed to streamline operations and enhance learning.
+      </p>
+      <div class="sol-grid">
+        <div class="sol-card">
+          <div class="sol-top" style="background: #e8f8f0">
+            <div class="sol-icon" style="background: #c6f0df">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+          </div>
+          <div class="sol-body">
+            <h4>School Website</h4>
+            <p>Modern, responsive web presence for information & admissions</p>
+          </div>
+        </div>
+        <div class="sol-card">
+          <div class="sol-top" style="background: #f0f1f3">
+            <div class="sol-icon" style="background: #e2e4e8">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+          </div>
+          <div class="sol-body">
+            <h4>Admin Panel</h4>
+            <p>Web-based comprehensive control system for staff & management</p>
+          </div>
+        </div>
+        <div class="sol-card">
+          <div class="sol-top" style="background: #eef0f4">
+            <div class="sol-icon" style="background: #dde2ea">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <path d="M12 18h.01" />
+              </svg>
+            </div>
+          </div>
+          <div class="sol-body">
+            <h4>Android App</h4>
+            <p>Dedicated mobile application for Parents, Teachers & Students</p>
+          </div>
+        </div>
+        <div class="sol-card">
+          <div class="sol-top" style="background: #eee8fb">
+            <div class="sol-icon" style="background: #ddd0f7">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+          </div>
+          <div class="sol-body">
+            <h4>Secure Database</h4>
+            <p>Cloud hosted, encrypted storage ensuring data safety</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 5: WEBSITE FEATURES ============ -->
+    <section class="slide sp">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px">
+        <div>
+          <div class="label">Component 01</div>
+          <h2 class="heading-lg" style="margin-bottom: 6px">School Website Features</h2>
+          <p style="font-size: 13px; color: #6b7280">A modern, informative, and responsive digital presence for your institution.</p>
+        </div>
+        <div class="plat-badges">
+          <div class="plat-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" /></svg
+            >WEB
+          </div>
+          <div class="plat-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2" />
+              <path d="M12 18h.01" /></svg
+            >TAB
+          </div>
+          <div class="plat-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" />
+              <path d="M12 18h.01" /></svg
+            >MOBILE
+          </div>
+        </div>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #dbeafe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Responsive Design</div>
+            <div class="fi-desc">Optimized for Mobile, Tablet, and Desktop</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #fef3c7">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Institutional Profile</div>
+            <div class="fi-desc">About School, Vision & Mission Statements</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #d1fae5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="8.5" cy="7" r="4" />
+              <path d="M20 8v6M23 11h-6" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Admissions</div>
+            <div class="fi-desc">Online Admission Enquiry Form</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #ede9fe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Academic Information</div>
+            <div class="fi-desc">Detailed Courses & Classes Information</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #fce7f3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Contact Integration</div>
+            <div class="fi-desc">Contact Page with Google Maps Embed</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #dbeafe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Faculty & Staff</div>
+            <div class="fi-desc">Dedicated section for team profiles</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #d1fae5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+          </div>
+          <div>
+            <div class="fi-title">CMS Access</div>
+            <div class="fi-desc">Secure Admin access for content updates</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #fef3c7">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Media Gallery</div>
+            <div class="fi-desc">High-quality Photo & Video Gallery</div>
+          </div>
+        </div>
+      </div>
+      <div class="features-note">
+        <span><em>All website features are customizable per school needs.</em></span>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 6: ADMIN PANEL FEATURES ============ -->
+    <section class="slide sp">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px">
+        <div>
+          <div class="label">Component 02</div>
+          <h2 class="heading-lg" style="margin-bottom: 6px">Admin Panel Features</h2>
+          <p style="font-size: 13px; color: #6b7280">Complete School Control System for streamlined operations & management.</p>
+        </div>
+        <div class="plat-badges">
+          <div class="plat-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" /></svg
+            >WEB
+          </div>
+          <div class="plat-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" /></svg>CLOUD
+          </div>
+          <div class="plat-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>SECURE
+          </div>
+        </div>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #dbeafe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="8.5" cy="7" r="4" />
+              <path d="M20 8v6M23 11h-6" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Student Management</div>
+            <div class="fi-desc">Complete lifecycle: Admission to Alumni</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #fce7f3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Exams & Results</div>
+            <div class="fi-desc">Marks entry, grading & report cards</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #fef3c7">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Staff Management</div>
+            <div class="fi-desc">Teacher & Staff profiles and records</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #d1fae5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Timetable System</div>
+            <div class="fi-desc">Schedule management for all classes</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #ede9fe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Class & Section</div>
+            <div class="fi-desc">Organize academic structure efficiently</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #dbeafe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
+          </div>
+          <div>
+            <div class="fi-title">Communication</div>
+            <div class="fi-desc">Notice board & announcement system</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #d1fae5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+              <polyline points="9 11 12 14 22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Attendance Tracking</div>
+            <div class="fi-desc">Digital records for Students & Staff</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #fce7f3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Access Control</div>
+            <div class="fi-desc">Role-based access (Admin, Teacher, Staff)</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #fef3c7">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Fee Management</div>
+            <div class="fi-desc">Payment tracking & automated receipts</div>
+          </div>
+        </div>
+        <div class="feat-item">
+          <div class="fi-icon" style="background: #ede9fe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+              <path d="M3 3v18h18" />
+              <path d="M18 17V9M13 17V5M8 17v-3" />
+            </svg>
+          </div>
+          <div>
+            <div class="fi-title">Reports & Analytics</div>
+            <div class="fi-desc">Comprehensive data dashboard</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 7: MOBILE APP FEATURES ============ -->
+    <section class="slide sp">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px">
+        <div>
+          <div class="label">Mobile Ecosystem</div>
+          <h2 class="heading-lg" style="margin-bottom: 0">Android Mobile App Features</h2>
+        </div>
+        <p style="font-size: 12.5px; color: #6b7280; font-style: italic; padding-top: 20px">For Parents, Teachers & Students</p>
+      </div>
+      <div class="app-cols">
+        <div class="app-col">
+          <div class="ac-header">
+            <div class="ac-icon" style="background: #1a1a2e">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div class="ac-label">
+              <h4>Parent App</h4>
+              <p>Monitoring & Updates</p>
+            </div>
+          </div>
+          <ul class="ck-list">
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Real-Time Attendance Tracking
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Exam Results & Report Cards
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Fee Status & Payment History
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Push Notifications & Circulars
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Direct Teacher Communication
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Homework & Assignment Updates
+            </li>
+          </ul>
+          <div class="ac-tag" style="background: #1a1a2e; color: #fff">&#9733; Key Component</div>
+        </div>
+        <div class="app-col elevated">
+          <div class="ac-header">
+            <div class="ac-icon" style="background: #2563eb">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <div class="ac-label">
+              <h4>Teacher App</h4>
+              <p>Classroom Management</p>
+            </div>
+          </div>
+          <ul class="ck-list">
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Mark & Update Attendance
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Upload Marks & Results
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >View Class & Student Details
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Share Notices & Homework
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Student Performance Analytics
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #dbeafe"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Timetable & Schedule Access
+            </li>
+          </ul>
+          <div class="ac-tag" style="background: #ede9fe; color: #7c3aed">&#9889; Productivity</div>
+        </div>
+        <div class="app-col">
+          <div class="ac-header">
+            <div class="ac-icon" style="background: #7c3aed">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <div class="ac-label">
+              <h4>Student Access</h4>
+              <p>Personal Dashboard</p>
+            </div>
+          </div>
+          <ul class="ck-list">
+            <li>
+              <span class="ck-dot" style="background: #d1fae5"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >View Attendance Record
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #d1fae5"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Check Exam Results & Grades
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #d1fae5"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Notifications & Announcements
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #d1fae5"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Daily Timetable & Schedule
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #d1fae5"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Homework & Assignment Tracker
+            </li>
+            <li>
+              <span class="ck-dot" style="background: #d1fae5"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+              >Fee Payment Status
+            </li>
+          </ul>
+          <div class="ac-tag" style="background: #dbeafe; color: #2563eb">&#9744; Easy Access</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 8: SECURITY ============ -->
+    <section class="slide slide-sec">
+      <div class="sec-side">
+        <div
+          class="circle-deco"
+          style="width: 100px; height: 100px; top: -20px; right: -30px; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 50%; position: absolute"
+        ></div>
+        <div
+          style="width: 52px; height: 52px; background: #2d2d44; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 28px"
+        >
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" /></svg>
+        </div>
+        <h2 style="font-size: 38px; font-weight: 900; line-height: 1.08; margin-bottom: 28px">Security &<br />Technology</h2>
+        <div style="display: flex; gap: 14px; margin-top: auto">
+          <span style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #9ca3af; display: flex; align-items: center; gap: 4px"
+            ><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#9ca3af" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg
+            >Secure</span
+          >
+          <span style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #9ca3af; display: flex; align-items: center; gap: 4px"
+            ><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#9ca3af" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" /></svg
+            >Privacy</span
+          >
+          <span style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #9ca3af; display: flex; align-items: center; gap: 4px"
+            ><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#9ca3af" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>Speed</span
+          >
+        </div>
+      </div>
+      <div class="sec-main">
+        <div class="sec-grid">
+          <div class="sec-card">
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </div>
+            <h4>Secure Login</h4>
+            <p>Advanced role-based access control prevents unauthorized entry to sensitive areas.</p>
+          </div>
+          <div class="sec-card">
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                <circle cx="12" cy="16" r="1" />
+              </svg>
+            </div>
+            <h4>Encrypted Storage</h4>
+            <p>AES-256 bit encryption ensures student and staff records are unreadable to intruders.</p>
+          </div>
+          <div class="sec-card">
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                <polyline points="23 4 23 10 17 10" />
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+              </svg>
+            </div>
+            <h4>Regular Backups</h4>
+            <p>Automated daily data backups to the cloud prevent any accidental data loss.</p>
+          </div>
+          <div class="sec-card">
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" /></svg>
+            </div>
+            <h4>Cloud Hosting</h4>
+            <p>Reliable, always-on cloud infrastructure accessible securely from anywhere.</p>
+          </div>
+          <div class="sec-card">
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h4>Scalable System</h4>
+            <p>Flexible architecture that grows effortlessly as your institution expands.</p>
+          </div>
+          <div class="sec-card">
+            <div class="sc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+            </div>
+            <h4>High Performance</h4>
+            <p>Optimized code and caching for lightning-fast speeds even during peak usage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 9: IMPLEMENTATION PLAN ============ -->
+    <section class="slide h-tl-slide">
+      <div class="h-tl-roadmap-badge">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+          <circle cx="4" cy="6" r="0.5" />
+          <circle cx="4" cy="12" r="0.5" />
+          <circle cx="4" cy="18" r="0.5" />
+        </svg>
+        Project Roadmap
+      </div>
+      <h2 class="h-tl-title">Implementation Plan</h2>
+
+      <div class="h-tl-time-card">
+        <div class="h-tl-time-content">
+          <div class="label-sm">Total Estimated Time</div>
+          <div class="val">8&ndash;10 Weeks</div>
+        </div>
+        <div style="width: 44px; height: 44px; border-radius: 12px; background: #f8fafc; display: flex; align-items: center; justify-content: center">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#64748b" stroke-width="2">
+            <path d="M12 8v4l3 3" />
+            <circle cx="12" cy="12" r="9" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="h-tl-container">
+        <div class="h-tl-line"></div>
+
+        <!-- Planning -->
+        <div class="h-tl-item">
+          <div class="h-tl-icon" style="background: #3b82f6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+          </div>
+          <div class="h-tl-card" style="--phase-color: #3b82f6">
+            <h4>Planning</h4>
+            <p>Requirement Discussion & Finalization</p>
+            <div class="h-tl-dur-pill" style="--phase-bg: #eff6ff; --phase-color: #3b82f6">1 Week</div>
+          </div>
+        </div>
+
+        <!-- UI/UX -->
+        <div class="h-tl-item">
+          <div class="h-tl-icon" style="background: #a855f7">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+          </div>
+          <div class="h-tl-card" style="--phase-color: #a855f7">
+            <h4>UI/UX Design</h4>
+            <p>Wireframes & Visual Prototypes</p>
+            <div class="h-tl-dur-pill" style="--phase-bg: #f5f3ff; --phase-color: #a855f7">1 Week</div>
+          </div>
+        </div>
+
+        <!-- Development -->
+        <div class="h-tl-item" style="width: 20%">
+          <div class="h-tl-icon" style="background: #10b981">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+          </div>
+          <div class="h-tl-card" style="--phase-color: #10b981">
+            <h4>Development</h4>
+            <p>Core System Coding & Integration</p>
+            <div class="h-tl-dur-pill" style="--phase-bg: #ecfdf5; --phase-color: #10b981">4&ndash;6 Weeks</div>
+          </div>
+        </div>
+
+        <!-- Testing -->
+        <div class="h-tl-item">
+          <div class="h-tl-icon" style="background: #f59e0b">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div class="h-tl-card" style="--phase-color: #f59e0b">
+            <h4>Testing</h4>
+            <p>QA & Security Checks</p>
+            <div class="h-tl-dur-pill" style="--phase-bg: #fffbeb; --phase-color: #f59e0b">2-3 Week</div>
+          </div>
+        </div>
+
+        <!-- Launch -->
+        <div class="h-tl-item">
+          <div class="h-tl-icon" style="background: #0d9488">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path
+                d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.59 8.31m6 6.06a6.06 6.06 0 01-9.39-3.05m0 0a14.94 14.94 0 016-6.06m-6 6.05a14.94 14.94 0 00-6 6.06"
+              />
+              <path d="M12 12l.01.01" />
+            </svg>
+          </div>
+          <div class="h-tl-card" style="--phase-color: #0d9488">
+            <h4>Launch</h4>
+            <p>Deployment & Staff Training</p>
+            <div class="h-tl-dur-pill" style="--phase-bg: #f0fdfa; --phase-color: #0d9488">1 Week</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-tl-footer">
+        <div class="h-tl-nav">
+          <span>Planning</span>
+          <span class="active">Execution Phase</span>
+          <span>Finalization</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 10: TRAINING & SUPPORT ============ -->
+    <section class="slide slide-split">
+      <div class="sidebar">
+        <div class="circle-deco" style="width: 180px; height: 180px; top: -40px; right: -60px"></div>
+        <div class="brand">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M4 8h16M4 12h16M4 16h16" /></svg> Dreamlytix
+        </div>
+        <div class="section-title">Training<br />& Support</div>
+        <div class="quote-block">
+          <div style="width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#f59e0b" stroke-width="2">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z" />
+            </svg>
+          </div>
+          <p class="quote-text">We don't just deliver – we ensure your success.</p>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="label">Service Assurance</div>
+        <h2 class="heading-lg">Post-Delivery Support</h2>
+        <div class="icon-bar-list">
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar b">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <p class="desc">Comprehensive <strong>Admin & Staff training sessions</strong> to ensure smooth adoption.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+              </div>
+              <p class="desc">Detailed <strong>User manuals & documentation</strong> for easy reference.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                </svg>
+              </div>
+              <p class="desc"><strong>Initial handholding support</strong> during the critical go-live phase.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="23" />
+                  <line x1="8" y1="23" x2="16" y2="23" />
+                </svg>
+              </div>
+              <p class="desc">Access to a <strong>Dedicated technical support channel</strong>.</p>
+            </div>
+          </div>
+          <div class="icon-bar-item">
+            <div class="bar-wrap">
+              <div class="bar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+              </div>
+              <p class="desc">Commitment to <strong>Quick issue resolution</strong> to minimize downtime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 11: PROJECT COST (ENHANCED) ============ -->
+    <section class="slide sp" style="background: linear-gradient(135deg, #f8fafc 0%, #f0fdf4 50%, #f8fafc 100%); position: relative">
+      <div style="position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(16, 185, 129, 0.04)"></div>
+      <div style="position: absolute; bottom: -30px; left: -30px; width: 120px; height: 120px; border-radius: 50%; background: rgba(16, 185, 129, 0.03)"></div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; position: relative">
+        <div>
+          <div class="label">Investment Overview</div>
+          <h2 class="heading-lg" style="margin-bottom: 4px">Project Cost (One-Time)</h2>
+          <p style="font-size: 13px; color: #6b7280">Detailed breakdown of development & deployment costs</p>
+        </div>
+        <div class="currency-badge" style="margin-top: 18px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23" />
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+          Currency: INR (&#8377;)
+        </div>
+      </div>
+      <table class="cost-tbl" style="margin-top: 18px; position: relative">
+        <thead>
+          <tr>
+            <th>Component Details</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="ci-row">
+                <span class="ci-icon" style="background: #e0f2fe"
+                  ><svg viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg
+                ></span>
+                <div>
+                  <div class="ci-title">School Website</div>
+                  <div class="ci-desc">Responsive design, content pages & admission portal</div>
+                  <div class="ci-subs">
+                    <span class="ci-sub">9 pages</span><span class="ci-sub">SEO optimized</span><span class="ci-sub">CMS access</span
+                    ><span class="ci-sub">Mobile responsive</span><span class="ci-sub">Media gallery</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>&#8377;25,000</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="ci-row">
+                <span class="ci-icon" style="background: #f3f4f6"
+                  ><svg viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8M12 17v4" /></svg
+                ></span>
+                <div>
+                  <div class="ci-title">Admin Panel</div>
+                  <div class="ci-desc">Comprehensive management system, reports & analytics</div>
+                  <div class="ci-subs">
+                    <span class="ci-sub">Student management</span><span class="ci-sub">Fee tracking</span><span class="ci-sub">Attendance</span
+                    ><span class="ci-sub">Timetable</span><span class="ci-sub">Reports dashboard</span><span class="ci-sub">Role-based access</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>&#8377;20,000</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="ci-row">
+                <span class="ci-icon" style="background: #d1fae5"
+                  ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" /></svg
+                ></span>
+                <div>
+                  <div class="ci-title">Setup & Deployment</div>
+                  <div class="ci-desc">Server configuration, database setup & launch</div>
+                  <div class="ci-subs">
+                    <span class="ci-sub">Cloud hosting setup</span><span class="ci-sub">SSL certificate</span><span class="ci-sub">Domain config</span
+                    ><span class="ci-sub">Database migration</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>&#8377;10,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cost-total">
+        <div class="ct-label">Total Project Investment</div>
+        <div class="ct-value">&#8377;55,000</div>
+      </div>
+      <div class="note-bar" style="margin-top: 16px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="16" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12.01" y2="8" />
+        </svg>
+        Note: Final costs can be adjusted based on specific customization requirements.
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 12: MOBILE APP SUBSCRIPTION ============ -->
+    <section class="slide sp" style="position: relative; overflow: hidden">
+      <!-- decorative blobs -->
+      <div
+        style="
+          position: absolute;
+          top: -60px;
+          right: -60px;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+          pointer-events: none;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          bottom: -40px;
+          left: -40px;
+          width: 140px;
+          height: 140px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+          pointer-events: none;
+        "
+      ></div>
+
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; position: relative">
+        <div>
+          <div class="label">Subscription Model</div>
+          <h2 class="heading-lg" style="margin-bottom: 4px">Android Mobile App Pricing</h2>
+          <p style="font-size: 13px; color: #6b7280">Monthly Android app subscription based on student count — lower rates for larger schools.</p>
+        </div>
+        <div
+          style="display: flex; align-items: center; gap: 8px; margin-top: 18px; background: #ede9fe; padding: 6px 14px; border-radius: 8px; border: 1px solid #ddd6fe"
+        >
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#7c3aed" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" />
+            <path d="M12 18h.01" />
+          </svg>
+          <span style="font-size: 12px; font-weight: 600; color: #6d28d9">Per Student / Month</span>
+        </div>
+      </div>
+
+      <!-- How it works -->
+      <div
+        style="
+          background: #f8fafc;
+          border: 1px solid #f1f5f9;
+          border-radius: 12px;
+          padding: 16px 22px;
+          margin-bottom: 24px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+        "
+      >
+        <div>
+          <div style="font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 2px">What Included in Every Plan?</div>
+          <div style="background: #f8fafc; border: 1px solid #f1f5f9; border-radius: 12px; display: flex; align-items: flex-start; gap: 16px">
+            <div style="flex: 1">
+              <div style="display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center">
+                <span style="font-size: 11.5px; color: #94a3b8; display: flex; align-items: center; gap: 6px">
+                  <span style="width: 4px; height: 4px; border-radius: 50%; background: #cbd5e1"></span> Teacher & Student App
+                </span>
+                <span style="font-size: 11.5px; color: #94a3b8; display: flex; align-items: center; gap: 6px">
+                  <span style="width: 4px; height: 4px; border-radius: 50%; background: #cbd5e1"></span> Push Notifications
+                </span>
+                <span style="font-size: 11.5px; color: #94a3b8; display: flex; align-items: center; gap: 6px">
+                  <span style="width: 4px; height: 4px; border-radius: 50%; background: #cbd5e1"></span> Attendance & Results
+                </span>
+                <span style="font-size: 11.5px; color: #94a3b8; display: flex; align-items: center; gap: 6px">
+                  <span style="width: 4px; height: 4px; border-radius: 50%; background: #cbd5e1"></span> Homework & Fee Tracking
+                </span>
+                <span style="font-size: 11.5px; color: #94a3b8; display: flex; align-items: center; gap: 6px">
+                  <span style="width: 4px; height: 4px; border-radius: 50%; background: #cbd5e1"></span> Regular Updates
+                </span>
+                <span style="font-size: 11.5px; color: #94a3b8; display: flex; align-items: center; gap: 6px">
+                  <span style="width: 4px; height: 4px; border-radius: 50%; background: #cbd5e1"></span> Play Store Listing
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing tiers -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px">
+        <!-- Tier 1 -->
+        <div
+          style="
+            background: #fff;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            position: relative;
+            transition:
+              transform 0.2s,
+              box-shadow 0.2s;
+          "
+        >
+          <div
+            style="width: 48px; height: 48px; border-radius: 12px; background: #dbeafe; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px"
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2563eb" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+            </svg>
+          </div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #6b7280; margin-bottom: 6px">Starter</div>
+          <div style="font-size: 11.5px; color: #374151; font-weight: 600; margin-bottom: 14px">1 — 200 Students</div>
+          <div style="font-size: 42px; font-weight: 900; color: #1a1a2e; line-height: 1">&#8377;45</div>
+          <div style="font-size: 11px; color: #9ca3af; margin-top: 4px">per student / month</div>
+        </div>
+
+        <!-- Tier 2 (Popular) -->
+        <div
+          style="
+            background: linear-gradient(180deg, #1a1a2e 0%, #2d2b55 100%);
+            border: 1.5px solid #1a1a2e;
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            position: relative;
+            transform: scale(1.04);
+            box-shadow: 0 12px 40px rgba(26, 26, 46, 0.2);
+          "
+        >
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              border-radius: 12px;
+              background: rgba(255, 255, 255, 0.1);
+              backdrop-filter: blur(8px);
+              border: 1px solid rgba(255, 255, 255, 0.15);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 14px;
+            "
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#34d399" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #34d399; margin-bottom: 6px">Growth</div>
+          <div style="font-size: 11.5px; color: rgba(255, 255, 255, 0.7); font-weight: 600; margin-bottom: 14px">201 — 350 Students</div>
+          <div style="font-size: 42px; font-weight: 900; color: #fff; line-height: 1">&#8377;40</div>
+          <div style="font-size: 11px; color: rgba(255, 255, 255, 0.5); margin-top: 4px">per student / month</div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div
+          style="
+            background: #fff;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            position: relative;
+            transition:
+              transform 0.2s,
+              box-shadow 0.2s;
+          "
+        >
+          <div
+            style="width: 48px; height: 48px; border-radius: 12px; background: #d1fae5; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px"
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#059669" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #6b7280; margin-bottom: 6px">Scale</div>
+          <div style="font-size: 11.5px; color: #374151; font-weight: 600; margin-bottom: 14px">350+ Students</div>
+          <div style="font-size: 42px; font-weight: 900; color: #1a1a2e; line-height: 1">&#8377;35</div>
+          <div style="font-size: 11px; color: #9ca3af; margin-top: 4px">per student / month</div>
+        </div>
+      </div>
+
+      <!-- Note -->
+      <div class="note-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="16" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12.01" y2="8" />
+        </svg>
+        Billing is monthly. Student count is verified at the start of each academic session. First month's subscription is due upon app deployment.
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 13: PAYMENT SCHEDULE ============ -->
+    <section class="slide sp" style="position: relative; overflow: hidden">
+      <!-- decorative elements -->
+      <div
+        style="
+          position: absolute;
+          top: -80px;
+          right: -80px;
+          width: 220px;
+          height: 220px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+          pointer-events: none;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          bottom: -50px;
+          left: -50px;
+          width: 160px;
+          height: 160px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
+          pointer-events: none;
+        "
+      ></div>
+
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; position: relative">
+        <div>
+          <div class="label">Payment Terms</div>
+          <h2 class="heading-lg" style="margin-bottom: 4px">Payment Schedule</h2>
+          <p style="font-size: 13px; color: #6b7280">Structured milestones for project & maintenance payments</p>
+        </div>
+        <div class="currency-badge" style="margin-top: 18px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23" />
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+          Currency: INR (&#8377;)
+        </div>
+      </div>
+
+      <!-- ===== PROJECT PAYMENT: 4 STEPS ===== -->
+      <div style="margin-top: 22px; margin-bottom: 28px; position: relative">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2b55 100%);
+            border-radius: 14px;
+            padding: 10px 18px;
+            margin-bottom: 14px;
+            position: relative;
+            overflow: hidden;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              top: -30px;
+              right: -30px;
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.03);
+              pointer-events: none;
+            "
+          ></div>
+          <div style="display: flex; align-items: center; gap: 14px">
+            <div
+              style="
+                width: 38px;
+                height: 38px;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#34d399" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <div>
+              <div style="font-size: 14px; font-weight: 800; color: #fff; letter-spacing: -0.3px">Project Development</div>
+            </div>
+          </div>
+          <div style="font-size: 20px; font-weight: 900; color: #34d399; letter-spacing: -0.5px">&#8377;55,000</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px">
+          <!-- Step 1 -->
+          <div
+            style="
+              background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);
+              border: 1.5px solid #bfdbfe;
+              border-radius: 14px;
+              padding: 18px 16px;
+              position: relative;
+              overflow: hidden;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: rgba(37, 99, 235, 0.08);
+                pointer-events: none;
+              "
+            ></div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px">
+              <div
+                style="width: 34px; height: 34px; border-radius: 10px; background: #2563eb; display: flex; align-items: center; justify-content: center; flex-shrink: 0"
+              >
+                <span style="font-size: 14px; font-weight: 900; color: #fff">1</span>
+              </div>
+              <div style="font-size: 13px; font-weight: 800; color: #1a1a2e; line-height: 1.25">Project Confirmation</div>
+            </div>
+            <div style="font-size: 10px; color: #64748b; line-height: 1.5; margin-bottom: 14px">Signing agreement & requirement</div>
+            <div style="padding-top: 10px; border-top: 1px solid #bfdbfe; text-align: center">
+              <div style="font-size: 20px; font-weight: 900; color: #1e3a8a">25% <small style="font-size: 12px">&#8377;13,750</small></div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            style="
+              background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+              border: 1.5px solid #c4b5fd;
+              border-radius: 14px;
+              padding: 18px 16px;
+              position: relative;
+              overflow: hidden;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: rgba(124, 58, 237, 0.08);
+                pointer-events: none;
+              "
+            ></div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px">
+              <div
+                style="width: 34px; height: 34px; border-radius: 10px; background: #7c3aed; display: flex; align-items: center; justify-content: center; flex-shrink: 0"
+              >
+                <span style="font-size: 14px; font-weight: 900; color: #fff">2</span>
+              </div>
+              <div style="font-size: 13px; font-weight: 800; color: #1a1a2e; line-height: 1.25">UI/UX Approval</div>
+            </div>
+            <div style="font-size: 10px; color: #64748b; line-height: 1.5; margin-bottom: 14px">Wireframe-design prototype signoff</div>
+            <div style="padding-top: 10px; border-top: 1px solid #c4b5fd; text-align: center">
+              <div style="font-size: 20px; font-weight: 900; color: #4c1d95">25% <small style="font-size: 12px">&#8377;13,750</small></div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            style="
+              background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+              border: 1.5px solid #fde68a;
+              border-radius: 14px;
+              padding: 18px 16px;
+              position: relative;
+              overflow: hidden;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: rgba(217, 119, 6, 0.08);
+                pointer-events: none;
+              "
+            ></div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px">
+              <div
+                style="width: 34px; height: 34px; border-radius: 10px; background: #d97706; display: flex; align-items: center; justify-content: center; flex-shrink: 0"
+              >
+                <span style="font-size: 14px; font-weight: 900; color: #fff">3</span>
+              </div>
+              <div style="font-size: 13px; font-weight: 800; color: #1a1a2e; line-height: 1.25">Development</div>
+            </div>
+            <div style="font-size: 10px; color: #64748b; line-height: 1.5; margin-bottom: 14px">Core modules built & demo provided</div>
+            <div style="padding-top: 10px; border-top: 1px solid #fde68a; text-align: center">
+              <div style="font-size: 20px; font-weight: 900; color: #92400e">25% <small style="font-size: 12px">&#8377;13,750</small></div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div
+            style="
+              background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+              border: 1.5px solid #bbf7d0;
+              border-radius: 14px;
+              padding: 18px 16px;
+              position: relative;
+              overflow: hidden;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: rgba(16, 185, 129, 0.08);
+                pointer-events: none;
+              "
+            ></div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px">
+              <div
+                style="width: 34px; height: 34px; border-radius: 10px; background: #10b981; display: flex; align-items: center; justify-content: center; flex-shrink: 0"
+              >
+                <span style="font-size: 14px; font-weight: 900; color: #fff">4</span>
+              </div>
+              <div style="font-size: 13px; font-weight: 800; color: #1a1a2e; line-height: 1.25">Final Delivery</div>
+            </div>
+            <div style="font-size: 10px; color: #64748b; line-height: 1.5; margin-bottom: 14px">Testing, deployment, training</div>
+            <div style="padding-top: 10px; border-top: 1px solid #bbf7d0; text-align: center">
+              <div style="font-size: 20px; font-weight: 900; color: #065f46">25% <small style="font-size: 12px">&#8377;13,750</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+
+      <!-- ===== MAINTENANCE PAYMENT: 2 HALF-YEARLY STEPS ===== -->
+      <div style="position: relative">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+            border-radius: 14px;
+            padding: 10px 18px;
+            margin-bottom: 14px;
+            position: relative;
+            overflow: hidden;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              top: -30px;
+              right: -30px;
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.04);
+              pointer-events: none;
+            "
+          ></div>
+          <div style="display: flex; align-items: center; gap: 14px">
+            <div
+              style="
+                width: 38px;
+                height: 38px;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.12);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#a7f3d0" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+            </div>
+            <div>
+              <div style="font-size: 14px; font-weight: 800; color: #fff; letter-spacing: -0.3px">Annual Maintenance (AMC)</div>
+            </div>
+          </div>
+          <div style="font-size: 20px; font-weight: 900; color: #a7f3d0; letter-spacing: -0.5px">
+            &#8377;18,000<span style="font-size: 11px; font-weight: 600; color: rgba(255, 255, 255, 0.5)">/year</span>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+          <!-- H1 -->
+          <div
+            style="
+              background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+              border: 1.5px solid #bbf7d0;
+              border-radius: 16px;
+              padding: 12px 15px;
+              position: relative;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: rgba(16, 185, 129, 0.08);
+                pointer-events: none;
+              "
+            ></div>
+            <div style="display: flex; align-items: center; gap: 14px">
+              <div
+                style="width: 44px; height: 44px; border-radius: 12px; background: #10b981; display: flex; align-items: center; justify-content: center; flex-shrink: 0"
+              >
+                <span style="font-size: 14px; font-weight: 900; color: #fff">H1</span>
+              </div>
+              <div>
+                <div style="font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #059669">First Half (50% of AMC)</div>
+                <div style="font-size: 15px; font-weight: 800; color: #1a1a2e">April — September</div>
+              </div>
+            </div>
+            <div style="font-size: 20px; font-weight: 900; color: #065f46">&#8377;9,000</div>
+          </div>
+
+          <!-- H2 -->
+          <div
+            style="
+              background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);
+              border: 1.5px solid #bfdbfe;
+              border-radius: 16px;
+              padding: 12px 15px;
+              position: relative;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: rgba(37, 99, 235, 0.08);
+                pointer-events: none;
+              "
+            ></div>
+            <div style="display: flex; align-items: center; gap: 14px">
+              <div
+                style="width: 44px; height: 44px; border-radius: 12px; background: #2563eb; display: flex; align-items: center; justify-content: center; flex-shrink: 0"
+              >
+                <span style="font-size: 14px; font-weight: 900; color: #fff">H2</span>
+              </div>
+              <div>
+                <div style="font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #2563eb">Second Half (50% of AMC)</div>
+                <div style="font-size: 15px; font-weight: 800; color: #1a1a2e">October — March</div>
+              </div>
+            </div>
+            <div style="font-size: 20px; font-weight: 900; color: #1e3a5f">&#8377;9,000</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note -->
+      <div class="note-bar" style="margin-top: 20px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="16" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12.01" y2="8" />
+        </svg>
+        All payments are exclusive of GST (18%). AMC commences after the 30-day post-delivery warranty period ends.
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 14: YEARLY MAINTENANCE ============ -->
+    <section class="slide sp">
+      <div class="label">Post-Delivery Support</div>
+      <h2 class="heading-lg" style="margin-bottom: 4px">Yearly Maintenance & Support</h2>
+      <p style="font-size: 13px; color: #6b7280; margin-bottom: 24px">Ensuring your school's digital infrastructure runs smoothly year-round.</p>
+      <div class="amc-grid">
+        <div class="amc-left">
+          <div style="display: flex; gap: 10px; margin-bottom: 18px">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#1a1a2e" stroke-width="2">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z" />
+            </svg>
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#1a1a2e" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+          </div>
+          <div style="display: flex; gap: 10px; margin-bottom: 24px">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#1a1a2e" stroke-width="2">
+              <path d="M12 19l7-7 3 3-7 7-3-3z" />
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+            </svg>
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#1a1a2e" stroke-width="2">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+          <div class="amc-heading">We Don't Just Deliver.<br />We Support.</div>
+          <p>
+            Technology requires care. Our Annual Maintenance Contract (AMC) guarantees that your system stays secure, updated, and efficient without adding to your
+            staff's workload.
+          </p>
+          <div class="amc-badges">
+            <span
+              ><svg viewBox="0 0 24 24" width="14" height="14" fill="#e11d48" stroke="none"><circle cx="12" cy="12" r="5" /></svg> Priority Support</span
+            >
+            <span
+              ><svg viewBox="0 0 24 24" width="14" height="14" fill="#059669" stroke="none"><circle cx="12" cy="12" r="5" /></svg> No Hidden Costs</span
+            >
+          </div>
+        </div>
+        <div class="amc-right">
+          <div class="amc-hdr">
+            <div>
+              <h4>Annual Maintenance Contract</h4>
+            </div>
+            <div class="amc-tag">AMC Package</div>
+          </div>
+          <div class="amc-item">
+            <div class="amc-ic" style="background: #dbeafe">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" />
+                <rect x="2" y="14" width="20" height="8" rx="2" />
+                <line x1="6" y1="6" x2="6.01" y2="6" />
+                <line x1="6" y1="18" x2="6.01" y2="18" />
+              </svg>
+            </div>
+            <div>
+              <h5>Server & Hosting Support</h5>
+              <p>Ensuring 99.9% uptime and server health optimization.</p>
+            </div>
+          </div>
+          <div class="amc-item">
+            <div class="amc-ic" style="background: #fef3c7">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h5>Bug Fixes & Minor Enhancements</h5>
+              <p>Immediate resolution of technical glitches and small feature tweaks.</p>
+            </div>
+          </div>
+          <div class="amc-item">
+            <div class="amc-ic" style="background: #fce7f3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                <line x1="12" y1="19" x2="12" y2="23" />
+                <line x1="8" y1="23" x2="16" y2="23" />
+              </svg>
+            </div>
+            <div>
+              <h5>Technical Support</h5>
+              <p>Dedicated channel for admin and staff query resolution.</p>
+            </div>
+          </div>
+          <div class="amc-item">
+            <div class="amc-ic" style="background: #dbeafe">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+            <div>
+              <h5>Security, Backup & Monitoring</h5>
+              <p>Security updates, backups, and monitoring for reliable system protection.</p>
+            </div>
+          </div>
+          <div class="amc-price">
+            <div class="ap-label">Yearly Maintenance Cost<span>Renewable annually</span></div>
+            <div class="ap-val">&#8377;18,000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 15: WHY CHOOSE ============ -->
+    <section class="slide sp tc" style="padding-top: 44px; padding-bottom: 44px">
+      <div style="display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#7c3aed" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" /></svg
+        ><span class="label" style="margin-bottom: 0; color: #7c3aed">Our Key Strengths</span>
+      </div>
+      <h2 class="heading-lg" style="margin-bottom: 6px">Why Choose Dreamlytix?</h2>
+      <p style="font-size: 13px; color: #6b7280; max-width: 670px; margin: 0 auto 28px; line-height: 1.6">
+        We combine technical expertise with a deep understanding of educational needs to deliver superior value.
+      </p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="1.5">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+          </div>
+          <h4>Education-Focused</h4>
+          <p>Specialized digital solutions tailored specifically for the unique workflows of schools and academies.</p>
+        </div>
+        <div class="why-card">
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="1.5">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+              <polyline points="10 17 15 12 10 7" />
+            </svg>
+          </div>
+          <h4>Intuitive Interface</h4>
+          <p>Clean, modern, and user-friendly designs that require minimal training for staff and parents.</p>
+        </div>
+        <div class="why-card">
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+          </div>
+          <h4>Secure Architecture</h4>
+          <p>Robust security measures and scalable infrastructure ensuring data protection and reliability.</p>
+        </div>
+        <div class="why-card">
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="1.5">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              <line x1="12" y1="19" x2="12" y2="23" />
+              <line x1="8" y1="23" x2="16" y2="23" />
+            </svg>
+          </div>
+          <h4>Dedicated Support</h4>
+          <p>We don't just deliver; we provide ongoing maintenance and quick resolution for peace of mind.</p>
+        </div>
+        <div class="why-card">
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <h4>Long-term Partner</h4>
+          <p>A commitment to growing with you, adapting technology as your institution evolves over time.</p>
+        </div>
+        <div class="why-card">
+          <div class="wc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="1.5"><path d="M4 8h16M4 12h16M4 16h16" /></svg>
+          </div>
+          <h4>Customization</h4>
+          <p>Flexible modules that can be tailored to fit the specific operational needs of your school.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SLIDE 16: CONTACT / CTA ============ -->
+    <section class="slide slide-cta">
+      <div class="cta-badge">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#34d399" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+        </svg>
+        Dreamlytix
+      </div>
+      <h2 class="cta-h2">Let's Build a Smarter<br />School Together</h2>
+      <p class="cta-sub">Ready to transform your institution with next-generation digital solutions? We are just a message away.</p>
+      <div class="cc-cards">
+        <div class="cc-card">
+          <div class="cc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="cc-lbl">Email Us</div>
+          <div class="cc-val">support@dreamlytix.com</div>
+        </div>
+        <div class="cc-card">
+          <div class="cc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+          </div>
+          <div class="cc-lbl">Call Us</div>
+          <div class="cc-val">+91 9933606242</div>
+        </div>
+        <div class="cc-card">
+          <div class="cc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <div class="cc-lbl">Visit Website</div>
+          <div class="cc-val">www.dreamlytix.com</div>
+        </div>
+      </div>
+      <div class="cta-foot">
+        <div class="copy">&copy; 2026 Dreamlytix Technologies. All Rights Reserved.</div>
+        <div class="socials">
+          <a href="#"
+            ><svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" /></svg
+          ></a>
+          <a href="#"
+            ><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+              /></svg
+          ></a>
+          <a href="#"
+            ><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg
+          ></a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

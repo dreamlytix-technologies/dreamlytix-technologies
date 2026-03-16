@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Acceptance - Dreamlytix Technologies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #1a1a2e;
+        line-height: 1.55;
+        background: #e5e5e5;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 16px auto;
+        background: #fff;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+        .page {
+          margin: 0;
+          box-shadow: none;
+          width: 100%;
+          min-height: auto;
+        }
+        .page + .page {
+          page-break-before: always;
+        }
+      }
+
+      /* ===== HEADER / LETTERHEAD ===== */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 48px;
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(52, 211, 153, 0.1) 0%, transparent 70%);
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .logo-icon {
+        width: 52px;
+        height: 52px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-icon svg {
+        width: 28px;
+        height: 28px;
+        stroke: #10b981;
+      }
+      .company-name {
+        font-size: 26px;
+        font-weight: 950;
+        color: #ffffff;
+        letter-spacing: -1.5px;
+        line-height: 1;
+      }
+      .company-tag {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #10b981;
+        margin-top: 4px;
+      }
+      .header-right {
+        text-align: right;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.8;
+      }
+      .header-right a {
+        color: #10b981;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* ===== DOCUMENT TITLE ===== */
+      .doc-title-bar {
+        background: #f8fafc;
+        color: #1e293b;
+        padding: 24px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .doc-title {
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: -0.5px;
+        color: #0f172a;
+      }
+      .doc-ref {
+        font-size: 10px;
+        color: #64748b;
+        text-align: right;
+        line-height: 1.6;
+      }
+      .doc-ref span {
+        display: block;
+        color: #1e293b;
+        font-weight: 800;
+        font-size: 11px;
+      }
+
+      /* ===== CONTENT ===== */
+      .content {
+        padding: 24px 40px;
+      }
+
+      /* Section titles */
+      .sec-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        background: #10b981;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 900;
+        border-radius: 8px;
+        margin-right: 12px;
+        box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+      }
+      .sec-title {
+        font-size: 15px;
+        font-weight: 900;
+        color: #0f172a;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #f1f5f9;
+        letter-spacing: -0.3px;
+      }
+
+      /* Party info grid */
+      .party-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+      .party-box {
+        border: 1px solid #e2e8f0;
+        background: #f8fafc;
+        border-radius: 14px;
+        padding: 20px;
+        position: relative;
+        transition: transform 0.2s;
+      }
+      .party-box .pb-label {
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        background: #10b981;
+        padding: 2px 10px;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 20px;
+      }
+      .party-box .pb-name {
+        font-size: 15px;
+        font-weight: 950;
+        color: #0f172a;
+        margin-bottom: 6px;
+      }
+      .party-box .pb-detail {
+        font-size: 10.5px;
+        color: #475569;
+        line-height: 1.7;
+      }
+      .party-box .pb-detail strong {
+        color: #1e293b;
+      }
+
+      /* Intro text */
+      .intro-text {
+        font-size: 10.5px;
+        color: #374151;
+        line-height: 1.7;
+        margin-bottom: 18px;
+      }
+
+      /* Scope table */
+      .scope-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin-bottom: 20px;
+        font-size: 11px;
+        border: 1px solid #f1f5f9;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .scope-table thead th {
+        background: #f8fafc;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #475569;
+        padding: 14px 18px;
+        text-align: left;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .scope-table thead th:nth-child(3),
+      .scope-table thead th:last-child {
+        text-align: right;
+      }
+      .scope-table tbody td {
+        padding: 14px 18px;
+        border-bottom: 1px solid #f1f5f9;
+        vertical-align: middle;
+        color: #334155;
+        line-height: 1.5;
+      }
+      .scope-table tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .scope-table tbody td:first-child {
+        font-weight: 800;
+        color: #0f172a;
+      }
+      .scope-table tbody td:nth-child(3),
+      .scope-table tbody td:last-child {
+        text-align: right;
+        white-space: nowrap;
+      }
+      .scope-table tbody td:last-child {
+        font-weight: 900;
+        color: #059669;
+        font-size: 13px;
+      }
+      .scope-table tfoot td {
+        padding: 16px 18px;
+        font-weight: 900;
+        font-size: 14px;
+        background: #f0fdf9;
+        border-top: 2px solid #10b981;
+        color: #059669;
+      }
+      .scope-table tfoot td:last-child {
+        text-align: right;
+      }
+      .st-sub {
+        font-size: 9px;
+        color: #94a3b8;
+        font-weight: 600;
+        margin-top: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Payment schedule */
+      .pay-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+      .pay-box {
+        background: #fff;
+        border: 1px solid #f1f5f9;
+        border-radius: 14px;
+        padding: 18px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        border-top: 3px solid #10b981;
+      }
+      .pay-box .pay-pct {
+        font-size: 26px;
+        font-weight: 950;
+        color: #0f172a;
+      }
+      .pay-box .pay-phase {
+        font-size: 11px;
+        font-weight: 800;
+        color: #10b981;
+        margin: 4px 0;
+        text-transform: uppercase;
+      }
+      .pay-box .pay-when {
+        font-size: 9px;
+        color: #64748b;
+        line-height: 1.5;
+        margin-bottom: 6px;
+      }
+      .pay-box .pay-amt {
+        font-size: 14px;
+        font-weight: 900;
+        color: #0f172a;
+        padding-top: 6px;
+        border-top: 1px solid #f1f5f9;
+      }
+
+      /* Timeline row */
+      .tl-row {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .tl-item {
+        flex: 1;
+        background: #fff;
+        border-radius: 12px;
+        padding: 14px;
+        text-align: center;
+        border: 1px solid #f1f5f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      }
+      .tl-item .tl-phase {
+        font-size: 10px;
+        font-weight: 900;
+        color: #10b981;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .tl-item .tl-dur {
+        font-size: 16px;
+        font-weight: 950;
+        color: #0f172a;
+        margin: 4px 0;
+      }
+      .tl-item .tl-desc {
+        font-size: 9px;
+        color: #64748b;
+        line-height: 1.4;
+      }
+
+      /* Terms list */
+      .terms-list {
+        list-style: none;
+        margin-bottom: 16px;
+      }
+      .terms-list li {
+        font-size: 9.5px;
+        color: #374151;
+        line-height: 1.6;
+        padding: 4px 0 4px 16px;
+        position: relative;
+      }
+      .terms-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 7px;
+        height: 7px;
+        border-radius: 2px;
+        background: #10b981;
+        transform: rotate(45deg);
+      }
+
+      /* Deliverables checklist */
+      .deliv-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 20px;
+        margin-bottom: 16px;
+      }
+      .deliv-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 9.5px;
+        color: #374151;
+        padding: 3px 0;
+      }
+      .deliv-item .d-check {
+        width: 14px;
+        height: 14px;
+        border-radius: 4px;
+        background: #d1fae5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .deliv-item .d-check svg {
+        width: 9px;
+        height: 9px;
+      }
+
+      /* Signature blocks */
+      .sig-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 20px;
+      }
+      .sig-block {
+        padding-top: 8px;
+      }
+      .sig-label {
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #10b981;
+        margin-bottom: 12px;
+        padding-left: 10px;
+        border-left: 3px solid #10b981;
+      }
+      .sig-line {
+        border-bottom: 2px solid #0f172a;
+        height: 60px;
+        margin-bottom: 12px;
+        background: rgba(16, 185, 129, 0.02);
+      }
+      .sig-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .sig-field {
+        font-size: 10px;
+        color: #334155;
+      }
+      .sig-field .sf-label {
+        font-weight: 700;
+        color: #94a3b8;
+        font-size: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 2px;
+      }
+      .sig-field .sf-val {
+        border-bottom: 1px solid #e2e8f0;
+        min-height: 20px;
+        margin-top: 2px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #0f172a;
+      }
+
+      /* Footer bar */
+      .page-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #f8fafc;
+        border-top: 1px solid #e5e7eb;
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 7.5px;
+        color: #9ca3af;
+      }
+      .page-footer a {
+        color: #10b981;
+        text-decoration: none;
+      }
+
+      /* Amount in words */
+      .amt-words {
+        background: #f0fdf9;
+        border: 1px solid #ccfbf1;
+        border-radius: 12px;
+        padding: 12px 18px;
+        font-size: 11px;
+        color: #059669;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+      }
+      .amt-words strong {
+        color: #14532d;
+        font-weight: 900;
+      }
+
+      /* Stamp area */
+      .stamp-area {
+        width: 90px;
+        height: 90px;
+        border: 1.5px dashed #d1d5db;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 7px;
+        color: #9ca3af;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.3;
+        margin: 0 auto;
+      }
+
+      /* Watermark */
+      .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-35deg);
+        font-size: 72px;
+        font-weight: 900;
+        color: rgba(16, 185, 129, 0.03);
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Ensure content above watermark */
+      .content,
+      .header,
+      .doc-title-bar,
+      .page-footer {
+        position: relative;
+        z-index: 1;
+      }
+
+      .mb-12 {
+        margin-bottom: 12px;
+      }
+      .mb-16 {
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==================== PAGE 1 ==================== -->
+    <div class="page">
+      <div class="watermark">DREAMLYTIX</div>
+
+      <!-- LETTERHEAD -->
+      <div class="header">
+        <div class="header-left">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M4 8h16M4 12h16M4 16h16" /></svg>
+          </div>
+          <div>
+            <div class="company-name">Dreamlytix</div>
+            <div class="company-tag">Technologies</div>
+          </div>
+        </div>
+        <div class="header-right">
+          <a href="https://dreamlytix.com">www.dreamlytix.com</a><br />
+          +91 99336 06242<br />
+          founder@dreamlytix.com<br />
+          Gangin, Murshidabad, WB 742223
+        </div>
+      </div>
+
+      <!-- DOCUMENT TITLE -->
+      <div class="doc-title-bar">
+        <div class="doc-title">PROJECT ACCEPTANCE & AGREEMENT</div>
+        <div class="doc-ref">
+          <span style="margin-bottom: 10px">Ref: DLX/PA/2026/003</span>
+          Date: ______ / ______ / 2026
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <!-- PARTIES -->
+        <div class="sec-title"><span class="sec-num">1</span> Parties to this Agreement</div>
+        <div class="party-grid">
+          <div class="party-box">
+            <div class="pb-label">Service Provider</div>
+            <div class="pb-name">Dreamlytix Technologies</div>
+            <div class="pb-detail">
+              <strong>Represented by:</strong> Supratim Das (Founder)<br />
+              <strong>Address:</strong> Gangin, Murshidabad, WB 742223<br />
+              <strong>Email:</strong> founder@dreamlytix.com<br />
+              <strong>Phone:</strong> +91 99336 06242<br />
+              <strong>Website:</strong> www.dreamlytix.com
+            </div>
+          </div>
+          <div class="party-box">
+            <div class="pb-label">Client</div>
+            <div class="pb-name">The Green View English Academy</div>
+            <div class="pb-detail">
+              <strong>Represented by:</strong> Mrs. Kakali Chakraborty (Principle)<br />
+              <strong>Address:</strong> Chakvrigu, Belain, West Bengal 733102<br />
+              <strong>Email:</strong> <br />
+              <strong>Phone:</strong> +91 <br />
+            </div>
+          </div>
+        </div>
+
+        <!-- INTRODUCTION -->
+        <div class="intro-text">
+          This Project Acceptance & Agreement ("Agreement") is entered into between <strong>Dreamlytix Technologies</strong> ("Service Provider") and
+          <strong>The Green View English Academy</strong> ("Client") for the development and delivery of a comprehensive digital school management ecosystem as outlined
+          in the proposal (Ref: DLX/PA/2026/003). By signing this document, both parties agree to the terms, scope, deliverables, costs, and timelines described herein.
+        </div>
+
+        <!-- PROJECT SCOPE & COST -->
+        <div class="sec-title"><span class="sec-num">2</span> Project Scope & Cost Breakdown</div>
+        <table class="scope-table">
+          <thead>
+            <tr>
+              <th style="width: 22%">Component</th>
+              <th style="width: 42%">Description & Deliverables</th>
+              <th style="width: 16%">Timeline</th>
+              <th style="width: 20%">Cost (INR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                School Website
+                <div class="st-sub">Component 01</div>
+              </td>
+              <td>
+                Responsive website with 9+ pages, institutional profile, admissions portal, media gallery, updates center, CMS access, SEO optimization & Google Maps
+                integration
+              </td>
+              <td>2-3 Weeks</td>
+              <td>&#8377;25,000</td>
+            </tr>
+            <tr>
+              <td>
+                Admin Panel
+                <div class="st-sub">Component 02</div>
+              </td>
+              <td>
+                Web-based control system: student management, staff records, attendance tracking, fee management, timetable, exams & results, reports dashboard,
+                role-based access control, notice board
+              </td>
+              <td>3-4 Weeks</td>
+              <td>&#8377;45,000</td>
+            </tr>
+            <tr>
+              <td>
+                Android App
+                <div class="st-sub">Component 03</div>
+              </td>
+              <td>
+                Mobile application with 3 user roles (Parent, Teacher, Student) including attendance view, results, fee status, push notifications, homework sharing &
+                direct communication
+              </td>
+              <td>3-4 Weeks</td>
+              <td>&#8377;40,000</td>
+            </tr>
+            <tr>
+              <td>
+                Setup & Deploy
+                <div class="st-sub">Component 04</div>
+              </td>
+              <td>Cloud server configuration, SSL certificate, domain setup, database migration, Go-live deployment, Play Store submission & initial staff training</td>
+              <td>1 Week</td>
+              <td>&#8377;10,000</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Total Project Cost (One-Time)</td>
+              <td style="text-align: right">&#8377;1,20,000</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <div class="amt-words">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#166534" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 8v4l2 2" />
+          </svg>
+          <span><strong>Amount in Words:</strong> Indian Rupees One Lakh Twenty Thousand Only</span>
+        </div>
+
+        <!-- PAYMENT SCHEDULE -->
+        <div class="sec-title"><span class="sec-num">3</span> Payment Schedule</div>
+        <div class="pay-grid">
+          <div class="pay-box">
+            <div class="pay-pct">40%</div>
+            <div class="pay-phase">Advance Payment</div>
+            <div class="pay-when">Upon project confirmation & requirement finalization</div>
+            <div class="pay-amt">&#8377;48,000</div>
+          </div>
+          <div class="pay-box">
+            <div class="pay-pct">30%</div>
+            <div class="pay-phase">Mid-Development</div>
+            <div class="pay-when">After UI/UX approval & core module completion</div>
+            <div class="pay-amt">&#8377;36,000</div>
+          </div>
+          <div class="pay-box">
+            <div class="pay-pct">30%</div>
+            <div class="pay-phase">Final Delivery</div>
+            <div class="pay-when">Upon testing, deployment & handover of all components</div>
+            <div class="pay-amt">&#8377;36,000</div>
+          </div>
+        </div>
+
+        <!-- TIMELINE -->
+        <div class="sec-title"><span class="sec-num">4</span> Project Timeline (8-10 Weeks)</div>
+        <div class="tl-row">
+          <div class="tl-item">
+            <div class="tl-phase">Planning</div>
+            <div class="tl-dur">1 Week</div>
+            <div class="tl-desc">Requirement finalization</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-phase">UI/UX</div>
+            <div class="tl-dur">1 Week</div>
+            <div class="tl-desc">Wireframes & prototypes</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-phase">Development</div>
+            <div class="tl-dur">4-6 Weeks</div>
+            <div class="tl-desc">Coding & integration</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-phase">Testing</div>
+            <div class="tl-dur">1 Week</div>
+            <div class="tl-desc">QA & security checks</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-phase">Launch</div>
+            <div class="tl-dur">1 Week</div>
+            <div class="tl-desc">Deploy & training</div>
+          </div>
+        </div>
+
+        <!-- DELIVERABLES -->
+        <div class="sec-title"><span class="sec-num">5</span> Key Deliverables</div>
+        <div class="deliv-grid">
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >Fully responsive school website (9+ pages)
+          </div>
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >Cloud-hosted admin panel with 10 modules
+          </div>
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >Android app (Parent + Teacher + Student)
+          </div>
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >SSL certificate & domain configuration
+          </div>
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >Admin & staff training sessions
+          </div>
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >User manuals & documentation
+          </div>
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >Source code & database access
+          </div>
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >Play Store app submission
+          </div>
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >AES-256 encrypted secure database
+          </div>
+          <div class="deliv-item">
+            <span class="d-check"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg></span
+            >30 days post-launch bug-fix support
+          </div>
+        </div>
+
+        <!-- ANNUAL MAINTENANCE -->
+        <div class="sec-title"><span class="sec-num">6</span> Annual Maintenance Contract (Optional)</div>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 16px;
+          "
+        >
+          <div>
+            <div style="font-size: 12px; font-weight: 700; color: #1a1a2e; margin-bottom: 3px">Yearly Maintenance & Support (AMC)</div>
+            <div style="font-size: 9px; color: #6b7280; line-height: 1.5">
+              Includes server & hosting support, bug fixes, security patches, technical support, daily backups & monitoring. Renewable annually.
+            </div>
+          </div>
+          <div style="text-align: right">
+            <div style="font-size: 18px; font-weight: 800; color: #1a1a2e">&#8377;18,000 – &#8377;25,000</div>
+            <div style="font-size: 8.5px; color: #6b7280">Per Year</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Initials line at bottom of page 1 -->
+      <div style="position: absolute; bottom: 40px; right: 40px; z-index: 1; display: flex; gap: 32px">
+        <div style="text-align: center">
+          <div style="width: 60px; border-bottom: 1px solid #cbd5e1; margin-bottom: 4px; height: 24px"></div>
+          <div style="font-size: 7px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px">SP Initials</div>
+        </div>
+        <div style="text-align: center">
+          <div style="width: 60px; border-bottom: 1px solid #cbd5e1; margin-bottom: 4px; height: 24px"></div>
+          <div style="font-size: 7px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px">Client Initials</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>&copy; 2026 Dreamlytix Technologies &bull; <a href="https://dreamlytix.com">dreamlytix.com</a></span>
+        <span>Page 1 of 2</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 2 ==================== -->
+    <div class="page">
+      <div class="watermark">DREAMLYTIX</div>
+
+      <!-- LETTERHEAD MINI -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 40px; border-bottom: 2px solid #10b981">
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div class="logo-icon" style="width: 32px; height: 32px; background: #f0fdf9; border: 1px solid #d1fae5">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M4 8h16M4 12h16M4 16h16" /></svg>
+          </div>
+          <span style="font-size: 15px; font-weight: 800; color: #0f172a"
+            >Dreamlytix <span style="font-size: 9px; font-weight: 700; color: #10b981; letter-spacing: 1px; text-transform: uppercase">Technologies</span></span
+          >
+        </div>
+        <div style="font-size: 8px; color: #9ca3af">Project Acceptance & Agreement &bull; Ref: DL/PA/2026/003</div>
+      </div>
+
+      <div class="content">
+        <!-- TERMS & CONDITIONS -->
+        <div class="sec-title"><span class="sec-num">7</span> Terms & Conditions</div>
+        <ol class="terms-list" style="counter-reset: terms">
+          <li>
+            <strong>Scope Changes:</strong> Any additions or modifications beyond the agreed scope will require a written change request and may incur additional charges,
+            to be mutually agreed upon before implementation.
+          </li>
+          <li>
+            <strong>Intellectual Property:</strong> Upon receipt of full payment, the Client will own all rights to the delivered software, design assets, and source
+            code. Dreamlytix retains the right to showcase the project in its portfolio.
+          </li>
+          <li>
+            <strong>Confidentiality:</strong> Both parties agree to keep all project-related information, including business data, credentials, and proprietary details,
+            strictly confidential during and after the engagement.
+          </li>
+          <li>
+            <strong>Payment Terms:</strong> All invoices are payable within 15 days of issuance. Late payments beyond 30 days may result in project suspension until dues
+            are cleared. All prices are exclusive of applicable taxes (GST @ 18%).
+          </li>
+          <li>
+            <strong>Timeline:</strong> The estimated 8-10 week timeline begins from the date of advance payment receipt and requirement finalization. Delays caused by the
+            Client (e.g., late content, feedback delays) will extend the timeline accordingly.
+          </li>
+          <li>
+            <strong>Warranty:</strong> Dreamlytix provides a 30-day post-delivery warranty covering bug fixes and minor adjustments. This does not include new features,
+            design changes, or content updates.
+          </li>
+          <li>
+            <strong>Third-Party Services:</strong> Costs for domain registration, hosting, Play Store developer account (&#8377;2,075 one-time), SMS gateway, and any
+            other third-party subscriptions are borne separately by the Client.
+          </li>
+          <li>
+            <strong>Cancellation:</strong> Either party may terminate this agreement with 15 days written notice. In case of cancellation, the Client shall pay for all
+            work completed till date. Advance payments are non-refundable once development has commenced.
+          </li>
+          <li>
+            <strong>Limitation of Liability:</strong> Dreamlytix's total liability under this agreement shall not exceed the total project cost. Neither party shall be
+            liable for indirect, incidental, or consequential damages.
+          </li>
+          <li>
+            <strong>Force Majeure:</strong> Neither party shall be held liable for delays or failure due to circumstances beyond reasonable control, including natural
+            disasters, government actions, internet outages, or pandemics.
+          </li>
+          <li>
+            <strong>Dispute Resolution:</strong> Any disputes arising from this agreement shall first be resolved through mutual consultation. If unresolved, disputes
+            shall be subject to the exclusive jurisdiction of courts in Murshidabad, West Bengal, India.
+          </li>
+          <li><strong>Governing Law:</strong> This agreement shall be governed by and construed in accordance with the laws of India.</li>
+        </ol>
+
+        <!-- CLIENT RESPONSIBILITIES -->
+        <div class="sec-title"><span class="sec-num">8</span> Client Responsibilities</div>
+        <ol class="terms-list">
+          <li>Provide all required content (text, images, logos, academic data) in a timely manner as per the agreed schedule.</li>
+          <li>Designate a single point of contact (SPOC) to coordinate with Dreamlytix for approvals and feedback.</li>
+          <li>Review and provide feedback on designs and deliverables within 5 business days of each milestone submission.</li>
+          <li>Ensure availability for training sessions scheduled during the deployment phase.</li>
+          <li>Procure and provide access to domain name, hosting, and Play Store developer account before launch.</li>
+        </ol>
+
+        <!-- ACCEPTANCE -->
+        <div class="sec-title"><span class="sec-num">9</span> Acceptance Declaration</div>
+        <div style="background: #f8fafc; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 16px 18px; margin-bottom: 20px">
+          <p style="font-size: 10px; color: #374151; line-height: 1.7">
+            By signing below, both parties confirm that they have read, understood, and agree to all terms and conditions outlined in this Project Acceptance & Agreement
+            document and the associated proposal. This agreement becomes effective upon the date of the last signature below.
+          </p>
+        </div>
+
+        <!-- SIGNATURES -->
+        <div class="sig-grid">
+          <div class="sig-block">
+            <div class="sig-label">For Dreamlytix Technologies (Service Provider)</div>
+            <div class="sig-line"></div>
+            <div class="sig-fields">
+              <div class="sig-field">
+                <div class="sf-label">Authorized Signatory</div>
+                <div class="sf-val">Supratim Das</div>
+              </div>
+              <div class="sig-field">
+                <div class="sf-label">Designation</div>
+                <div class="sf-val">Founder & CEO</div>
+              </div>
+              <div class="sig-field">
+                <div class="sf-label">Date</div>
+                <div class="sf-val"></div>
+              </div>
+              <div class="sig-field">
+                <div class="sf-label">Place</div>
+                <div class="sf-val">Murshidabad, WB</div>
+              </div>
+            </div>
+          </div>
+          <div class="sig-block">
+            <div class="sig-label">For The Green View English Academy (Client)</div>
+            <div class="sig-line"></div>
+            <div class="sig-fields">
+              <div class="sig-field">
+                <div class="sf-label">Authorized Signatory</div>
+                <div class="sf-val"></div>
+              </div>
+              <div class="sig-field">
+                <div class="sf-label">Designation</div>
+                <div class="sf-val"></div>
+              </div>
+              <div class="sig-field">
+                <div class="sf-label">Date</div>
+                <div class="sf-val"></div>
+              </div>
+              <div class="sig-field">
+                <div class="sf-label">Place</div>
+                <div class="sf-val"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAMP / SEAL -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px">
+          <div class="stamp-area">Company<br />Stamp / Seal</div>
+          <div class="stamp-area">School<br />Stamp / Seal</div>
+        </div>
+
+        <!-- WITNESS SECTION -->
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e5e7eb">
+          <div style="font-size: 9px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; color: #94a3b8; margin-bottom: 12px">Witness (Optional)</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px">
+            <div style="display: flex; gap: 12px; align-items: flex-end">
+              <div style="font-size: 9px; color: #94a3b8; white-space: nowrap">Name:</div>
+              <div style="flex: 1; border-bottom: 1px solid #d1d5db; min-height: 18px"></div>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: flex-end">
+              <div style="font-size: 9px; color: #94a3b8; white-space: nowrap">Signature:</div>
+              <div style="flex: 1; border-bottom: 1px solid #d1d5db; min-height: 18px"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXECUTION NOTE -->
+        <div style="margin-top: 20px; padding: 12px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e5e7eb">
+          <p style="font-size: 8.5px; color: #64748b; line-height: 1.6; text-align: center">
+            This agreement is executed in <strong style="color: #334155">duplicate</strong>, each copy having equal legal validity. This offer is valid for
+            <strong style="color: #334155">30 days</strong> from the date of issuance. All amounts mentioned are exclusive of GST (18%) unless stated otherwise.
+          </p>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>&copy; 2026 Dreamlytix Technologies &bull; <a href="https://dreamlytix.com">dreamlytix.com</a> &bull; founder@dreamlytix.com &bull; +91 99336 06242</span>
+        <span>Page 2 of 2</span>
+      </div>
+    </div>
+  </body>
+</html>
