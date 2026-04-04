@@ -7,51 +7,30 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 const portfolioItems = [
   {
     id: 1,
-    title: "Lal Sweets",
-    category: "E-Commerce Website",
-    description: "Modern sweets store with responsive design for smooth shopping experience.",
-    website: "https://www.lalsweets.com/",
+    title: "Dreamlytix",
+    category: "Business Solutions Platform",
+    description:
+      "India's ed-tech development agency building custom websites, admin panels, and mobile apps for schools, gyms, and growing businesses — 150+ institutions digitized.",
+    website: "https://www.dreamlytix.com/",
     gradient: "from-orange-500 to-amber-300",
   },
   {
     id: 2,
-    title: "Kirtilals",
-    category: "Luxury Website",
-    description: "Premium diamond-jewellery store with elegant UX for luxury buyers.",
-    website: "https://www.kirtilals.com/",
+    title: "Novacoat",
+    category: "Interior & Exterior Color Solutions",
+    description:
+      "Professional painting contractor based in West Bengal, offering expert residential and commercial painting services with quality finishes and reliable workmanship.",
+    website: "https://www.novacoat.co.in/",
     gradient: "from-zinc-800 to-zinc-900",
   },
   {
     id: 3,
-    title: "Tradescribe",
-    category: "Trading Platform",
-    description: "Built a sleek journaling platform for tracking trades with AI-backed analytics.",
-    website: "https://tradescribe.in/",
+    title: "khabarwala",
+    category: "News & Media Platform",
+    description:
+      "India's ground-rooted Bengali news portal covering politics, technology, entertainment, and local stories — from every village to Delhi, in English and বাংলা.",
+    website: "https://khabarwala-news-portal.vercel.app/",
     gradient: "from-blue-600 to-cyan-400",
-  },
-  {
-    id: 4,
-    title: "Murzban",
-    category: "Clothing Luxury",
-    description: "Modern online store for curated men's & women's designer fashion.",
-    website: "https://murzban.in/",
-    gradient: "from-purple-600 to-rose-400",
-  },
-  {
-    id: 5,
-    title: "Greenfeels",
-    category: "Sustainable Ecom",
-    description: "Curated eco-friendly essentials in a clean responsive design for conscious shoppers.",
-    website: "https://greenfeels.in/",
-    gradient: "from-emerald-500 to-lime-400",
-  },
-  {
-    id: 6,
-    title: "Momentz",
-    category: "Premium Store",
-    description: "Curated luxury gifts and premium home décor in a sleek online storefront.",
-    website: "https://momentz.in/",
-    gradient: "from-indigo-500 to-fuchsia-500",
   },
 ];
 
@@ -77,14 +56,21 @@ const itemVariants = {
 
 const Portfolio = () => {
   return (
-    <section className="relative py-24 overflow-hidden" id="portfolio" style={{ background: "linear-gradient(160deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%)" }}>
+    <section
+      className="relative py-24 overflow-hidden"
+      id="portfolio"
+      style={{
+        background:
+          "linear-gradient(160deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%)",
+      }}
+    >
       {/* Background elements */}
       <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
           <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +88,10 @@ const Portfolio = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight"
           >
-            Turning Visions Into <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">Digital Reality</span>
+            Turning Visions Into{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">
+              Digital Reality
+            </span>
           </m.h2>
 
           <m.p
@@ -110,9 +99,10 @@ const Portfolio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-zinc-400 text-lg md:text-xl"
+            className="text-zinc-400 text-sm"
           >
-            Explore our featured projects. We build scalable, high-performance web applications tailored to your business goals.
+            Explore our featured projects. We build scalable, high-performance
+            web applications tailored to your business goals.
           </m.p>
         </div>
 
@@ -129,18 +119,22 @@ const Portfolio = () => {
               variants={itemVariants}
               className="group relative rounded-4xl bg-zinc-900/50 border border-white/5 overflow-hidden hover:border-white/20 transition-all duration-500"
             >
-              {/* Card Image/Gradient Area */}
-              <div className={`relative h-64 w-full bg-linear-to-br ${item.gradient} overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-
-                {/* Decorative floating shapes to make it look like an abstract image */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 ease-out" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-24 h-24 bg-white/20 backdrop-blur-md rounded-2xl rotate-12 group-hover:rotate-45 group-hover:scale-110 transition-all duration-500" />
-                <div className="absolute top-[-5%] left-[-5%] w-16 h-16 bg-black/20 backdrop-blur-md rounded-full group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-500" />
+              {/* Card Image Area */}
+              <div className="relative h-56 w-full overflow-hidden bg-gray-950 p-3 pb-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://api.microlink.io/?url=${encodeURIComponent(item.website)}&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000&viewport.width=1280&viewport.height=800`}
+                  alt={`${item.title} website screenshot`}
+                  className="w-full h-full object-cover object-top rounded-t-sm transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
 
                 {/* Top Badge Overlay */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-black/40 backdrop-blur-md text-white/90 text-xs font-semibold rounded-full border border-white/10">{item.category}</span>
+                  <span className="px-3 py-1 bg-black/40 backdrop-blur-md text-white/90 text-xs font-semibold rounded-full border border-white/10">
+                    {item.category}
+                  </span>
                 </div>
 
                 {/* Link Icon Overlay */}
@@ -153,11 +147,6 @@ const Portfolio = () => {
                 >
                   <ExternalLink size={18} />
                 </a>
-
-                {/* Placeholder Image Text */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity">
-                  <span className="text-3xl font-bold tracking-wider text-white mix-blend-overlay" aria-hidden="true">{item.title}</span>
-                </div>
               </div>
 
               {/* Card Content Area */}
@@ -168,10 +157,14 @@ const Portfolio = () => {
                 />
 
                 <div className="flex items-start justify-between gap-4 mb-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                    {item.title}
+                  </h3>
                 </div>
 
-                <p className="text-zinc-400 text-sm mb-8 line-clamp-2 leading-relaxed">{item.description}</p>
+                <p className="text-zinc-400 text-sm mb-4 line-clamp-4 leading-relaxed">
+                  {item.description}
+                </p>
 
                 <a
                   href={item.website}
@@ -180,7 +173,10 @@ const Portfolio = () => {
                   className="inline-flex items-center gap-2 text-sm font-semibold text-white group-hover:text-blue-400 transition-colors"
                 >
                   Visit Website
-                  <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight
+                    size={16}
+                    className="transform group-hover:translate-x-1 transition-transform"
+                  />
                 </a>
               </div>
             </m.div>

@@ -2,7 +2,22 @@
 
 import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
-import { Globe, Smartphone, Server, Sparkles, CheckCircle2, FileText, BookOpen, Calendar, Bell, Monitor, CreditCard, BarChart3, ArrowRight, Zap } from "lucide-react";
+import {
+  Globe,
+  Smartphone,
+  Server,
+  Sparkles,
+  CheckCircle2,
+  FileText,
+  BookOpen,
+  Calendar,
+  Bell,
+  Monitor,
+  CreditCard,
+  BarChart3,
+  ArrowRight,
+  Zap,
+} from "lucide-react";
 
 const platforms = [
   {
@@ -50,7 +65,8 @@ const platforms = [
     tagline: "Stay connected, anywhere, anytime",
     gradient: "from-teal-500 via-green-500 to-emerald-500",
     bgGlow: "bg-teal-500/10",
-    description: "Dedicated Android apps for end-users (parents, students, or clients) with real-time access to attendance, updates, billing, and direct communications.",
+    description:
+      "Dedicated Android apps for end-users (parents, students, or clients) with real-time access to attendance, updates, billing, and direct communications.",
     features: [
       { icon: BookOpen, text: "Attendance & Performance Tracking" },
       { icon: CreditCard, text: "Billing & Payment History Access" },
@@ -69,7 +85,10 @@ export default function Services() {
   const Icon = platform.icon;
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gray-950" id="services">
+    <section
+      className="relative py-24 overflow-hidden bg-gray-950"
+      id="services"
+    >
       {/* ── Animated Background ── */}
       <div className="absolute inset-0 pointer-events-none">
         <AnimatePresence mode="wait">
@@ -102,10 +121,14 @@ export default function Services() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
-            Complete <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">School Management Software</span> Modules
+            Everything You Need to{" "}
+            <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+              Scale & Succeed
+            </span>
           </h2>
           <p className="text-white/50 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            A complete digital ecosystem for schools, gyms, and growing businesses — every module crafted to work seamlessly together.
+            A complete digital ecosystem for businesses, startups, and growing
+            businesses — every module crafted to work seamlessly together.
           </p>
         </m.div>
 
@@ -133,7 +156,9 @@ export default function Services() {
                 aria-selected={isActive}
                 aria-controls={`tabpanel-${p.id}`}
                 className={`relative flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                  isActive ? "text-white shadow-lg shadow-black/30" : "text-white/50 border border-white/10 bg-white/5 hover:text-white/80 hover:bg-white/10"
+                  isActive
+                    ? "text-white shadow-lg shadow-black/30"
+                    : "text-white/50 border border-white/10 bg-white/5 hover:text-white/80 hover:bg-white/10"
                 }`}
               >
                 {isActive && (
@@ -168,24 +193,38 @@ export default function Services() {
             {/* Left: Info Card */}
             <div className="relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md overflow-hidden">
               {/* Gradient accent top-left */}
-              <div className={`absolute -top-20 -left-20 w-64 h-64 bg-linear-to-br ${platform.gradient} opacity-15 rounded-full blur-3xl`} />
+              <div
+                className={`absolute -top-20 -left-20 w-64 h-64 bg-linear-to-br ${platform.gradient} opacity-15 rounded-full blur-3xl`}
+              />
 
               {/* Icon + stat row */}
               <div className="flex items-start justify-between mb-6 relative z-10">
-                <div className={`w-16 h-16 rounded-2xl bg-linear-to-br ${platform.gradient} flex items-center justify-center shadow-xl`}>
+                <div
+                  className={`w-16 h-16 rounded-2xl bg-linear-to-br ${platform.gradient} flex items-center justify-center shadow-xl`}
+                >
                   <Icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-black text-white">{platform.stat.value}</div>
-                  <div className="text-xs text-white/40 font-medium">{platform.stat.label}</div>
+                  <div className="text-2xl font-black text-white">
+                    {platform.stat.value}
+                  </div>
+                  <div className="text-xs text-white/40 font-medium">
+                    {platform.stat.label}
+                  </div>
                 </div>
               </div>
 
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-2 relative z-10">{platform.tagline}</p>
-              <h3 className={`text-2xl sm:text-3xl font-extrabold mb-4 bg-linear-to-r ${platform.gradient} bg-clip-text text-transparent relative z-10`}>
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-2 relative z-10">
+                {platform.tagline}
+              </p>
+              <h3
+                className={`text-2xl sm:text-3xl font-extrabold mb-4 bg-linear-to-r ${platform.gradient} bg-clip-text text-transparent relative z-10`}
+              >
                 {platform.label}
               </h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-8 relative z-10">{platform.description}</p>
+              <p className="text-white/60 text-sm leading-relaxed mb-8 relative z-10">
+                {platform.description}
+              </p>
 
               <a
                 href="#contact"
@@ -208,11 +247,15 @@ export default function Services() {
                     transition={{ delay: idx * 0.07, duration: 0.35 }}
                     className="group flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                   >
-                    <div className={`shrink-0 w-9 h-9 rounded-xl bg-linear-to-br ${platform.gradient} flex items-center justify-center shadow-md`}>
+                    <div
+                      className={`shrink-0 w-9 h-9 rounded-xl bg-linear-to-br ${platform.gradient} flex items-center justify-center shadow-md`}
+                    >
                       <FIcon className="w-4 h-4 text-white" />
                     </div>
                     <div className="flex flex-col justify-center">
-                      <span className="text-white/80 text-sm font-medium leading-snug group-hover:text-white transition-colors">{feature.text}</span>
+                      <span className="text-white/80 text-sm font-medium leading-snug group-hover:text-white transition-colors">
+                        {feature.text}
+                      </span>
                     </div>
                   </m.div>
                 );
@@ -230,14 +273,19 @@ export default function Services() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
-            { value: "150+", label: "Schools Digitized", icon: Globe },
+            { value: "10+", label: "Websites Digitized", icon: Globe },
             { value: "6", label: "Core Modules", icon: Sparkles },
             { value: "99.9%", label: "Uptime Guaranteed", icon: Zap },
             { value: "24/7", label: "Support Available", icon: CheckCircle2 },
           ].map((s) => (
-            <div key={s.label} className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 transition-all duration-300 group">
+            <div
+              key={s.label}
+              className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 transition-all duration-300 group"
+            >
               <s.icon className="w-5 h-5 text-cyan-400 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-              <div className="text-2xl font-black text-white mb-1">{s.value}</div>
+              <div className="text-2xl font-black text-white mb-1">
+                {s.value}
+              </div>
               <div className="text-xs text-white/40 font-medium">{s.label}</div>
             </div>
           ))}

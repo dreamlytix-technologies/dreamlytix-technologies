@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions - Dreamlytix",
-  description: "Dreamlytix Terms & Conditions — rules and guidelines for using our school management software and services.",
+  description: "Dreamlytix Terms & Conditions — rules and guidelines for using our software and services.",
   alternates: {
     canonical: "https://dreamlytix.com/terms-and-conditions",
   },
@@ -27,8 +27,8 @@ export default function TermsAndConditions() {
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">2. Services</h2>
             <p>
-              Dreamlytix provides school management software, website development, admin panel development, and mobile application development services for educational
-              institutions. The specific scope, deliverables, and timelines for any project will be defined in a separate service agreement.
+              Dreamlytix provides software development, website development, admin panel development, and mobile application development services for
+              businesses. The specific scope, deliverables, and timelines for any project will be defined in a separate service agreement.
             </p>
           </section>
 

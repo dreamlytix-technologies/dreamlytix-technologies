@@ -22,10 +22,10 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: "#implementation", label: "About Us", isContact: false },
+    { href: "#implementation", label: "About", isContact: false },
     { href: "#services", label: "Services", isContact: false },
-    { href: "#portfolio", label: "Portfolio", isContact: false },
-    { href: "#testimonials", label: "Reviews", isContact: false },
+    { href: "#portfolio", label: "Projects", isContact: false },
+    { href: "#tools", label: "Tools", isContact: false },
     { href: "#faq", label: "FAQs", isContact: false },
     { href: "#contact", label: "Get in Quote", isContact: true },
   ].map((link) => ({
@@ -34,18 +34,29 @@ const Header = () => {
   }));
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || !isHomePage ? "py-3 bg-gray-900 shadow-lg" : "py-6 bg-transparent"}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || !isHomePage ? "py-3 bg-gray-900 shadow-lg" : "py-6 bg-transparent"}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group -ml-3">
-            <Image src="/images/hero-logo.png" alt="Dreamlytix Logo" width={72} height={64} className="-mr-3" priority />
+            <Image
+              src="/images/hero-logo.png"
+              alt="Dreamlytix Logo"
+              width={72}
+              height={64}
+              className="-mr-3"
+              priority
+            />
             <div className="flex flex-col leading-tight">
               <div className="text-xl sm:text-2xl font-bold">
                 <span className="text-white transition-colors">Dream</span>
                 <span className="gradient-text-primary">lytix</span>
               </div>
-              <span className="text-xs text-center text-gray-500 tracking-wide">You Dream, We Build.</span>
+              <span className="text-xs text-center text-gray-500 tracking-wide">
+                You Dream, We Build.
+              </span>
             </div>
           </Link>
 
@@ -61,7 +72,10 @@ const Header = () => {
                     {link.label}
                   </a>
                 ) : (
-                  <a href={link.href} className="relative text-gray-300 hover:text-orange-500 transition-colors group">
+                  <a
+                    href={link.href}
+                    className="relative text-gray-300 hover:text-orange-500 transition-colors group"
+                  >
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
                   </a>
@@ -85,7 +99,10 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div id="mobile-menu" className="md:hidden mt-6 glass-dark rounded-2xl p-6 animate-slideUp">
+          <div
+            id="mobile-menu"
+            className="md:hidden mt-6 glass-dark rounded-2xl p-6 animate-slideUp"
+          >
             <ul className="space-y-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -98,7 +115,11 @@ const Header = () => {
                       {link.label}
                     </a>
                   ) : (
-                    <a href={link.href} onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-orange-500 font-medium transition-colors">
+                    <a
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block text-gray-400 hover:text-orange-500 font-medium transition-colors"
+                    >
                       {link.label}
                     </a>
                   )}

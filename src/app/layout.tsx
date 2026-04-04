@@ -1,24 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 
-import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import MotionProvider from "@/components/ui/MotionProvider";
 import "./globals.css";
 
-// Modern, professional font for body text
-const inter = Inter({
-  variable: "--font-inter",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
 });
 
-// Modern, bold font for headings
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const siteUrl = "https://dreamlytix.com";
 
@@ -42,10 +34,10 @@ export const metadata: Metadata = {
     "software development company India",
     "custom software development",
     "business website development",
-    "school management software India",
-    "school ERP software",
-    "school website development",
-    "school mobile app",
+    "business management software India",
+    "business ERP software",
+    "business website development",
+    "business mobile app",
     "student management system",
     "fee management software",
     "attendance tracking system",
@@ -185,7 +177,7 @@ const organizationSchema = {
     minValue: 5,
     maxValue: 20,
   },
-  knowsAbout: ["Website Development", "Admin Panel Development", "Mobile App Development", "School Management Software", "Custom Software Development", "SaaS Development", "Web Applications"],
+  knowsAbout: ["Website Development", "Admin Panel Development", "Mobile App Development", "Business Management Software", "Custom Software Development", "SaaS Development", "Web Applications"],
 };
 
 const localBusinessSchema = {
@@ -238,7 +230,7 @@ const localBusinessSchema = {
     "@type": "Country",
     name: "India",
   },
-  serviceType: ["Website Development", "Admin Panel Development", "Mobile App Development", "Custom Software Development", "School Management Software", "SaaS Development"],
+  serviceType: ["Website Development", "Admin Panel Development", "Mobile App Development", "Custom Software Development", "Business Management Software", "SaaS Development"],
 };
 
 const websiteSchema = {
@@ -318,7 +310,7 @@ const faqSchema = {
       name: "What is Dreamlytix and who is it for?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Dreamlytix is an educational technology company that builds complete digital ecosystems for schools and institutions. We provide integrated websites, admin panels, and mobile apps — all tailored for educational workflows like student management, attendance tracking, fee collection, and parent communication.",
+        text: "Dreamlytix is a technology company that builds complete digital ecosystems for businesses. We provide integrated websites, admin panels, and mobile apps — all tailored for your operational workflows like client management, scheduling, billing, and team communication.",
       },
     },
     {
@@ -326,7 +318,7 @@ const faqSchema = {
       name: "What services are included in the Dreamlytix package?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Our complete package includes a responsive school website, a full-featured admin panel (student management, attendance, fee tracking, exam results, timetable, reports), and a dedicated Android mobile app for parents and students with real-time notifications, attendance, and fee information.",
+        text: "Our complete package includes a responsive website, a full-featured admin panel (client management, scheduling, billing, reports), and a dedicated mobile app with real-time notifications and business insights.",
       },
     },
     {
@@ -339,7 +331,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Is my school's data secure with Dreamlytix?",
+      name: "Is my business data secure with Dreamlytix?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Absolutely. We implement role-based access control, industry-standard encryption for all sensitive data, automated daily backups, and cloud-based hosting with a 99.9% uptime guarantee. Your student records, financial data, and institutional information are always protected and recoverable.",
@@ -347,7 +339,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Can the system scale as our school grows?",
+      name: "Can the system scale as our business grows?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes — our architecture is built to scale seamlessly from 100 to 10,000+ students with no performance degradation. We use modern technologies like Next.js, Node.js, and cloud infrastructure (AWS, Docker) to ensure speed and reliability at any scale.",
@@ -398,8 +390,8 @@ const serviceSchema = {
     {
       "@type": "Service",
       position: 4,
-      name: "School Management Software",
-      description: "Complete school management system with student management, fee tracking, attendance, exam results, timetables, and parent communication apps.",
+      name: "Business Management Software",
+      description: "Complete business management system with client management, billing, scheduling, reports, and team communication apps.",
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: "India",
       serviceType: "Software Development",
@@ -504,14 +496,13 @@ export default function RootLayout({
         />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }} />
       </head>
-      <body suppressHydrationWarning className={`${inter.variable} ${outfit.variable} font-sans antialiased flex flex-col overflow-x-hidden`}>
+      <body suppressHydrationWarning className={`${spaceGrotesk.variable} font-sans antialiased flex flex-col overflow-x-hidden`}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">
           Skip to content
         </a>
         <MotionProvider>
           <Header />
           <main id="main-content" className="flex-1">{children}</main>
-          <Footer />
         </MotionProvider>
       </body>
     </html>

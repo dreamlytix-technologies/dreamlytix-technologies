@@ -26,7 +26,7 @@ html {
 body {
   overflow-x: hidden;
   font-family:
-    var(--font-inter),
+    "Space Grotesk", "Space Grotesk Fallback", var(--font-space-grotesk),
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -45,7 +45,7 @@ h4,
 h5,
 h6 {
   font-family:
-    var(--font-outfit),
+    "Space Grotesk", "Space Grotesk Fallback", var(--font-space-grotesk),
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -202,6 +202,26 @@ h6 {
 
 .animate-slideUp {
   animation: slideUp 0.3s ease-out;
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes counter-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes counter-spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* ===== SECTION SPACING ===== */

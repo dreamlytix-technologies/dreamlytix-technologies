@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Dreamlytix - School Management Software Company India";
+export const alt = "Dreamlytix - Software Development Company India";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -60,7 +60,7 @@ export default function OGImage() {
               lineHeight: 1.4,
             }}
           >
-            School Management Software | Website & App Development
+            Software Solutions | Website & App Development
           </div>
 
           <div

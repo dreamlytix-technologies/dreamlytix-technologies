@@ -25,7 +25,7 @@ export default function WhatsAppButton() {
 
       <Link
         target="_blank"
-        href="https://wa.me/919933606242?text=Hi%20Dreamlytix%2C%20I%27m%20interested%20in%20your%20school%20management%20software."
+        href="https://wa.me/919933606242?text=Hi%20Dreamlytix%2C%20I%27m%20interested%20in%20your%20software%20solutions."
         rel="noopener noreferrer"
         aria-label="Chat with Dreamlytix on WhatsApp"
         className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-[0_4px_24px_rgba(37,211,102,0.45)] hover:shadow-[0_6px_32px_rgba(37,211,102,0.6)] hover:scale-110 active:scale-95 transition-all duration-300"

@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "What is Dreamlytix and who is it for?",
     answer:
-      "Dreamlytix builds complete digital ecosystems primarily for schools, but perfectly adapted for small businesses, gyms, and corporate organizations. We provide integrated websites, admin panels, and mobile apps — tailored specifically to your unique operational workflows.",
+      "Dreamlytix builds complete digital ecosystems for businesses of all sizes — from startups and small businesses to gyms, corporate organizations, and enterprises. We provide integrated websites, admin panels, and mobile apps — tailored specifically to your unique operational workflows.",
   },
   {
     question: "What services are included in the Dreamlytix package?",

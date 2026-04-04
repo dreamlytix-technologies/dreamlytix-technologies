@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Dreamlytix",
-  description: "Dreamlytix Privacy Policy — how we collect, use, and protect your data. School management software trusted by 150+ institutions.",
+  description: "Dreamlytix Privacy Policy — how we collect, use, and protect your data. Software solutions trusted by 150+ businesses.",
   alternates: {
     canonical: "https://dreamlytix.com/privacy-policy",
   },

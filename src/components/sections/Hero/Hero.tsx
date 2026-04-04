@@ -32,8 +32,16 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
-          <m.div className="space-y-8 max-w-xl" variants={containerVariants} initial="hidden" animate="visible">
-            <m.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-zinc-50 tracking-tight">
+          <m.div
+            className="space-y-8 max-w-xl"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <m.h1
+              variants={itemVariants}
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-zinc-50 tracking-tight"
+            >
               Turning Ideas Into{" "}
               <span className="gradient-text relative pb-2 inline-block">
                 Digital Reality
@@ -46,15 +54,24 @@ const Hero = () => {
               </span>
             </m.h1>
 
-            <m.p variants={itemVariants} className="text-zinc-400 text-sm md:text-base leading-relaxed">
-              We deliver innovative digital solutions including secure school websites, scalable admin panels, and user-friendly mobile applications. We help educational
-              institutions and growing businesses transform their operations with cutting-edge technology, reliable infrastructure, and performance-driven design.
+            <m.p
+              variants={itemVariants}
+              className="text-zinc-400 text-sm md:text-base leading-relaxed"
+            >
+              We deliver innovative digital solutions including secure websites,
+              scalable admin panels, and user-friendly mobile applications. We
+              help businesses transform their operations with cutting-edge
+              technology, reliable infrastructure, and performance-driven
+              design.
             </m.p>
 
-            <m.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 pt-4">
+            <m.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 pt-4"
+            >
               <a
                 href="#services"
-                className="px-8 py-4 bg-white text-zinc-900 rounded-full font-bold hover:bg-zinc-200 transition-colors shadow-lg shadow-white/10 text-center"
+                className="px-6 py-2 md:py-3 bg-white text-zinc-900 rounded-xl font-bold hover:bg-zinc-200 transition-colors shadow-lg shadow-white/10 text-center text-sm md:text-base"
               >
                 “You Dream, We Build — Delivering Technology with Purpose.”
               </a>
@@ -104,11 +121,27 @@ const Hero = () => {
             <m.div
               className="absolute bottom-24 -right-4 md:right-4 backdrop-blur-xl bg-zinc-900/80 border border-white/10 p-4 rounded-2xl shadow-2xl flex items-center gap-4 z-20"
               animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
             >
               <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-emerald-500/30">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
                 </svg>
               </div>
               <div>
