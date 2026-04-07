@@ -56,7 +56,7 @@ const Hero = () => {
 
             <m.p
               variants={itemVariants}
-              className="text-zinc-400 text-sm md:text-base leading-relaxed"
+              className="text-zinc-400 text-sm md:text-sm leading-relaxed"
             >
               We deliver innovative digital solutions including secure websites,
               scalable admin panels, and user-friendly mobile applications. We

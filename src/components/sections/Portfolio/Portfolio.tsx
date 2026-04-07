@@ -25,11 +25,11 @@ const portfolioItems = [
   },
   {
     id: 3,
-    title: "khabarwala",
+    title: "The Bengal Eye",
     category: "News & Media Platform",
     description:
       "India's ground-rooted Bengali news portal covering politics, technology, entertainment, and local stories — from every village to Delhi, in English and বাংলা.",
-    website: "https://khabarwala-news-portal.vercel.app/",
+    website: "https://the-bengal-eye-news.vercel.app/",
     gradient: "from-blue-600 to-cyan-400",
   },
 ];

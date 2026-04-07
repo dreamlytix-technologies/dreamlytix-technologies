@@ -204,14 +204,14 @@ export default function Services() {
                 >
                   <Icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-right">
+                {/* <div className="text-right">
                   <div className="text-2xl font-black text-white">
                     {platform.stat.value}
                   </div>
                   <div className="text-xs text-white/40 font-medium">
                     {platform.stat.label}
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-2 relative z-10">
